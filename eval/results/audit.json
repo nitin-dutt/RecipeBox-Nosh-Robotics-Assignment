@@ -1,0 +1,99 @@
+{
+  "k": 25,
+  "queries": [
+    "pasta",
+    "soup",
+    "salad",
+    "cookies",
+    "cake",
+    "bread",
+    "stir fry",
+    "curry",
+    "casserole",
+    "pie",
+    "sandwich",
+    "tacos",
+    "pizza",
+    "rice",
+    "noodles",
+    "breakfast",
+    "muffins",
+    "pancakes",
+    "stew",
+    "dip",
+    "sauce",
+    "chili",
+    "burger",
+    "roast",
+    "lasagna",
+    "brownies",
+    "dinner",
+    "appetizer",
+    "dessert",
+    "chicken"
+  ],
+  "classes": {
+    "vegetarian": {
+      "recipes_checked": 750,
+      "leaks": 1,
+      "rate": 0.0013,
+      "examples": [
+        {
+          "query": "burger",
+          "id": "HMKueolqro3o/nIFGlN33wPzQcykqPq",
+          "title": "Homemade Burger/Dog Buns",
+          "line": "Equipment: a stand mixer fitted with paddle attachment; a 3-inch round cookie cutter (for burger buns) or 2 (13- by 9-inch) baking pans (for hot dog buns)",
+          "warnings": []
+        }
+      ]
+    },
+    "dairy": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "egg": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "peanut": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "shellfish": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "pork": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "tree_nut": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "gluten": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    },
+    "veg_mode": {
+      "recipes_checked": 750,
+      "leaks": 0,
+      "rate": 0.0,
+      "examples": []
+    }
+  }
+}

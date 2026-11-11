@@ -1,0 +1,228 @@
+# Deterministic evaluation cases. Each turn gives the user's message and the plan a good planner would produce, so the run needs no
+# LLM call and gives the same result every time. (The real planner is exercised by eval/conversations.yaml.)
+# Checks are written independently of the system: raw-text regexes (eval/independent.py) and direct SQL on the database.
+
+- id: T1-count-both-ingredients
+  task: 1
+  why: "Statistics must use the complete filtered set and say what they counted."
+  turns:
+    - say: "How many recipes use both garlic and onion?"
+      plan: {intent: count, scope: new, add_include: [garlic, onion]}
+  checks:
+    - count_close: {words: [garlic, onion], low: 0.7, high: 1.0}      # we exclude garlic POWDER etc., so we may be below a plain-text count
+    - denominator_is_complete_recipes: {}
+    - has_calculation: {}
+
+- id: T1-count-explains-normalization
+  task: 1
+  why: "The brief asks the answer to explain ingredient-name normalization."
+  turns:
+    - say: "How many recipes contain garlic, and what counts as garlic?"
+      plan: {intent: count, scope: new, add_include: [garlic]}
+  checks:
+    - note_contains: "Matching rule for 'garlic'"
+    - note_contains: "NOT counted as garlic"
+
+- id: T1-median-ingredient-count
+  task: 1
+  why: "Average and median ingredient counts, with the calculation."
+  turns:
+    - say: "What is the average and median number of ingredients per recipe?"
+      plan: {intent: ingredient_stats, scope: new}
+  checks:
+    - text_contains: "median"
+    - has_calculation: {}
+
+- id: T1-refuse-calories
+  task: 1
+  why: "The dataset has no nutrition data: refuse, never guess."
+  turns:
+    - say: "How many calories are in a typical banana bread?"
+      plan: {intent: unsupported, unsupported_text: calories}
+  checks:
+    - status: refused
+    - no_sources: {}
+    - text_contains: "no nutrition"
+
+- id: T1-mixed-supported-and-unsupported
+  task: 1
+  why: "Answer the part we can, name the part we cannot."
+  turns:
+    - say: "Show me penne recipes and tell me how long each takes to cook"
+      plan: {intent: search, scope: new, query: penne}
+  checks:
+    - min_sources: 3
+    - text_contains: "Not answered"
+
+- id: T1-fewest-steps-ordering
+  task: 1
+  why: "Ranking must be correct and ties disclosed."
+  turns:
+    - say: "Which 5 recipes with tomato have the fewest steps?"
+      plan: {intent: rank_steps, scope: new, add_include: [tomato], k: 5}
+  checks:
+    - min_sources: 5
+    - steps_ascending: {}
+    - text_contains: "tie"
+
+- id: C1-no-dairy-penne
+  task: 1
+  why: "Hard exclusion: nothing returned may contain dairy by an independent text check."
+  turns:
+    - say: "Show me penne recipes"
+      plan: {intent: search, scope: new, query: penne}
+    - say: "I can't have dairy"
+      plan: {intent: search, add_exclude_classes: [dairy]}
+  checks:
+    - min_sources: 3
+    - no_violations: dairy
+    - active_filter: {key: exclude_classes, value: dairy}
+    - active_filter: {key: query, value: penne}
+
+- id: C2-no-peanut
+  task: 1
+  turns:
+    - say: "Noodle recipes without peanuts"
+      plan: {intent: search, scope: new, query: noodles, add_exclude_classes: [peanut]}
+  checks:
+    - min_sources: 3
+    - no_violations: peanut
+
+- id: C3-egg-free-cookies
+  task: 1
+  turns:
+    - say: "Egg-free cookies"
+      plan: {intent: search, scope: new, query: cookies, add_exclude_classes: [egg]}
+  checks:
+    - min_sources: 3
+    - no_violations: egg
+
+- id: C4-vegetarian-toggle
+  task: 1
+  why: "The UI switch is a hard filter applied in code."
+  vegetarian: true
+  turns:
+    - say: "Soup recipes"
+      plan: {intent: search, scope: new, query: soup, k: 10}
+  checks:
+    - min_sources: 5
+    - no_violations: vegetarian
+    - active_filter: {key: vegetarian_only, value: true}
+
+- id: C5-model-forgets-restriction
+  task: 1
+  why: "If the planner forgets a stated restriction, the guard adds it."
+  turns:
+    - say: "Cookies but I'm allergic to peanuts"
+      plan: {intent: search, scope: new, query: cookies}
+  checks:
+    - no_violations: peanut
+    - active_filter: {key: exclude_classes, value: peanut}
+
+- id: M1-eggs-onions-tomatoes-rice
+  task: 2
+  why: "The brief's example: ranked, explainable, constraints respected."
+  turns:
+    - say: "I have eggs, onions, tomatoes and rice. No peanuts, at most 6 steps."
+      plan: {intent: match, scope: new, available_text: "eggs, onions, tomatoes and rice", add_exclude_classes: [peanut], max_steps: 6}
+    - say: "Exclude eggs too"
+      plan: {intent: match, add_exclude_classes: [egg]}
+  checks:
+    - min_sources: 3
+    - no_violations: egg
+    - no_violations: peanut
+    - steps_at_most: 6
+    - text_contains: "Ignored because you excluded them"
+
+- id: M2-no-match-is-labelled
+  task: 2
+  why: "A hard constraint is never relaxed silently: with nothing eligible, say so; near-misses are labelled as breaking the constraint."
+  turns:
+    - say: "I only have chicken breast, but no poultry please."
+      plan: {intent: match, scope: new, available_text: "chicken breast", add_exclude_classes: [poultry]}
+  checks:
+    - status: no_results
+    - alternatives_labelled: {}
+
+- id: S1-banana-bread-egg
+  task: 3
+  why: "Weak evidence must be reported as weak; nothing applied without support."
+  turns:
+    - say: "Show me banana bread recipes"
+      plan: {intent: search, scope: new, query: banana bread}
+    - say: "Make the first one egg-free"
+      plan: {intent: substitute, ref_index: 1, add_exclude_classes: [egg]}
+  checks:
+    - text_regex: "evidence is (WEAK|CONFLICTING|NONE|SUPPORTED)"
+    - text_regex: "(?i)nothing applied|prediction|tentative"      # weak evidence: nothing applied, or applied and labelled tentative
+    - no_safety_claim: {}
+    - cited_ids_exist: {}
+
+- id: S2-cookies-without-butter
+  task: 3
+  why: "A well-supported swap cites several real recipes."
+  turns:
+    - say: "Show me chocolate chip cookie recipes with butter"
+      plan: {intent: search, scope: new, query: chocolate chip cookies, add_include: [butter]}
+    - say: "Replace the butter in the first one"
+      plan: {intent: substitute, ref_index: 1, remove: [butter]}
+  checks:
+    - text_regex: "evidence is SUPPORTED"
+    - adapted_view: {}
+    - min_sources: 3
+    - cited_ids_exist: {}
+    - no_safety_claim: {}
+
+- id: S3-dairy-free-cream-pasta
+  task: 3
+  why: "An adaptation must say what remains; never claim dairy-free while dairy is still listed."
+  turns:
+    - say: "Creamy pasta recipes with heavy cream"
+      plan: {intent: search, scope: new, query: creamy pasta, add_include: ["heavy cream"]}
+    - say: "Make the first one dairy-free"
+      plan: {intent: substitute, ref_index: 1, add_exclude_classes: [dairy]}
+  checks:
+    - text_regex: "Text check for dairy: (no term found|possible|still present)"
+    - no_safety_claim: {}
+    - dairy_claim_consistent: {}
+
+- id: M3-model-forgets-step-limit
+  task: 2
+  why: "Found by a real conversation: the planner dropped 'at most 6 steps'. The guard must add it."
+  turns:
+    - say: "I have eggs, onions, tomatoes and rice. What can I cook? No peanuts, at most 6 steps."
+      plan: {intent: match, scope: new, available_text: "eggs, onions, tomatoes and rice", add_exclude_classes: [peanut]}
+  checks:
+    - min_sources: 3
+    - steps_at_most: 6
+    - active_filter: {key: max_steps, value: 6}
+
+- id: X1-double-a-recipe
+  task: 3
+  why: "Phase 10: scaling changes only the amounts, and says what it did not change."
+  turns:
+    - say: "Show me banana bread recipes"
+      plan: {intent: search, scope: new, query: banana bread}
+    - say: "Double the first one"
+      plan: {intent: scale, ref_index: 1, scale_factor: 2}
+  checks:
+    - text_regex: "scaled by 2x"
+    - text_contains: "NOT scaled"
+    - text_contains: "Instructions (unchanged)"
+    - cited_ids_exist: {}
+    - no_safety_claim: {}
+
+- id: T1-low-spice-profile
+  task: 3
+  taste: {spice: low}
+  why: "Phase 10: a taste profile adjusts only the hot ingredient lines and labels the numbers a rule of thumb."
+  turns:
+    - say: "Show me spicy chili chicken recipes"
+      plan: {intent: search, scope: new, query: spicy chili chicken}
+    - say: "Open the first one"
+      plan: {intent: get_recipe, ref_index: 1}
+  checks:
+    - text_contains: "Adjusted to your taste (spice low)"
+    - text_regex: "Reduce by about 50%"
+    - text_contains: "not from the dataset"
+    - cited_ids_exist: {}

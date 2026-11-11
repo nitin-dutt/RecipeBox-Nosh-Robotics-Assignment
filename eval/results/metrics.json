@@ -1,0 +1,267 @@
+{
+  "deterministic": {
+    "cases": 114,
+    "passed": 114,
+    "checks": 305,
+    "checks_passed": 305,
+    "multi_turn_cases": 48,
+    "by_category": {
+      "core": {
+        "cases": 19,
+        "passed": 19
+      },
+      "restrictions": {
+        "cases": 9,
+        "passed": 9
+      },
+      "allergen-guard": {
+        "cases": 10,
+        "passed": 10
+      },
+      "follow-ups": {
+        "cases": 15,
+        "passed": 15
+      },
+      "vegetarian": {
+        "cases": 13,
+        "passed": 13
+      },
+      "statistics": {
+        "cases": 11,
+        "passed": 11
+      },
+      "matching": {
+        "cases": 6,
+        "passed": 6
+      },
+      "substitution": {
+        "cases": 6,
+        "passed": 6
+      },
+      "web-search": {
+        "cases": 2,
+        "passed": 2
+      },
+      "scaling": {
+        "cases": 8,
+        "passed": 8
+      },
+      "taste": {
+        "cases": 6,
+        "passed": 6
+      },
+      "limits": {
+        "cases": 7,
+        "passed": 7
+      },
+      "retrieval": {
+        "cases": 2,
+        "passed": 2
+      }
+    },
+    "by_check": {
+      "count_close": {
+        "n": 2,
+        "ok": 2
+      },
+      "denominator_is_complete_recipes": {
+        "n": 4,
+        "ok": 4
+      },
+      "has_calculation": {
+        "n": 10,
+        "ok": 10
+      },
+      "note_contains": {
+        "n": 2,
+        "ok": 2
+      },
+      "text_contains": {
+        "n": 42,
+        "ok": 42
+      },
+      "status": {
+        "n": 16,
+        "ok": 16
+      },
+      "no_sources": {
+        "n": 8,
+        "ok": 8
+      },
+      "min_sources": {
+        "n": 49,
+        "ok": 49
+      },
+      "steps_ascending": {
+        "n": 4,
+        "ok": 4
+      },
+      "no_violations": {
+        "n": 45,
+        "ok": 45
+      },
+      "active_filter": {
+        "n": 22,
+        "ok": 22
+      },
+      "steps_at_most": {
+        "n": 6,
+        "ok": 6
+      },
+      "alternatives_labelled": {
+        "n": 1,
+        "ok": 1
+      },
+      "text_regex": {
+        "n": 16,
+        "ok": 16
+      },
+      "no_safety_claim": {
+        "n": 13,
+        "ok": 13
+      },
+      "cited_ids_exist": {
+        "n": 11,
+        "ok": 11
+      },
+      "adapted_view": {
+        "n": 2,
+        "ok": 2
+      },
+      "dairy_claim_consistent": {
+        "n": 1,
+        "ok": 1
+      },
+      "no_word": {
+        "n": 8,
+        "ok": 8
+      },
+      "filter_absent": {
+        "n": 5,
+        "ok": 5
+      },
+      "trace_has": {
+        "n": 4,
+        "ok": 4
+      },
+      "veg_blocked": {
+        "n": 4,
+        "ok": 4
+      },
+      "suggest": {
+        "n": 2,
+        "ok": 2
+      },
+      "answer_lacks": {
+        "n": 7,
+        "ok": 7
+      },
+      "scale_independent": {
+        "n": 7,
+        "ok": 7
+      },
+      "removed_line": {
+        "n": 1,
+        "ok": 1
+      },
+      "web_labelled": {
+        "n": 1,
+        "ok": 1
+      },
+      "no_web": {
+        "n": 1,
+        "ok": 1
+      },
+      "opened_ref": {
+        "n": 3,
+        "ok": 3
+      },
+      "same_recipe_as_previous": {
+        "n": 1,
+        "ok": 1
+      },
+      "taste_lines_match": {
+        "n": 4,
+        "ok": 4
+      },
+      "source_count_between": {
+        "n": 1,
+        "ok": 1
+      },
+      "titles_contain": {
+        "n": 2,
+        "ok": 2
+      }
+    }
+  },
+  "leak_audit": {
+    "vegetarian": {
+      "checked": 750,
+      "leaks": 1
+    },
+    "dairy": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "egg": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "peanut": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "shellfish": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "pork": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "tree_nut": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "gluten": {
+      "checked": 750,
+      "leaks": 0
+    },
+    "veg_mode": {
+      "checked": 750,
+      "leaks": 0
+    }
+  },
+  "conversations": {
+    "conversations": 14,
+    "turns": 41,
+    "turns_passed": 41,
+    "planner_was_llm": 41,
+    "allergen_guard_fired": 5,
+    "other_guard_fired": 6,
+    "uncached_turns": 1,
+    "turn_seconds": {
+      "median": 2.23,
+      "p90": 2.23,
+      "max": 2.23
+    },
+    "planner_seconds": {
+      "median": 2.1,
+      "max": 2.1
+    }
+  },
+  "latency": {
+    "turns": 14,
+    "median": 1.83,
+    "p90": 2.69,
+    "max": 5.3,
+    "model_median": 1.54,
+    "planner_was_llm": 14
+  },
+  "baseline": {
+    "ids_quoted": 10,
+    "ids_real": 0,
+    "calories_gave_number": false,
+    "said_no_nutrition": false
+  }
+}

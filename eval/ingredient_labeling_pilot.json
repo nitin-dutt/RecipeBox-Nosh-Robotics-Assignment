@@ -1,0 +1,624 @@
+{
+ "rules": {
+  "names": 172,
+  "recall_any_flag": 0.824,
+  "recall_definite_flagged": 0.92,
+  "recall_definite_exact": 0.911,
+  "precision_of_flags": 0.992,
+  "false_alarm_pairs": 1,
+  "parent_accuracy": 0.788,
+  "is_ingredient_accuracy": 0.988,
+  "gold_flagged_pairs": 159,
+  "gold_definite_pairs": 112,
+  "missed_definite": [
+   [
+    "imitation crabmeat",
+    "fish"
+   ],
+   [
+    "spaghettini",
+    "gluten"
+   ],
+   [
+    "chourico",
+    "pork"
+   ],
+   [
+    "ficelle",
+    "gluten"
+   ],
+   [
+    "lt pickled mayo",
+    "egg"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "gluten"
+   ],
+   [
+    "blueberry bavarian cream",
+    "egg"
+   ],
+   [
+    "sunshine cheez it cracker",
+    "dairy"
+   ],
+   [
+    "chardonnay dry",
+    "alcohol"
+   ]
+  ],
+  "missed_any": [
+   [
+    "condensed cream of mushroom soup",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "imitation crabmeat",
+    "fish",
+    "yes"
+   ],
+   [
+    "imitation crabmeat",
+    "shellfish",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "soy",
+    "maybe"
+   ],
+   [
+    "tamari",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "chocolate chip",
+    "soy",
+    "maybe"
+   ],
+   [
+    "semisweet chocolate",
+    "soy",
+    "maybe"
+   ],
+   [
+    "dark chocolate",
+    "soy",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "pork",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "beef",
+    "maybe"
+   ],
+   [
+    "unflavored gelatin",
+    "pork",
+    "maybe"
+   ],
+   [
+    "unflavored gelatin",
+    "beef",
+    "maybe"
+   ],
+   [
+    "hot dog",
+    "beef",
+    "maybe"
+   ],
+   [
+    "salami",
+    "beef",
+    "maybe"
+   ],
+   [
+    "spaghettini",
+    "gluten",
+    "yes"
+   ],
+   [
+    "chourico",
+    "pork",
+    "yes"
+   ],
+   [
+    "instant oatmeal",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "ficelle",
+    "gluten",
+    "yes"
+   ],
+   [
+    "basil olive pesto",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "lt pickled mayo",
+    "egg",
+    "yes"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "egg",
+    "maybe"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "gluten",
+    "yes"
+   ],
+   [
+    "blueberry bavarian cream",
+    "egg",
+    "yes"
+   ],
+   [
+    "sunshine cheez it cracker",
+    "dairy",
+    "yes"
+   ],
+   [
+    "beer frosting",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "chardonnay dry",
+    "alcohol",
+    "yes"
+   ],
+   [
+    "black bean paste",
+    "soy",
+    "maybe"
+   ]
+  ],
+  "false_alarms": [
+   [
+    "praline liqueur",
+    "peanut",
+    "maybe"
+   ]
+  ]
+ },
+ "llm": {
+  "names": 172,
+  "recall_any_flag": 0.937,
+  "recall_definite_flagged": 1.0,
+  "recall_definite_exact": 0.991,
+  "precision_of_flags": 0.937,
+  "false_alarm_pairs": 10,
+  "parent_accuracy": 0.706,
+  "is_ingredient_accuracy": 1.0,
+  "gold_flagged_pairs": 159,
+  "gold_definite_pairs": 112,
+  "missed_definite": [],
+  "missed_any": [
+   [
+    "imitation crabmeat",
+    "shellfish",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "soy",
+    "maybe"
+   ],
+   [
+    "ice cream",
+    "egg",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "pork",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "beef",
+    "maybe"
+   ],
+   [
+    "salami",
+    "beef",
+    "maybe"
+   ],
+   [
+    "tortilla chip",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "baked tortilla chip",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "egg",
+    "maybe"
+   ]
+  ],
+  "false_alarms": [
+   [
+    "imitation crabmeat",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "worcestershire sauce",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "ginger beer",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "spaghetti",
+    "egg",
+    "maybe"
+   ],
+   [
+    "penne",
+    "egg",
+    "maybe"
+   ],
+   [
+    "white bread",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "breadcrumb",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "spaghettini",
+    "egg",
+    "maybe"
+   ],
+   [
+    "chocolate covered peanut",
+    "soy",
+    "maybe"
+   ]
+  ]
+ },
+ "merged_all": {
+  "names": 172,
+  "recall_any_flag": 0.956,
+  "recall_definite_flagged": 1.0,
+  "recall_definite_exact": 0.991,
+  "precision_of_flags": 0.933,
+  "false_alarm_pairs": 11,
+  "parent_accuracy": 0.788,
+  "is_ingredient_accuracy": 0.988,
+  "gold_flagged_pairs": 159,
+  "gold_definite_pairs": 112,
+  "missed_definite": [],
+  "missed_any": [
+   [
+    "imitation crabmeat",
+    "shellfish",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "soy",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "pork",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "beef",
+    "maybe"
+   ],
+   [
+    "salami",
+    "beef",
+    "maybe"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "egg",
+    "maybe"
+   ]
+  ],
+  "false_alarms": [
+   [
+    "imitation crabmeat",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "worcestershire sauce",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "ginger beer",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "spaghetti",
+    "egg",
+    "maybe"
+   ],
+   [
+    "penne",
+    "egg",
+    "maybe"
+   ],
+   [
+    "white bread",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "breadcrumb",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "peanut",
+    "maybe"
+   ],
+   [
+    "spaghettini",
+    "egg",
+    "maybe"
+   ],
+   [
+    "chocolate covered peanut",
+    "soy",
+    "maybe"
+   ]
+  ]
+ },
+ "merged_policy": {
+  "names": 172,
+  "recall_any_flag": 0.925,
+  "recall_definite_flagged": 1.0,
+  "recall_definite_exact": 0.991,
+  "precision_of_flags": 0.961,
+  "false_alarm_pairs": 6,
+  "parent_accuracy": 0.788,
+  "is_ingredient_accuracy": 0.988,
+  "gold_flagged_pairs": 159,
+  "gold_definite_pairs": 112,
+  "missed_definite": [],
+  "missed_any": [
+   [
+    "imitation crabmeat",
+    "shellfish",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "soy",
+    "maybe"
+   ],
+   [
+    "chocolate chip",
+    "soy",
+    "maybe"
+   ],
+   [
+    "semisweet chocolate",
+    "soy",
+    "maybe"
+   ],
+   [
+    "dark chocolate",
+    "soy",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "pork",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "beef",
+    "maybe"
+   ],
+   [
+    "unflavored gelatin",
+    "pork",
+    "maybe"
+   ],
+   [
+    "unflavored gelatin",
+    "beef",
+    "maybe"
+   ],
+   [
+    "salami",
+    "beef",
+    "maybe"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "egg",
+    "maybe"
+   ]
+  ],
+  "false_alarms": [
+   [
+    "imitation crabmeat",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "ginger beer",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "peanut",
+    "maybe"
+   ],
+   [
+    "spaghettini",
+    "egg",
+    "maybe"
+   ],
+   [
+    "chocolate covered peanut",
+    "soy",
+    "maybe"
+   ]
+  ]
+ },
+ "final_system": {
+  "names": 172,
+  "recall_any_flag": 0.956,
+  "recall_definite_flagged": 1.0,
+  "recall_definite_exact": 0.991,
+  "precision_of_flags": 0.95,
+  "false_alarm_pairs": 8,
+  "parent_accuracy": 0.788,
+  "is_ingredient_accuracy": 0.988,
+  "gold_flagged_pairs": 159,
+  "gold_definite_pairs": 112,
+  "missed_definite": [],
+  "missed_any": [
+   [
+    "imitation crabmeat",
+    "shellfish",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "oyster sauce",
+    "soy",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "pork",
+    "maybe"
+   ],
+   [
+    "marshmallow",
+    "beef",
+    "maybe"
+   ],
+   [
+    "salami",
+    "beef",
+    "maybe"
+   ],
+   [
+    "double crust all butter pie dough shell",
+    "egg",
+    "maybe"
+   ]
+  ],
+  "false_alarms": [
+   [
+    "imitation crabmeat",
+    "gluten",
+    "maybe"
+   ],
+   [
+    "ginger beer",
+    "alcohol",
+    "maybe"
+   ],
+   [
+    "white bread",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "breadcrumb",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "dairy",
+    "maybe"
+   ],
+   [
+    "praline liqueur",
+    "peanut",
+    "maybe"
+   ],
+   [
+    "spaghettini",
+    "egg",
+    "maybe"
+   ],
+   [
+    "chocolate covered peanut",
+    "soy",
+    "maybe"
+   ]
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+# --- secrets ---
+.env
+*.key
+# --- generated data (rebuilt by setup_and_run.py) ---
+data/
+Dataset/
+# --- environments and caches ---
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+node_modules/
+web/dist/
+*.tsbuildinfo
+# --- generated eval history (eval/report.md and eval/results/metrics.json are kept) ---
+eval/results/*_before_*.json
+eval/results/conversations_with_narration_*.json
+# --- personal: notes, planning, tracking, interview prep, tooling ---
+decisions.md
+PLAN.md
+interview/
+video/
+.claude/
+tools/
+CLAUDE.md
+memory/
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

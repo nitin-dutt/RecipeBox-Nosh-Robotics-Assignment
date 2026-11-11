@@ -1,0 +1,108 @@
+{
+  "turns": 14,
+  "median": 1.83,
+  "p90": 2.69,
+  "max": 5.3,
+  "model_median": 1.54,
+  "planner_was_llm": 14,
+  "rows": [
+    {
+      "say": "show me eggplant parmesan recipes",
+      "intent": "search",
+      "seconds": 4.84,
+      "planner_seconds": 4.5,
+      "planner": "llm"
+    },
+    {
+      "say": "what percentage of recipes use ginger",
+      "intent": "count",
+      "seconds": 5.3,
+      "planner_seconds": 5.2,
+      "planner": "llm"
+    },
+    {
+      "say": "I have lentils, carrots and ginger",
+      "intent": "match",
+      "seconds": 2.69,
+      "planner_seconds": 1.75,
+      "planner": "llm"
+    },
+    {
+      "say": "recipes with cinnamon and apples without nuts",
+      "intent": "search",
+      "seconds": 2.21,
+      "planner_seconds": 1.92,
+      "planner": "llm"
+    },
+    {
+      "say": "which 3 recipes with oats have the fewest steps",
+      "intent": "rank_steps",
+      "seconds": 1.36,
+      "planner_seconds": 1.25,
+      "planner": "llm"
+    },
+    {
+      "say": "how many recipes use turmeric",
+      "intent": "count",
+      "seconds": 1.55,
+      "planner_seconds": 1.46,
+      "planner": "llm"
+    },
+    {
+      "say": "show me stuffed pepper recipes",
+      "intent": "search",
+      "seconds": 1.8,
+      "planner_seconds": 1.53,
+      "planner": "llm"
+    },
+    {
+      "say": "open the second one",
+      "intent": "get_recipe",
+      "seconds": 1.47,
+      "planner_seconds": 1.46,
+      "planner": "llm"
+    },
+    {
+      "say": "double the first one",
+      "intent": "scale",
+      "seconds": 1.87,
+      "planner_seconds": 1.86,
+      "planner": "llm"
+    },
+    {
+      "say": "I'm allergic to kiwi",
+      "intent": "substitute",
+      "seconds": 1.52,
+      "planner_seconds": 1.52,
+      "planner": "llm"
+    },
+    {
+      "say": "show me coconut curry recipes",
+      "intent": "search",
+      "seconds": 1.9,
+      "planner_seconds": 1.55,
+      "planner": "llm"
+    },
+    {
+      "say": "make the first one dairy-free",
+      "intent": "substitute",
+      "seconds": 2.67,
+      "planner_seconds": 2.63,
+      "planner": "llm"
+    },
+    {
+      "say": "what are the most common ingredients in cookie recipes",
+      "intent": "top_ingredients",
+      "seconds": 1.31,
+      "planner_seconds": 1.2,
+      "planner": "llm"
+    },
+    {
+      "say": "show me lemon chicken recipes",
+      "intent": "search",
+      "seconds": 1.58,
+      "planner_seconds": 1.32,
+      "planner": "llm"
+    }
+  ]
+}

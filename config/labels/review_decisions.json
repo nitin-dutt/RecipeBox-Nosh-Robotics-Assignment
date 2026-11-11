@@ -1,0 +1,2452 @@
+{
+ "lower_class|all beef hot dog|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "all beef hot dog",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|amaretti cookie|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "amaretti cookie",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|amaretto liqueur|tree_nut": {
+  "class": "tree_nut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "amaretto liqueur",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|bacon and|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "bacon and",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|baked tortilla chip|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "baked tortilla chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|beef bouillon cube|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "beef bouillon cube",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|beef bouillon granule|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "beef bouillon granule",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|beef bouillon|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "beef bouillon",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|beef gravy|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "beef gravy",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|bread machine yeast|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "bread machine yeast",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|butter flavored extract|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "butter flavored extract",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|butter pan|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "butter pan",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|butter shortening|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "butter shortening",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|cake compressed yeast|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "cake compressed yeast",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|cake pan|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "cake pan",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|cake yeast|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "cake yeast",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|caramel ice cream topping|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "caramel ice cream topping",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|caramel ice cream topping|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "caramel ice cream topping",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|champagne wine vinegar|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "champagne wine vinegar",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|chicken bouillon cube|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "chicken bouillon cube",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|chicken bouillon granule|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "chicken bouillon granule",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|chicken bouillon|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "chicken bouillon",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|chicken flavored ramen noodle|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "chicken flavored ramen noodle",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|chicken flavored ramen noodle|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "chicken flavored ramen noodle",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|chocolate liqueur|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "chocolate liqueur",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|chorizo sausage|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "chorizo sausage",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|chorizo|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "chorizo",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|coconut extract|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "coconut extract",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|coconut ice cream|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "coconut ice cream",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|coconut ice cream|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "coconut ice cream",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|coffee ice cream|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "coffee ice cream",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|cornbread mix|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "cornbread mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|court bouillon|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "court bouillon",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|cream style corn|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "cream style corn",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|creamed corn|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "creamed corn",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|deep dish pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "deep dish pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|double crust ready use pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "double crust ready use pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|dry bread stuffing mix|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "dry bread stuffing mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|dry brown gravy mix|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "dry brown gravy mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|egg roll wrapper|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "egg roll wrapper",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|egg substitute|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "egg substitute",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|flour dredging|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "flour dredging",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|g flour|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "g flour",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|graham cracker pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "graham cracker pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|granola|peanut": {
+  "class": "peanut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "granola",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|gravy|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "gravy",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|herb seasoned dry bread stuffing mix|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "herb seasoned dry bread stuffing mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|herb seasoned stuffing mix|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "herb seasoned stuffing mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|i cant believe its not butter spread|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "i cant believe its not butter spread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|ice cream|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "ice cream",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|instant butterscotch pudding mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "instant butterscotch pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|instant chocolate pudding mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "instant chocolate pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|instant lemon pudding mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "instant lemon pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|instant pistachio pudding mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "instant pistachio pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|instant pistachio pudding mix|tree_nut": {
+  "class": "tree_nut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "instant pistachio pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|instant vanilla pudding mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "instant vanilla pudding mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|leftover stuffing|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "leftover stuffing",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|liquid egg substitute|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "liquid egg substitute",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|malt vinegar|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "malt vinegar",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|marshmallow cream|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "marshmallow cream",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|meatball|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "meatball",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|mexican chorizo|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "mexican chorizo",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|mixed nut|tree_nut": {
+  "class": "tree_nut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "mixed nut",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|ml milk|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "ml milk",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|nut|peanut": {
+  "class": "peanut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "nut",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|pareve margarine|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "pareve margarine",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|pheasant|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "pheasant",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|praline liqueur|peanut": {
+  "class": "peanut",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "praline liqueur",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|quail egg|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "quail egg",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|ranch dressing mix|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "ranch dressing mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|red wine vinaigrette|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "red wine vinaigrette",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|refrigerated pie crust half of package|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "refrigerated pie crust half of package",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|refrigerated pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "refrigerated pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|rice stick noodle|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "rice stick noodle",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|rice vermicelli|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "rice vermicelli",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|rum extract|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "rum extract",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|rum flavored extract|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "rum flavored extract",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|rye whiskey|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "rye whiskey",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|seasoned salt|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "seasoned salt",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|sherry wine vinegar|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "sherry wine vinegar",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|soba noodle|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "soba noodle",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|soy oil|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "soy oil",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|spaghetti squash|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "spaghetti squash",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|tortilla chip|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "tortilla chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|unbaked deep dish pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "unbaked deep dish pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|unbaked pie crust|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "unbaked pie crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|vanilla pudding|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "vanilla pudding",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|veal scallop|shellfish": {
+  "class": "shellfish",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "veal scallop",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|vegetable bouillon|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "vegetable bouillon",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "maybe"
+ },
+ "lower_class|venison steak|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "none",
+  "name": "venison steak",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "lower_class|vermicelli|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "lower_class",
+  "llm_says": "maybe",
+  "name": "vermicelli",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "yes"
+ },
+ "not_ingredient|after first day of active fermentation|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "after first day of active fermentation",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|aluminum foil|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "aluminum foil",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|available asian market|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "available asian market",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|available specialty food shop and supermarket|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "available specialty food shop and supermarket",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|available specialty food shop|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "available specialty food shop",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|ball jar lid and band|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "ball jar lid and band",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|bamboo skewer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "bamboo skewer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|black|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "black",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|blanched|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "blanched",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|brown|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "brown",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|butter pan|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "butter pan",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|cake pan|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "cake pan",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|candy thermometer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "candy thermometer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|canning jar lid and ring|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "canning jar lid and ring",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|cheesecloth|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "cheesecloth",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|chip|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|cleaned|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "cleaned",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|cornstarch dissolved water|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "cornstarch dissolved water",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|dark|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "dark",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|deep fry thermometer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "deep fry thermometer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|dried|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "dried",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|dry|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "dry",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|em|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "em",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|flour dredging|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "flour dredging",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|fully|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "fully",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|g flour|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "g flour",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|g sugar|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "g sugar",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|green|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "green",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|half canning jar lid and ring|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "half canning jar lid and ring",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|hickory wood chip|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "hickory wood chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|kitchen twine|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "kitchen twine",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|light|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "light",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|lollipop stick|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "lollipop stick",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|long|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "long",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|metal skewer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "metal skewer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|ml milk|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "ml milk",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|ml olive oil|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "ml olive oil",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|ml water|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "ml water",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|parchment paper|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "parchment paper",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|pie weight|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "pie weight",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|piece|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "piece",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|preheat oven degree f|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "preheat oven degree f",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|red yellow|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "red yellow",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|red|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "red",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|reynold wrap aluminum foil|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "reynold wrap aluminum foil",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|roasted|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "roasted",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|round|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "round",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|skewer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "skewer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|soft|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "soft",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|spice mill|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "spice mill",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|strong|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "strong",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|toothpick|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "toothpick",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|topping|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "topping",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|unbleached|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "unbleached",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|untreated cedar plank|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "untreated cedar plank",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|vegetable oil pan|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "vegetable oil pan",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|washed|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "washed",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|water broth|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "water broth",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|white|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "white",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|wood chip|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "wood chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|wooden skewer|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "wooden skewer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "not_ingredient|yellow|": {
+  "class": "",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "not_ingredient",
+  "llm_says": "not an ingredient",
+  "name": "yellow",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "ingredient"
+ },
+ "raise_maybe|bacon bit|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "bacon bit",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|breadcrumb|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "breadcrumb",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|bread|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|bread|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chicken bouillon granule|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chicken bouillon granule",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate chip|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate hazelnut spread|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate hazelnut spread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate sandwich cookie|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate sandwich cookie",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate syrup|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate syrup",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate wafer cookie|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate wafer cookie",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate wafer cookie|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate wafer cookie",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|chorizo sausage|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "chorizo sausage",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|condensed cream of celery soup|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "condensed cream of celery soup",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|condensed tomato soup|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "condensed tomato soup",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|condensed tomato soup|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "condensed tomato soup",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|cooking spray|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "cooking spray",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|cream of mushroom soup|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "cream of mushroom soup",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|creamy salad dressing|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "creamy salad dressing",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|creamy salad dressing|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "creamy salad dressing",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|crusty bread|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "crusty bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|crusty bread|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "crusty bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|dark chocolate chip|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "dark chocolate chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|dark chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "dark chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|dry onion soup mix|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "dry onion soup mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|dry onion soup mix|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "dry onion soup mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|dry onion soup mix|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "dry onion soup mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|elbow macaroni|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "elbow macaroni",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|english muffin|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "english muffin",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|farfalle pasta|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "farfalle pasta",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|fettuccine|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "fettuccine",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|fine bittersweet chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "fine bittersweet chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|french fried onion|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "french fried onion",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|gelatin|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "gelatin",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|gelatin|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "gelatin",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|graham cracker crumb|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "graham cracker crumb",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|graham cracker crust|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "graham cracker crust",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|hamburger bun|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "hamburger bun",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|hamburger bun|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "hamburger bun",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|italian seasoned bread crumb|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "italian seasoned bread crumb",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|italian style salad dressing|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "italian style salad dressing",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|linguine|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "linguine",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|macaroni|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "macaroni",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|marshmallow creme|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "marshmallow creme",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|milk chocolate chip|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "milk chocolate chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|milk chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "milk chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|no stick cooking spray|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "no stick cooking spray",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|nonstick vegetable oil spray|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "nonstick vegetable oil spray",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|old bay seasoning|shellfish": {
+  "class": "shellfish",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "old bay seasoning",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|olive oil cooking spray|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "olive oil cooking spray",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|orzo pasta|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "orzo pasta",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pasta shell|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pasta shell",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pasta|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pasta",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pastry double crust pie|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pastry double crust pie",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|penne|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "penne",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pepperoni|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pepperoni",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pesto|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pesto",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|pie shell|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "pie shell",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|potato chip|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "potato chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|refried bean|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "refried bean",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|rigatoni|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "rigatoni",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|sake|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "sake",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|saltine cracker|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "saltine cracker",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|seasoned bread crumb|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "seasoned bread crumb",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|semisweet chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "semisweet chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|shortening|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "shortening",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|smoked sausage|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "smoked sausage",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|smoked sausage|poultry": {
+  "class": "poultry",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "smoked sausage",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|solid vegetable shortening|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "solid vegetable shortening",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|spaghetti|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "spaghetti",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|square chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "square chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|steak sauce|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "steak sauce",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|steak sauce|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "steak sauce",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|taco seasoning mix|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "taco seasoning mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|unflavored gelatin|beef": {
+  "class": "beef",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "unflavored gelatin",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|unflavored gelatin|pork": {
+  "class": "pork",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "unflavored gelatin",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|vanilla wafer|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "vanilla wafer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|vanilla wafer|egg": {
+  "class": "egg",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "vanilla wafer",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|vegetable oil|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "vegetable oil",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|vegetable shortening|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "vegetable shortening",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|whipped topping|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "whipped topping",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|whiskey|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "whiskey",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|white bread|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "white bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|white chocolate chip|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "white chocolate chip",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|white chocolate|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "white chocolate",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|whole wheat bread|dairy": {
+  "class": "dairy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "whole wheat bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|whole wheat bread|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "whole wheat bread",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|worcestershire sauce|alcohol": {
+  "class": "alcohol",
+  "date": "2026-11-09",
+  "decision": "reject",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "worcestershire sauce",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|xanthan gum|gluten": {
+  "class": "gluten",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "xanthan gum",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|xanthan gum|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "xanthan gum",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ },
+ "raise_maybe|yellow cake mix|soy": {
+  "class": "soy",
+  "date": "2026-11-09",
+  "decision": "accept",
+  "kind": "raise_maybe",
+  "llm_says": "maybe",
+  "name": "yellow cake mix",
+  "reviewer": "project owner (approved assistant recommendations)",
+  "rules_say": "none"
+ }
+}

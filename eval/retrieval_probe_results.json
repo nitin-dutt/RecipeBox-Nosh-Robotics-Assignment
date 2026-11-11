@@ -1,0 +1,320 @@
+{
+  "k": 10,
+  "ingredient_queries": [
+    {
+      "query": "chickpeas",
+      "recipes_that_contain_it": 873,
+      "keyword": 0.7,
+      "semantic": 0.9,
+      "hybrid": 0.8
+    },
+    {
+      "query": "tofu",
+      "recipes_that_contain_it": 641,
+      "keyword": 1.0,
+      "semantic": 0.9,
+      "hybrid": 1.0
+    },
+    {
+      "query": "salmon",
+      "recipes_that_contain_it": 1239,
+      "keyword": 0.5,
+      "semantic": 0.9,
+      "hybrid": 1.0
+    },
+    {
+      "query": "pumpkin",
+      "recipes_that_contain_it": 568,
+      "keyword": 0.6,
+      "semantic": 0.7,
+      "hybrid": 0.8
+    },
+    {
+      "query": "lentils",
+      "recipes_that_contain_it": 466,
+      "keyword": 0.7,
+      "semantic": 0.5,
+      "hybrid": 1.0
+    },
+    {
+      "query": "coconut milk",
+      "recipes_that_contain_it": 1167,
+      "keyword": 0.8,
+      "semantic": 0.6,
+      "hybrid": 0.6
+    },
+    {
+      "query": "zucchini",
+      "recipes_that_contain_it": 2207,
+      "keyword": 1.0,
+      "semantic": 0.9,
+      "hybrid": 1.0
+    },
+    {
+      "query": "eggplant",
+      "recipes_that_contain_it": 1132,
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "quinoa",
+      "recipes_that_contain_it": 482,
+      "keyword": 0.9,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "shrimp",
+      "recipes_that_contain_it": 3129,
+      "keyword": 1.0,
+      "semantic": 0.8,
+      "hybrid": 0.9
+    },
+    {
+      "query": "spinach",
+      "recipes_that_contain_it": 2397,
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 0.9
+    },
+    {
+      "query": "mushrooms",
+      "recipes_that_contain_it": 5153,
+      "keyword": 0.9,
+      "semantic": 0.7,
+      "hybrid": 0.9
+    }
+  ],
+  "title_queries": [
+    {
+      "query": "banana bread",
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "chicken noodle soup",
+      "keyword": 0.8,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "apple pie",
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "lasagna",
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "pad thai",
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "chocolate chip cookies",
+      "keyword": 0.1,
+      "semantic": 0.9,
+      "hybrid": 0.9
+    },
+    {
+      "query": "caesar salad",
+      "keyword": 1.0,
+      "semantic": 1.0,
+      "hybrid": 1.0
+    },
+    {
+      "query": "beef stew",
+      "keyword": 1.0,
+      "semantic": 0.9,
+      "hybrid": 1.0
+    }
+  ],
+  "descriptive": [
+    {
+      "query": "comforting winter soup",
+      "top5": [
+        "Winter Squash Soup with a Sweet Heat",
+        "Winter Vegetable Soup",
+        "Winter Vegetable Soup",
+        "Winter Solstice Soup",
+        "Budget-Friendly Hearty Winter Soup"
+      ]
+    },
+    {
+      "query": "light summer salad",
+      "top5": [
+        "Summer's Best Salad",
+        "Seedless Summer Salad",
+        "Summer Vegetable Salad",
+        "Fresh Summer Salad",
+        "Date Summer Salad"
+      ]
+    },
+    {
+      "query": "spicy vegetarian curry",
+      "top5": [
+        "Vegetarian Bean Curry",
+        "Delightful Indian Coconut Vegetarian Curry in the Slow Cooker",
+        "Vegetarian Chickpea Curry with Turnips",
+        "Vegetarian Potato and Cauliflower Curry",
+        "Spicy Vegetarian Chili"
+      ]
+    },
+    {
+      "query": "quick weeknight pasta",
+      "top5": [
+        "Weeknight Pasta",
+        "Quick Weekday Pasta",
+        "Weeknight Porchetta",
+        "Weeknight Bolognese",
+        "Quick Mediterranean Pasta"
+      ]
+    },
+    {
+      "query": "something sweet with chocolate and nuts",
+      "top5": [
+        "Sweet and Savory Spiced Nuts",
+        "Marble Nut Clusters",
+        "Yum Yum Nut Sweets",
+        "Chocolate Bark with Mixed Nuts and Dried Cherries",
+        "Fruit and Nut Chocolate Chunks"
+      ]
+    },
+    {
+      "query": "hearty breakfast",
+      "top5": [
+        "Hearty Breakfast Specialty",
+        "Hearty Breakfast Cookies",
+        "Hearty Breakfast Bake",
+        "Single Skillet Hearty Breakfast",
+        "A Hearty Porridge"
+      ]
+    },
+    {
+      "query": "cozy chickpea stew",
+      "top5": [
+        "Chickpea Stew",
+        "Chickpea Stew",
+        "Chickpea Stew",
+        "Chicken and Chickpea Stew",
+        "Moroccan Chickpea Stew"
+      ]
+    }
+  ],
+  "restriction_leakage": [
+    {
+      "query": "pasta without dairy",
+      "restriction": "dairy",
+      "semantic_definite_violations_in_top10": 7,
+      "semantic_any_flag_in_top10": 7,
+      "hybrid_definite_violations_in_top10": 4,
+      "hybrid_any_flag_in_top10": 7,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "dairy free creamy soup",
+      "restriction": "dairy",
+      "semantic_definite_violations_in_top10": 8,
+      "semantic_any_flag_in_top10": 8,
+      "hybrid_definite_violations_in_top10": 6,
+      "hybrid_any_flag_in_top10": 6,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "vegan dessert",
+      "restriction": "dairy",
+      "semantic_definite_violations_in_top10": 0,
+      "semantic_any_flag_in_top10": 4,
+      "hybrid_definite_violations_in_top10": 1,
+      "hybrid_any_flag_in_top10": 3,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "egg free cake",
+      "restriction": "egg",
+      "semantic_definite_violations_in_top10": 5,
+      "semantic_any_flag_in_top10": 5,
+      "hybrid_definite_violations_in_top10": 8,
+      "hybrid_any_flag_in_top10": 8,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "peanut free cookies",
+      "restriction": "peanut",
+      "semantic_definite_violations_in_top10": 10,
+      "semantic_any_flag_in_top10": 10,
+      "hybrid_definite_violations_in_top10": 10,
+      "hybrid_any_flag_in_top10": 10,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "gluten free bread",
+      "restriction": "gluten",
+      "semantic_definite_violations_in_top10": 0,
+      "semantic_any_flag_in_top10": 9,
+      "hybrid_definite_violations_in_top10": 0,
+      "hybrid_any_flag_in_top10": 10,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "nut free brownies",
+      "restriction": "tree_nut",
+      "semantic_definite_violations_in_top10": 8,
+      "semantic_any_flag_in_top10": 9,
+      "hybrid_definite_violations_in_top10": 5,
+      "hybrid_any_flag_in_top10": 6,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    },
+    {
+      "query": "shellfish free seafood stew",
+      "restriction": "shellfish",
+      "semantic_definite_violations_in_top10": 9,
+      "semantic_any_flag_in_top10": 9,
+      "hybrid_definite_violations_in_top10": 9,
+      "hybrid_any_flag_in_top10": 9,
+      "filter_first_violations_in_top10": 0,
+      "filter_first_returned": 10
+    }
+  ],
+  "summary": {
+    "ingredient_precision_at_10": {
+      "keyword": 0.842,
+      "semantic": 0.825,
+      "hybrid": 0.908
+    },
+    "title_precision_at_10": {
+      "keyword": 0.863,
+      "semantic": 0.975,
+      "hybrid": 0.988
+    },
+    "leakage_definite_violations_total_in_80_results": {
+      "semantic": 47,
+      "hybrid": 43,
+      "filter_first": 0
+    },
+    "index": {
+      "model": "BAAI/bge-small-en-v1.5",
+      "dim": 384,
+      "n_docs": 124647,
+      "doc_version": "v1-title+ingredient-names",
+      "db_fingerprint": "d17491e25ea93fdb161d7ef7d0cb2800-1290da51b6a27609d81332998a5bdd7e",
+      "built_at": "2026-11-09T12:52:31+00:00",
+      "bm25_terms": 20088,
+      "rrf_k": 60
+    }
+  }
+}

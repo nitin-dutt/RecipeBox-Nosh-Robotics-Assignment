@@ -1,0 +1,49 @@
+{
+  "stats": {
+    "model": "gemini-3.5-flash-lite",
+    "api_calls": 0,
+    "cache_hits": 4,
+    "tokens_in": 0,
+    "tokens_out": 0
+  },
+  "results": {
+    "count": {
+      "question": "How many recipes in the dataset use both garlic and onion? Give the exact number and the percentage.",
+      "answer": "I do not have access to the exact dataset execution results to provide the precise number and percentage of recipes that use both garlic and onion from the 125,000 recipes in the Recipe Box dataset.",
+      "gold_plain_text_count": 20244,
+      "numbers_in_answer": [
+        125000
+      ],
+      "declined": true
+    },
+    "ids": {
+      "question": "List 5 penne pasta recipes from the dataset that contain no dairy. Give each recipe's title and its recipe ID in the dataset.",
+      "answer": "Here are 5 dairy-free penne pasta recipes from the Recipe Box dataset: 1. Penne with Roasted Vegetables and Basil Pesto (Recipe ID: 4125), 2. Spicy Tomato and Garlic Penne (Recipe ID: 12432), 3. Olive Oil and Herb Penne Pasta (Recipe ID: 25610), 4. Vegan Mushroom Penne Stroganoff (Recipe ID: 38921), and 5. Mediterranean Penne with Sun-Dried Tomatoes and Capers (Recipe ID: 51204).",
+      "ids_quoted": 5,
+      "ids_real": 0,
+      "id_lengths": [
+        4,
+        5
+      ],
+      "titles_quoted": 4,
+      "titles_in_dataset": 0
+    },
+    "calories": {
+      "question": "How many calories are in the dataset's banana bread recipe?",
+      "answer": "The Recipe Box dataset contains thousands of different banana bread recipes sourced from sites like Allrecipes, Epicurious, and Food Network, so there isn't just a single 'banana bread recipe' or a fixed calorie count. Nutritional information also depends on the specific user submissions and ingredients used for each individual recipe.",
+      "gave_a_number": false,
+      "said_dataset_lacks_it": false
+    },
+    "match": {
+      "question": "I have eggs, onions, tomatoes and rice. List 5 recipes from the dataset that use them, with recipe IDs, using at most 6 steps and no peanuts.",
+      "answer": "Based on the Recipe Box dataset, here are 5 recipes that utilize eggs, onions, tomatoes, and rice, each with 6 or fewer steps and no peanuts: \n1. Recipe ID 12450: Simple Spanish Rice and Eggs - Step 1: Sauté chopped onions and diced tomatoes in a skillet. Step 2: Stir in cooked rice until warm. Step 3: Push the rice and vegetable mixture to the sides to create a well in the center. Step 4: Crack eggs directly into the well. Step 5: Cover the skillet and cook until the egg whites are set and yolks are cooked to your liking. Step 6: Season with salt and pepper before serving.\n2. Recipe ID 43892: Tomato and Egg Fried Rice - Step 1: Scramble eggs in a wok and set aside. Step 2: In the same wok, sauté diced onions and tomatoes until soft. Step 3: Add day-old cooked rice and stir-fry with the vegetables. Step 4: Return the scrambled eggs to the wok and break them into smaller pieces. Step 5: Mix thoroughly and season with soy sauce. Step 6: Serve hot.\n3. Recipe ID 78104: Quick Egg Biryani Bowls - Step 1: Boil eggs until hard-boiled, then peel and halve them. Step 2: Sauté sliced onions and chopped tomatoes with spices in a pot. Step 3: Add cooked basmati rice to the spiced onion and tomato mixture and stir gently. Step 4: Place the egg halves on top of the rice. Step 5: Cover and simmer on low heat for 5 minutes. Step 6: Garnish and serve.\n4. Recipe ID 91230: Persian-Style Tomato Rice with Fried Egg - Step 1: Cook rice with diced tomatoes and tomato paste until fluffy. Step 2: Sauté onions separately until golden brown. Step 3: Gently fold the sautéed onions into the tomato rice. Step 4: Fry eggs in a separate pan sunny-side up. Step 5: Spoon the tomato rice onto plates. Step 6: Top each portion with a fried egg.\n5. Recipe ID 11023: Tomato Onion Rice Casserole with Baked Eggs - Step 1: Mix cooked rice, diced tomatoes, and sautéed onions in a baking dish. Step 2: Create small indentations in the rice mixture using the back of a spoon. Step 3: Crack raw eggs into each indentation. Step 4: Bake in a preheated oven at 375 degrees F for 15 minutes. Step 5: Ensure egg whites are completely opaque. Step 6: Let cool for a few minutes and serve directly from the dish.",
+      "ids_quoted": 5,
+      "ids_real": 0,
+      "id_lengths": [
+        5
+      ],
+      "titles_quoted": 5,
+      "titles_in_dataset": 0
+    }
+  }
+}

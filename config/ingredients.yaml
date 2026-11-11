@@ -1,0 +1,470 @@
+# Ingredient lexicon: curated, reviewable data that drives the parser (domain/ingredient.py).
+# Everything is lowercase, accent-folded, hyphens written as spaces, singular.
+# Changing this file changes parsing; the unit tests and audit script show the effect.
+
+# Multi-word descriptors that are removed before tokenising.
+descriptor_phrases:
+  - to cover
+  - to coat
+  - to cover the bottom
+  - extra virgin
+  - low fat
+  - lowfat
+  - fat free
+  - reduced fat
+  - low sodium
+  - reduced sodium
+  - low salt
+  - no salt added
+  - non fat
+  - bite size
+  - bite sized
+  - skin on
+  - bone in
+  - good quality
+  - high quality
+  - best quality
+  - store bought
+  - room temperature
+  - all natural
+  - ice cold
+  - at room temperature
+  - firmly packed
+  - lightly packed
+  - loosely packed
+  - cut into
+  - cut in
+  - chopped into
+  - sliced into
+  - plus more
+  - plus extra
+  - or more
+  - or less
+  - or to taste
+  - to taste
+  - as needed
+  - if desired
+  - for garnish
+  - for serving
+  - for dusting
+  - for sprinkling
+  - for frying
+  - for greasing
+  - for drizzling
+  - for brushing
+  - for topping
+  - for decoration
+  - such as
+  - preferably
+  - about
+  - approximately
+
+# Single tokens removed from the ingredient name (kept in `descriptors` for transparency).
+descriptors:
+  [large, small, medium, big, jumbo, extra, thin, thick, thinly, thickly, mini, sized, size,
+   chopped, diced, minced, sliced, shredded, grated, crushed, peeled, seeded, cubed, halved,
+   quartered, trimmed, cored, pitted, rinsed, drained, thawed, melted, softened, beaten, cooked,
+   uncooked, cut, torn, mashed, pureed, sifted, packed, finely, coarsely, roughly, freshly, lightly,
+   firmly, loosely, divided, crumbled, toasted, shelled, deveined, stemmed, juiced, zested,
+   separated, chilled, cold, warm, lukewarm, boiling, ripe, fresh, raw, organic, good, quality,
+   homemade, prepared, plain, unsalted, salted, sweetened, unsweetened, lean, boneless, skinless,
+   skinned, virgin, nonfat, skim, lite, natural, pure, real, seedless, optional, additional, freshly,
+   frozen, thawed, canned, uncooked, heaping, scant, level, rounded, generous, whole, ground, hot,
+   a, an, the, some, few, more, less, about, approximately, to, for, into, with, plus,
+   at, in, on, if, as, needed, taste, desired, garnish, serving, each, per, then, very, well,
+   cracked, original, best, brand, recipe,
+   tablespoon, teaspoon, cup, ounce, pound, gram, jigger, fluid, scoop, dozen, quart, pint, gallon, liter,
+   pinch, dash, splash, handful, percent, lb, oz,
+   # brands: removed so "Pillsbury all-purpose flour" == "all-purpose flour"
+   pillsbury, crisco, hellmanns, kraft, philadelphia, nestle, hershey, hersheys, campbells,
+   campbell, betty, crocker, medal, arthur, smuckers, bisquick, jif, skippy,
+   mccormick, lipton, knorr, swanson, heinz, frenchs, kikkoman, domino, duncan, hines, gay, lea,
+   pam, ragu, prego, barilla, bertolli, oscar, mayer]
+
+# Brand products whose brand IS the product name.
+# (handled in synonyms below: cool whip, oreo, ...)
+
+# Descriptors that look removable but are part of the product in these phrases; protected first.
+protected_phrases:
+  - pound cake
+  - pound cake mix
+  - whole wheat
+  - whole grain
+  - whole milk powder
+  - hot sauce
+  - hot pepper
+  - hot dog
+  - hot chocolate
+  - hot cocoa
+  - hot italian sausage
+  - hot pepper sauce
+  - hot red pepper
+  - ground beef
+  - ground pork
+  - ground turkey
+  - ground chicken
+  - ground lamb
+  - ground veal
+  - ground sausage
+  - ground meat
+  - ground bison
+  - ground cherry
+  - ground coffee
+  - dry mustard
+  - baby back
+  - plain yogurt
+  - whole cloves
+  - whole cranberry sauce
+  - whole cranberry
+  - and half
+  - half and half
+  - half & half
+
+# After tokens are removed, rewrite these protected placeholders back to words.
+# (handled in code; list kept here only for documentation)
+
+# Phrase / whole-name synonyms -> canonical name.
+synonyms:
+  scallion: green onion
+  spring onion: green onion
+  green onion: green onion
+  garbanzo bean: chickpea
+  garbanzo: chickpea
+  chick pea: chickpea
+  coriander leaf: cilantro
+  fresh coriander: cilantro
+  cilantro leaf: cilantro
+  confectioner sugar: powdered sugar
+  confectioners sugar: powdered sugar
+  icing sugar: powdered sugar
+  10x sugar: powdered sugar
+  caster sugar: superfine sugar
+  castor sugar: superfine sugar
+  granulated sugar: sugar
+  white sugar: sugar
+  white granulated sugar: sugar
+  table sugar: sugar
+  light brown sugar: brown sugar
+  dark brown sugar: brown sugar
+  golden brown sugar: brown sugar
+  capsicum: bell pepper
+  sweet pepper: bell pepper
+  aubergine: eggplant
+  courgette: zucchini
+  rocket: arugula
+  prawn: shrimp
+  king prawn: shrimp
+  heavy whipping cream: heavy cream
+  whipping cream: heavy cream
+  double cream: heavy cream
+  half and half: half and half
+  half half: half and half
+  flour: all purpose flour
+  plain flour: all purpose flour
+  ap flour: all purpose flour
+  white flour: all purpose flour
+  unbleached flour: all purpose flour
+  self raising flour: self rising flour
+  bicarbonate of soda: baking soda
+  bicarb: baking soda
+  sodium bicarbonate: baking soda
+  cornflour: cornstarch
+  corn starch: cornstarch
+  kosher salt: salt
+  sea salt: salt
+  table salt: salt
+  coarse salt: salt
+  fine salt: salt
+  flaky salt: salt
+  coarse kosher salt: salt
+  pepper: black pepper
+  ground pepper: black pepper
+  cooking oil: vegetable oil
+  salad oil: vegetable oil
+  yoghurt: yogurt
+  powdered milk: milk powder
+  dry milk: milk powder
+  nonfat dry milk: milk powder
+  evaporated milk: evaporated milk
+  active dry yeast: yeast
+  dry yeast: yeast
+  instant yeast: yeast
+  rapid rise yeast: yeast
+  garlic clove: garlic
+  clove garlic: garlic
+  clove of garlic: garlic
+  garlic cloves: garlic
+  chicken stock: chicken broth
+  beef stock: beef broth
+  vegetable stock: vegetable broth
+  veggie broth: vegetable broth
+  chicken breast half: chicken breast
+  boneless chicken breast: chicken breast
+  chicken breast fillet: chicken breast
+  chicken thigh fillet: chicken thigh
+  mince: ground meat
+  minced beef: ground beef
+  hamburger: ground beef
+  hamburger meat: ground beef
+  parmigiano reggiano: parmesan cheese
+  parmigiano: parmesan cheese
+  parmesan: parmesan cheese
+  pecorino romano: pecorino cheese
+  mozzarella: mozzarella cheese
+  cheddar: cheddar cheese
+  feta: feta cheese
+  ricotta: ricotta cheese
+  swiss: swiss cheese
+  vanilla: vanilla extract
+  vanilla essence: vanilla extract
+  pure vanilla extract: vanilla extract
+  chilli: chili pepper
+  chile: chili pepper
+  chilli powder: chili powder
+  chile powder: chili powder
+  chilli flake: red pepper flake
+  chili flake: red pepper flake
+  crushed red pepper: red pepper flake
+  crushed red pepper flake: red pepper flake
+  red chili flake: red pepper flake
+  mayo: mayonnaise
+  tomatoe: tomato
+  jalapeno pepper: jalapeno
+  jalapeno chile: jalapeno
+  jalapeno chili: jalapeno
+  sesame seed: sesame seed
+  soya sauce: soy sauce
+  shoyu: soy sauce
+  noodle: noodle
+  spaghetti pasta: spaghetti
+  macaroni: macaroni
+  penne pasta: penne
+  penne rigate: penne
+  rigatoni pasta: rigatoni
+  bread crumb: breadcrumb
+  dry bread crumb: breadcrumb
+  dried bread crumb: breadcrumb
+  panko bread crumb: panko
+  panko breadcrumb: panko
+  cooking spray: cooking spray
+  nonstick cooking spray: cooking spray
+  nonstick spray: cooking spray
+  vegetable cooking spray: cooking spray
+  water: water
+  ice water: water
+  cold water: water
+  warm water: water
+  hot water: water
+  boiling water: water
+  lukewarm water: water
+  ice cube: ice
+  egg yolk: egg yolk
+  egg white: egg white
+  white egg: egg white
+  white of egg: egg white
+  yolk: egg yolk
+  eggs: egg
+  large egg: egg
+  whole egg: egg
+  basil leaf: basil
+  parsley leaf: parsley
+  mint leaf: mint
+  thyme leaf: thyme
+  cilantro leaf: cilantro
+  sage leaf: sage
+  oregano leaf: oregano
+  tarragon leaf: tarragon
+  flat leaf parsley: parsley
+  italian parsley: parsley
+  curly parsley: parsley
+  curly leaf parsley: parsley
+  black peppercorn: black pepper
+  peppercorn: black pepper
+  dry white wine: white wine
+  dry red wine: red wine
+  cider vinegar: apple cider vinegar
+  light corn syrup: corn syrup
+  dark corn syrup: corn syrup
+  cool whip: whipped topping
+  whipped topping: whipped topping
+  oreo cookie: chocolate sandwich cookie
+  oreo: chocolate sandwich cookie
+  semisweet chocolate chip: chocolate chip
+  semi sweet chocolate chip: chocolate chip
+  chocolate chip: chocolate chip
+  bittersweet chocolate: dark chocolate
+  extra virgin olive oil: olive oil
+  pie crust: pie crust
+
+# Words that vanish when they modify these bases ("yellow onion" -> "onion").
+collapse:
+  onion: [yellow, white, sweet, spanish, vidalia, brown, cooking, large, medium, small]
+  tomato: [cherry, grape, roma, plum, beefsteak, vine, heirloom, diced, crushed, stewed, whole, peeled, canned, italian, ripe]
+  potato: [russet, yukon gold, idaho, baking, white, red, new, baby, golden, yellow, large, medium, small, boiling]
+  apple: [granny smith, fuji, gala, honeycrisp, mcintosh, golden delicious, red delicious, cooking, tart, braeburn, pink lady]
+  rice: [white, long grain, short grain, medium grain, cooked, instant, converted, uncooked, enriched, parboiled]
+  garlic: [fresh, large, whole]
+  carrot: [baby, large, medium]
+  celery: [stalk, rib, large]
+  lemon: [large, medium]
+  lime: [large, medium]
+  orange: [navel, large, valencia, blood]
+  butter: [stick, salted, unsalted, sweet cream, european style, cold, softened, melted, whipped]
+  milk: [whole, skim, lowfat, nonfat, fat free, reduced fat, 2%, 1%, low fat]
+  sugar: [granulated, white, fine, regular, cane]
+  cheese: []
+  sour cream: [light, reduced fat, fat free, regular, low fat]
+  oil: []
+  egg: [large, medium, small, extra large, jumbo, whole, fresh, hard boiled, hard cooked, boiled]
+
+# A single adjective before a comma ("roasted, unsalted peanuts", "red, yellow and green bell pepper", "firm, ripe
+# tomatoes") is not the ingredient: it is merged with what follows the comma.
+lonely_modifiers:
+  [red, white, yellow, green, black, brown, orange, purple, dark, light, soft, dry, dried, firm, roasted, toasted,
+   smoked, strong, hard, sweet, hot, mild, plain, thick, thin, ripe, fresh, raw, large, small, medium]
+
+# Names whose last/first word looks like a form but are atomic products (never split into base+form).
+atomic_products:
+  - baking powder
+  - baking soda
+  - chili powder
+  - curry powder
+  - five spice powder
+  - chinese five spice
+  - garam masala
+  - soy sauce
+  - fish sauce
+  - hot sauce
+  - worcestershire sauce
+  - oyster sauce
+  - hoisin sauce
+  - teriyaki sauce
+  - barbecue sauce
+  - bbq sauce
+  - tabasco sauce
+  - sriracha sauce
+  - enchilada sauce
+  - cranberry sauce
+  - apple sauce
+  - applesauce
+  - peanut butter
+  - almond butter
+  - cashew butter
+  - apple butter
+  - cocoa butter
+  - cream of tartar
+  - cream cheese
+  - sour cream
+  - ice cream
+  - heavy cream
+  - coconut cream
+  - coconut milk
+  - cornstarch
+  - cooking spray
+  - corn syrup
+  - vegetable oil
+  - canola oil
+  - cooking oil
+  - red pepper flake
+  - powdered sugar
+  - brown sugar
+  - lemon pepper
+  - bell pepper
+  - black pepper
+  - white pepper
+  - cayenne pepper
+  - green onion
+  - bay leaf
+  - curry leaf
+  - kaffir lime leaf
+  - lime leaf
+  - banana leaf
+  - grape leaf
+  - vanilla bean
+  - cinnamon stick
+  - egg yolk
+  - egg white
+  - apple cider vinegar
+  - balsamic vinegar
+  - white wine
+  - red wine
+  - rice wine
+  - sesame seed
+  - chia seed
+  - poppy seed
+  - caraway seed
+  - fennel seed
+  - mustard seed
+  - cumin seed
+  - pumpkin seed
+  - sunflower seed
+  - corn syrup
+
+# Exceptions to the generic suffix/prefix split.
+base_overrides:
+  egg yolk: [egg, yolk]
+  egg white: [egg, white]
+
+# Suffix words that mark a processed form of a base ingredient ("garlic powder" -> base garlic, form powder).
+form_suffixes: [powder, paste, juice, zest, extract, oil, flake, puree, syrup, seed, leaf, broth, vinegar, salt, sauce, rind, peel, bouillon, spread, jam, jelly, liqueur, wine, sprout]
+# Prefix words marking a processed form ("dried thyme" -> base thyme, form dried).
+form_prefixes: [dried, sun dried, smoked, pickled, candied, powdered]   # cooking states (roasted, toasted) are NOT forms
+
+# name stays specific, base is the generic parent (used for "contains X" at base level).
+varieties:
+  bell pepper: [red, green, yellow, orange]
+  bean: [black, kidney, pinto, navy, cannellini, lima, garbanzo]
+  onion: [red, purple, pearl, cipollini]
+  rice: [brown, basmati, jasmine, arborio, wild, sushi, glutinous, sticky]
+  tomato: [sun dried, green]
+  chicken: [breast, thigh, leg, wing, drumstick]
+  mushroom: [button, cremini, portobello, shiitake, oyster, white]
+  cheese: [cheddar, mozzarella, parmesan, swiss, feta, ricotta, cream, cottage, goat, blue, gouda, provolone, monterey jack]
+  flour: [all purpose, bread, cake, self rising, whole wheat, rice, almond, coconut, corn, rye, spelt]
+  sugar: [brown, powdered, superfine, turbinado, raw, cane]
+  oil: [olive, vegetable, canola, sesame, peanut, coconut, sunflower, corn, avocado, safflower]
+  wine: [red, white, dry white, dry red, rice, sherry, marsala, port, sparkling]
+  vinegar: [white, red wine, white wine, balsamic, cider, apple cider, rice, sherry, malt, distilled]
+  broth: [chicken, beef, vegetable, fish]
+  yogurt: [greek]
+  noodle: [egg, rice, soba, udon, ramen]
+  pasta: [whole wheat]
+  bread: [white, whole wheat, french, italian, rye, sourdough, pita]
+  lettuce: [romaine, iceberg, butter, leaf]
+  squash: [butternut, acorn, summer, yellow, spaghetti]
+  cabbage: [red, napa, green, savoy]
+  chocolate: [dark, semisweet, bittersweet, milk, white, unsweetened]
+  cream: [heavy, light, sour, whipping]
+
+# Words/phrases that identify a count of items or measure but are not part of the name.
+trailing_noise:
+  [half, piece, chunk, strip, wedge, fillet, filet]
+
+# If a (form-less) name ends with one of these words, its `parent` is that word: "maui onion", "dice red onion",
+# "plum tomato" are onions/tomatoes. Names in distinct_products or atomic_products are excluded.
+head_parents:
+  [onion, garlic, tomato, potato, carrot, celery, lemon, lime, orange, apple, banana, mushroom, spinach,
+   cabbage, broccoli, cauliflower, zucchini, cucumber, egg, shrimp, ginger, parsley, cilantro, basil, mint,
+   thyme, rosemary, sage, oregano, dill, chive, shallot, leek, avocado, strawberry, blueberry, raspberry,
+   cranberry, pineapple, mango, peach, pear, cherry, grape, beet, turnip, parsnip, squash, eggplant, corn,
+   pumpkin, kale, lettuce, radish, asparagus, pea, lentil, chickpea, quinoa, oat, walnut, pecan, almond,
+   beef, pork, turkey, chicken, ham, bacon, sausage, steak, tofu, tuna, salmon, scallop, clam, crabmeat, mustard, yogurt, tortilla, pasta, macaroni, cornmeal, raisin, honey, molasses, arugula, yeast, marshmallow, breadcrumb, peanut, olive, cheese, bread, chocolate, rum, vodka, tequila, whiskey, brandy, beer, sherry, coffee, gelatin, salsa, paprika, mayonnaise, pickle, cracker, shortening, bitters, baguette, coconut]
+
+# Parents whose members are treated as INTERCHANGEABLE when matching what the user has (an onion is an
+# onion whatever its colour). Deliberately smaller than head_parents: cheese, oil or wine are not
+# interchangeable, so 'I have cheese' must not satisfy 'feta'.
+interchangeable:
+  [onion, garlic, tomato, potato, carrot, celery, lemon, lime, orange, apple, banana, mushroom, spinach,
+   cabbage, broccoli, cauliflower, zucchini, cucumber, egg, shrimp, ginger, parsley, cilantro, basil, mint,
+   thyme, rosemary, sage, oregano, dill, chive, shallot, leek, avocado, strawberry, blueberry, raspberry,
+   cranberry, pineapple, mango, peach, pear, cherry, grape, beet, turnip, parsnip, squash, eggplant, corn,
+   pumpkin, kale, lettuce, radish, asparagus, pea, lentil, chickpea, quinoa, oat, walnut, pecan, almond]
+
+# Names that end with a head word above but are a different thing.
+distinct_products:
+  [sweet potato, green onion, water chestnut, sweet corn, creamed corn, popcorn, baby corn, cream corn,
+   butternut squash, spaghetti squash, acorn squash, summer squash, winter squash, yellow squash,
+   egg white, egg yolk, hard egg, easter egg, ground ginger, crystallized ginger, candied ginger,
+   pickled ginger, dried onion, onion soup, sun dried tomato, hot sauce, split pea, black eyed pea,
+   snow pea, snap pea, sugar snap pea, chick pea, crab apple, custard apple, pineapple, jicama,
+   tuna steak, salmon steak, swordfish steak, halibut steak, fish steak, cream of coconut, ginger beer, root beer, turkey bacon, turkey sausage, chicken sausage, ice cream, sour cream, cream cheese, goat cheese, cottage cheese, cream of tartar, coconut oil, coconut milk, coconut cream, coconut water, coconut sugar, coconut flour, coconut extract, peanut butter, peanut oil, bread flour, bread crumb, pound cake, cheese cake, chocolate chip, chocolate syrup, chocolate sauce, hot chocolate, mustard seed, mustard green, tortilla chip, rice paper, mayonnaise dressing]

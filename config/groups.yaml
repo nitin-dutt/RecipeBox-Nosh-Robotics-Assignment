@@ -1,0 +1,23 @@
+# Category words a user may say that are not canonical ingredient names. A group expands to OR of its members.
+# Members are canonical names (see ingredient_vocab). The expansion is always shown in the computation record.
+groups:
+  pasta: [penne, spaghetti, elbow macaroni, macaroni, linguine, fettuccine, rigatoni, ziti, farfalle, orzo,
+          fusilli, rotini, angel hair pasta, lasagna noodle, pasta, egg noodle, noodle, vermicelli, tortellini,
+          ravioli, cavatappi, rotelle, ditalini, capellini, tagliatelle, pappardelle, bucatini, manicotti, shell]
+  noodle: [egg noodle, noodle, rice noodle, soba noodle, udon noodle, ramen noodle, lasagna noodle, vermicelli]
+  citrus: [lemon, lime, orange, grapefruit, tangerine, clementine, mandarin orange]
+  herb: [parsley, cilantro, basil, mint, thyme, rosemary, sage, oregano, dill, tarragon, chive, marjoram, chervil]
+  berry: [strawberry, blueberry, raspberry, blackberry, cranberry]
+  nut: [almond, walnut, pecan, cashew, pistachio, hazelnut, macadamia nut, pine nut, brazil nut, peanut, chestnut]
+  cheese: [cheese]          # parent-level match already covers cheddar, parmesan, mozzarella...
+  bean: [black bean, kidney bean, pinto bean, navy bean, cannellini bean, lima bean, white bean, chickpea, bean]
+  mushroom: [mushroom, button mushroom, cremini mushroom, portobello mushroom, shiitake mushroom]
+  chili: [jalapeno, chili pepper, serrano pepper, habanero pepper, cayenne pepper, poblano pepper]
+
+# Everyday items that appear in most recipes. Optionally excluded from "most common ingredient" rankings.
+staples: [salt, black pepper, water, sugar, all purpose flour, butter, olive oil, vegetable oil, egg, garlic, onion,
+          white pepper, baking powder, baking soda, milk, ice, cooking spray, canola oil]
+
+# Assumed to be on hand when matching, unless the caller overrides the list. Shown in every match result.
+# Anything the user lists explicitly is always treated as available; an empty override means "assume nothing".
+pantry: [salt, black pepper, white pepper, water, vegetable oil, olive oil, canola oil, cooking spray]

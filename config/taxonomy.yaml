@@ -1,0 +1,243 @@
+# Restriction taxonomy. Applied to the CANONICAL ingredient name (lowercase, accent-folded, singular).
+#
+# For each class:
+#   terms        -> status "yes":   the ingredient contains/is the restricted item
+#   maybe_terms  -> status "maybe": commonly contains it, or may; text alone cannot settle it
+#   guards       -> phrases removed from the name BEFORE matching (e.g. "coconut milk" is not dairy)
+#   exempt       -> if the name contains one of these phrases, the class never applies ("dairy free cheese")
+#   includes     -> union with other classes (meat = pork + beef + poultry + lamb + game + own terms)
+#
+#   demote       -> phrases that never count as "yes" but still count as "maybe" (e.g. spice blends)
+#
+# Matching is whole-word, so "butternut squash" is not "butter" and "eggplant" is not "egg".
+# This is a text-only classification: it never certifies anything as safe. A recipe with no hit is only
+# "no restricted ingredient found in the ingredient text".
+
+# Regexes applied to the (normalised, lowercase) INSTRUCTION text before scanning it for restricted terms. They remove
+# ingredient words used as verbs, shapes, colours or equipment, e.g. "cream the shortening", "walnut sized balls".
+instruction_guards:
+  - '\b\w+ sized?\b'
+  - '\b\w+ shaped?\b'
+  # remove only the verb, never the real ingredient next to it: "cream butter and brown sugar" keeps its butter
+  - '\bcream(?= (?:the|together|until|shortening|with|butter and)\b)'
+  - '\bcheese ?cloth\b'
+  - '\bto toast\b'
+  - '\btoast(?= (?:the|until|in|on|over|them|it|nuts?|walnuts?|pecans?|almonds?|seeds?|spices?|coconut|sesame|pine|hazelnuts?|cumin|rice|oats?|flour|pumpkin|sunflower|chopped|whole|slivered)\b)'
+  - '\bcolou?r of (a |an |the )?\w+( \w+)?'
+  - '\b(?:\w+ ){1,2}brown\b(?! (?:sugar|rice|butter|mustard|bread|lentil|flour|gravy|sauce|ale|bean))'
+
+classes:
+  dairy:
+    label: Dairy
+    terms:
+      [milk, butter, cheese, cream, yogurt, buttermilk, ghee, whey, casein, caseinate, kefir, custard,
+       lactose, half and half, creme fraiche, mascarpone, ricotta, mozzarella, parmesan, parmigiano,
+       cheddar, feta, gouda, brie, camembert, gruyere, provolone, romano, pecorino, gorgonzola, asiago,
+       fontina, havarti, manchego, burrata, halloumi, paneer, queso, cotija, colby, monterey jack, emmental,
+       edam, stilton, roquefort, neufchatel, quark, gelato, dulce de leche, cajeta, labneh, skyr,
+       eggnog, alfredo, bechamel, buttercream, milkshake, milkfat, curd, cheesecake, mozzarella,
+       swiss cheese, gruyere, ice cream, sour cream, whipped cream, milk chocolate, white chocolate]
+    maybe_terms:
+      [margarine, chocolate, chocolate chip, butterscotch, caramel, toffee, pudding, whipped topping,
+       creamed, cake mix, pancake mix, biscuit mix, bisquick, pie crust, puff pastry, croissant,
+       brioche, ranch dressing, caesar dressing, instant mashed potato, naan, nougat, fudge, latte]
+    guards:
+      [coconut milk, almond milk, soy milk, soymilk, rice milk, oat milk, cashew milk, hemp milk,
+       nut milk, plant based milk, coconut milk powder, coconut cream, cream of coconut, creamed coconut,
+       cream of tartar, cream soda, cream sherry, peanut butter, almond butter, cashew butter,
+       sunflower butter, nut butter, seed butter, soy butter, cocoa butter, shea butter, apple butter,
+       butter bean, butter lettuce, butterhead lettuce, butter flavor extract, cream of rice,
+       cream of wheat, coconut whipped cream, irish cream liqueur, bean curd, butter flavored,
+       butter flavor, butter extract, butter flavoring, butter spray, bread and butter]
+    exempt: [dairy free, non dairy, nondairy, vegan, lactose free milk alternative]
+
+  egg:
+    label: Egg
+    terms:
+      [egg, yolk, albumen, meringue, mayonnaise, eggnog, aioli, hollandaise, bearnaise, souffle, quiche,
+       lemon curd, tartar sauce, egg noodle, egg roll wrapper, egg substitute]
+    maybe_terms:
+      [noodle, cake mix, pancake mix, brownie mix, waffle, brioche, challah, wonton wrapper, pie crust,
+       tempura, fresh pasta, ramen, marshmallow, pound cake, mousse, ice cream, pudding, caesar dressing,
+       ranch dressing, custard]
+    guards: [egg replacer, flax egg, flaxseed egg, flax seed egg, chia egg, vegan egg, vegan mayonnaise,
+             eggless, rice noodle, rice stick noodle, glass noodle, cellophane noodle, bean thread noodle,
+             shirataki noodle, soba noodle, udon noodle, buckwheat noodle, sweet potato starch noodle,
+             marshmallow, easter egg]
+    exempt: [egg free, eggless, vegan]
+
+  peanut:
+    label: Peanut
+    terms: [peanut, groundnut, arachis, peanut oil, peanut sauce, satay]
+    maybe_terms: [nut, mixed nut, trail mix, nut butter, granola, praline, nougat, pad thai, kung pao, mole]
+    guards: [pine nut, macadamia nut, pistachio nut, cashew nut, brazil nut, pecan nut, hickory nut,
+             pinon nut, pignoli nut, lychee nut, corn nut, macadamia nut oil, betel nut, water chestnut]
+    exempt: [peanut free]
+
+  tree_nut:
+    label: Tree nut
+    terms:
+      [almond, walnut, pecan, cashew, pistachio, hazelnut, filbert, macadamia, brazil nut, chestnut,
+       praline, marzipan, nutella, amaretto, frangelico, nougat, mixed nut, pine nut, hickory nut,
+       gianduja, orgeat, baklava, pignoli]
+    maybe_terms: [nut, pesto, granola, trail mix, coconut, nut butter]
+    guards: [water chestnut, horse chestnut]
+    exempt: [nut free, tree nut free]
+
+  gluten:
+    label: Gluten (wheat, barley, rye)
+    terms:
+      [wheat, flour, bread, breadcrumb, panko, crouton, pasta, spaghetti, linguine, fettuccine, penne,
+       macaroni, lasagna, lasagne, rigatoni, ziti, farfalle, orzo, rotini, fusilli, tortellini, ravioli,
+       vermicelli, angel hair, cavatappi, rotelle, cannelloni, manicotti, ditalini, capellini,
+       tagliatelle, pappardelle, bucatini, noodle, couscous, semolina, bulgur, barley, rye, spelt, farro,
+       kamut, seitan, cracker, pretzel, pita, naan, bagel, croissant, biscuit, cookie, cake mix,
+       pizza dough, phyllo, filo, puff pastry, pie crust, pie shell, wonton wrapper, egg roll wrapper,
+       flour tortilla, wheat tortilla, whole wheat tortilla, stuffing, malt, graham, bun, english muffin, focaccia, baguette, ciabatta, sourdough,
+       toast, ladyfinger, pound cake, sponge cake, angel food cake, wafer, muffin, scone, tempura,
+       cornbread, pancake mix, brownie mix, biscuit mix, bisquick, breading, wheat germ, bran, orzo]
+    maybe_terms:
+      [tortilla, tortilla chip, soy sauce, teriyaki, hoisin, worcestershire sauce, beer, oat, rolled oat, soba, gnocchi,
+       dumpling, batter, cake, brownie, pancake, waffle, gravy, bouillon, seasoned salt, imitation crab,
+       licorice, ale, lager, stout, malt vinegar]
+    guards:
+      [rice flour, corn flour, almond flour, coconut flour, chickpea flour, gram flour, besan,
+       potato flour, tapioca flour, buckwheat flour, cassava flour, soy flour, sorghum flour, millet flour,
+       teff flour, quinoa flour, amaranth flour, rice noodle, glass noodle, cellophane noodle,
+       bean thread noodle, shirataki noodle, corn tortilla, rice paper, rice pasta, corn pasta,
+       chickpea pasta, lentil pasta, rice cracker, cream of tartar, flour sack, rice bran, corn bran,
+       oat flour, oat bran, peanut flour, hazelnut flour, arrowroot flour, bread fruit, breadfruit,
+       root beer, ginger beer, ginger ale, bun fish, buckwheat noodle, pasta sauce, spaghetti sauce,
+       bread and butter, bread fruit, cookie sheet, cookie cutter, cookie press, biscuit cutter, bread pan,
+       loaf pan, pasta pot, bread knife, pizza stone, pizza cutter, pizza pan, pasta machine]
+    exempt: [gluten free, wheat free, glutenfree]
+
+  soy:
+    label: Soy
+    terms: [soy, soya, soybean, tofu, tempeh, edamame, miso, tamari, shoyu, natto, bean curd, soy sauce]
+    maybe_terms: [teriyaki, hoisin, margarine, vegetable broth bouillon]
+    guards: []
+    exempt: [soy free]
+
+  fish:
+    label: Fish
+    terms:
+      [fish, salmon, tuna, cod, tilapia, halibut, trout, anchovy, sardine, mackerel, haddock, snapper,
+       bass, swordfish, catfish, herring, mahi mahi, pollock, flounder, sole, grouper, perch, pike, eel,
+       roe, caviar, bonito, dashi, fish sauce, surimi, kamaboko, lox, whitefish, monkfish, branzino,
+       walleye, carp, shark, skate, turbot, mullet, smelt, whiting, orange roughy, imitation crab, pangasius,
+       nam pla, katsuobushi, bluefish, kipper, anchovie]
+    maybe_terms: [worcestershire sauce, caesar dressing, caesar salad dressing, seafood seasoning, paella]
+    guards: [goldfish, swedish fish, fish pepper, fish free, jellyfish]
+    exempt: []
+
+  shellfish:
+    label: Shellfish
+    terms:
+      [shrimp, prawn, crab, lobster, crawfish, crayfish, scallop, clam, mussel, oyster, squid, calamari,
+       octopus, abalone, whelk, conch, langoustine, krill, escargot, sea urchin, cockle, periwinkle,
+       shrimp paste, oyster sauce, clam juice]
+    maybe_terms: [seafood, bouillabaisse, paella, seafood seasoning]
+    demote: [crab boil seasoning, crab boil spice mix, crab boil, shrimp boil seasoning, shrimp seasoning, seafood boil seasoning]
+    guards: [oyster mushroom, crab apple, imitation crab, scallop squash, oyster cracker, king oyster]
+    exempt: []
+
+  sesame:
+    label: Sesame
+    terms: [sesame, tahini, gomasio, benne]
+    maybe_terms: [hummus, halva, halvah, everything bagel, baba ganoush, zaatar, za atar, falafel]
+    guards: []
+    exempt: []
+
+  pork:
+    label: Pork
+    terms:
+      [pork, bacon, ham, prosciutto, pancetta, lard, chorizo, salt pork, pepperoni, spare rib,
+       baby back rib, guanciale, ham hock, mortadella, capicola, tasso, andouille, chicharron, pork rind,
+       speck, pig, hog, trotter]
+    maybe_terms: [sausage, bratwurst, kielbasa, hot dog, salami, bologna, jambon]
+    guards: [turkey bacon, turkey ham, turkey sausage, chicken sausage, chicken ham, vegetarian bacon,
+             veggie bacon, tofu bacon, coconut bacon, imitation bacon, artificial bacon, soy bacon, bacon flavored, bacon-flavored, ham radio, duck bacon, bison bacon,
+             beef bacon, beef chorizo, lamb bacon, hot dog bun, hot dog roll]
+    exempt: [vegetarian, vegan, meatless, meat free, plant based]
+
+  beef:
+    label: Beef
+    terms:
+      [beef, steak, veal, brisket, sirloin, ribeye, rib eye, chuck, short rib, oxtail, corned beef,
+       roast beef, beef jerky, bone marrow, tripe, filet mignon, flank, skirt steak, hanger steak,
+       tri tip, t bone, porterhouse, tallow, suet, hamburger, bouillon beef, beef broth, beef bouillon,
+       meatloaf, meatball]
+    maybe_terms: [consomme, pot roast]
+    guards: [steak sauce, steak seasoning, steak spice, tuna steak, salmon steak, fish steak, halibut steak,
+             swordfish steak, cauliflower steak, portobello steak, beefsteak tomato, chuck wagon, ham steak,
+             hamburger bun, hamburger roll, hamburger relish, hamburger bun, hot dog bun]
+    exempt: [vegetarian, vegan, meatless, meat free, plant based, imitation]
+
+  poultry:
+    label: Poultry
+    terms:
+      [chicken, turkey, duck, goose, hen, cornish hen, quail, pheasant, capon, squab, poultry, turkey bacon,
+       turkey sausage, chicken sausage, chicken broth, chicken bouillon, giblet, gizzard, schmaltz]
+    maybe_terms: [stuffing mix, gravy]
+    guards: [chicken of the sea, chicken of the woods, hen of the woods, turkey red, turkey berry,
+             poultry seasoning, poultry shears, poultry spice]
+    exempt: [vegetarian, vegan, meatless, meat free, plant based, imitation]
+
+  lamb:
+    label: Lamb / mutton
+    terms: [lamb, mutton, rack of lamb]
+    maybe_terms: []
+    guards: [lamb lettuce, lamb s lettuce, lambs lettuce, lamb s quarter]
+    exempt: [vegetarian, vegan, meatless, plant based]
+
+  game:
+    label: Game and other meat
+    terms: [venison, rabbit, bison, boar, elk, goat meat, pigeon, frog leg, kangaroo, alligator, buffalo meat]
+    maybe_terms: [buffalo, goat]
+    guards: [pigeon pea, boar head, boars head, buffalo wing, buffalo sauce, buffalo mozzarella, buffalo chicken, goat cheese, goat milk,
+             goat yogurt, goat s milk, buffalo wing sauce, chevre]
+    exempt: [vegetarian, vegan, meatless, plant based]
+
+  meat:
+    label: Meat (any animal flesh)
+    includes: [pork, beef, poultry, lamb, game]
+    terms: [sausage, hot dog, salami, jerky, meatball, meatloaf, meat, ground meat, liver, bologna,
+            deli meat, cold cut, pate, foie gras, bratwurst, kielbasa, gelatin meat]
+    maybe_terms: [bouillon, stock cube, consomme, gravy, broth cube]
+    guards: [meatless, meat free, meat substitute, meat alternative, vegetarian sausage, vegan sausage,
+             veggie sausage, veggie hot dog, soy sausage, tofu hot dog, crab meat, crabmeat, lobster meat,
+             coconut meat, crawfish tail meat, shrimp meat, clam meat, oyster meat, nut meat, fruit meat,
+             lump crab meat, hot dog bun, hot dog roll, meat tenderizer, mincemeat]
+    exempt: [vegetarian, vegan, meatless, meat free, plant based]
+
+  vegetarian:
+    label: Not vegetarian (meat, fish, shellfish, gelatin)
+    includes: [meat, fish, shellfish]
+    terms: [gelatin, gelatine, lard, tallow, suet, isinglass, carmine, cochineal, bone broth]
+    maybe_terms: [worcestershire sauce, caesar dressing, marshmallow, rennet, bouillon, stock cube,
+                  jello, gummy bear, gummy worm, parmesan cheese, parmigiano]
+    guards: []
+    exempt: [vegetarian, vegan]
+
+  vegan:
+    label: Not vegan (any animal product)
+    includes: [vegetarian, dairy, egg]
+    terms: [honey, bee pollen, royal jelly, beeswax, shellac, lanolin]
+    # sugar is deliberately NOT listed: bone-char refining cannot be seen in ingredient text
+    maybe_terms: [wine, beer, chocolate, bread]
+    guards: [bread flour, wine vinegar, root beer, ginger beer]
+    exempt: [vegan]
+
+  alcohol:
+    label: Alcohol
+    terms:
+      [wine, beer, ale, lager, stout, vodka, rum, whiskey, whisky, bourbon, scotch, brandy, cognac,
+       liqueur, tequila, gin, sherry, vermouth, sake, mirin, champagne, prosecco, port, schnapps, amaretto,
+       kahlua, triple sec, grand marnier, cointreau, marsala, cooking wine, madeira, curacao, irish cream,
+       shaoxing, bitters, cider hard, kirsch, calvados, grappa, absinthe, pernod, ouzo, sambuca, rye whiskey]
+    maybe_terms: [vanilla extract, almond extract, lemon extract, rum extract, extract]
+    guards: [champagne vinegar, scotch bonnet, wine vinegar, root beer, ginger beer, sherry vinegar, rice wine vinegar, port wine cheese,
+             non alcoholic, alcohol free, apple cider vinegar, cider vinegar, balsamic vinegar,
+             ginger ale, cream sherry vinegar, nonalcoholic]
+    exempt: [non alcoholic, alcohol free, nonalcoholic, virgin]

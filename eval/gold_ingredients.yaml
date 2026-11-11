@@ -1,0 +1,187 @@
+# Hand-labelled gold set for ingredient labeling (names are real parser outputs from the database).
+#
+# WHO WROTE THIS: the assistant, from food knowledge, BEFORE looking at the LLM output and independently of the rules.
+# It is therefore independent of the two systems it scores, but NOT independent of its author: the project owner should
+# spot-check ~30 random entries (any disagreement is a bug in this file, fix it and re-run the pilot).
+#
+# Fields: parent (broader everyday ingredient it truly IS a kind of; default = the name itself), is_ingredient (default true),
+# classes: restriction class -> yes | maybe ; a class that is not listed means "does not apply".
+# Policy used (same as the labeler prompt): coconut = tree_nut maybe; vanilla/other extracts = alcohol maybe; soy sauce =
+# soy yes + gluten maybe; margarine/chocolate = dairy maybe; gelatin = pork/beef maybe; plant milks are not dairy.
+names:
+  # ----------------------------------------------------------------------------------------- look-alike traps
+  coconut milk:        {group: trap, classes: {tree_nut: maybe}}
+  almond milk:         {group: trap, classes: {tree_nut: yes}}
+  soy milk:            {group: trap, classes: {soy: yes}}
+  oat milk:            {group: trap, classes: {gluten: maybe}}
+  coconut cream:       {group: trap, classes: {tree_nut: maybe}}
+  cream of coconut:    {group: trap, classes: {tree_nut: maybe}}
+  peanut butter:       {group: trap, classes: {peanut: yes}}
+  almond butter:       {group: trap, classes: {tree_nut: yes}}
+  cashew butter:       {group: trap, classes: {tree_nut: yes}}
+  cocoa butter:        {group: trap, classes: {}}
+  apple butter:        {group: trap, classes: {}}
+  butternut squash:    {group: trap, classes: {}}
+  cream of tartar:     {group: trap, classes: {}}
+  condensed cream of mushroom soup: {group: trap, classes: {dairy: yes, gluten: maybe}}
+  eggplant:            {group: trap, classes: {}}
+  egg noodle:          {group: trap, parent: noodle, classes: {egg: yes, gluten: yes}}
+  mayonnaise:          {group: trap, classes: {egg: yes}}
+  tuna steak:          {group: trap, classes: {fish: yes}}
+  salmon steak:        {group: trap, classes: {fish: yes}}
+  ham steak:           {group: trap, classes: {pork: yes}}
+  turkey bacon:        {group: trap, classes: {poultry: yes}}
+  imitation crabmeat:  {group: trap, classes: {fish: yes, shellfish: maybe}}
+  oyster mushroom:     {group: trap, parent: mushroom, classes: {}}
+  oyster sauce:        {group: trap, classes: {shellfish: yes, soy: maybe, gluten: maybe}}
+  fish sauce:          {group: trap, classes: {fish: yes}}
+  worcestershire sauce: {group: trap, classes: {fish: maybe, gluten: maybe}}
+  soy sauce:           {group: trap, classes: {soy: yes, gluten: maybe}}
+  tamari:              {group: trap, classes: {soy: yes, gluten: maybe}}
+  mirin:               {group: trap, classes: {alcohol: yes}}
+  vanilla extract:     {group: trap, classes: {alcohol: maybe}}
+  sherry vinegar:      {group: trap, classes: {}}
+  red wine vinegar:    {group: trap, classes: {}}
+  rice wine:           {group: trap, classes: {alcohol: yes}}
+  root beer:           {group: trap, classes: {}}
+  ginger beer:         {group: trap, classes: {}}
+  ginger ale:          {group: trap, classes: {}}
+  margarine:           {group: trap, classes: {dairy: maybe, soy: maybe}}
+  ghee:                {group: trap, classes: {dairy: yes}}
+  buttermilk:          {group: trap, classes: {dairy: yes}}
+  evaporated milk:     {group: trap, classes: {dairy: yes}}
+  condensed milk:      {group: trap, classes: {dairy: yes}}
+  half and half:       {group: trap, classes: {dairy: yes}}
+  ice cream:           {group: trap, classes: {dairy: yes, egg: maybe}}
+  chocolate chip:      {group: trap, classes: {dairy: maybe, soy: maybe}}
+  semisweet chocolate: {group: trap, parent: chocolate, classes: {dairy: maybe, soy: maybe}}
+  dark chocolate:      {group: trap, parent: chocolate, classes: {dairy: maybe, soy: maybe}}
+  marshmallow:         {group: trap, classes: {pork: maybe, beef: maybe}}
+  unflavored gelatin:  {group: trap, parent: gelatin, classes: {pork: maybe, beef: maybe}}
+  lard:                {group: trap, classes: {pork: yes}}
+  pancetta:            {group: trap, parent: pork, classes: {pork: yes}}
+  prosciutto:          {group: trap, parent: pork, classes: {pork: yes}}
+  hot dog:             {group: trap, classes: {pork: maybe, beef: maybe}}
+  salami:              {group: trap, classes: {pork: yes, beef: maybe}}
+  couscous:            {group: trap, classes: {gluten: yes}}
+  rolled oat:          {group: trap, parent: oat, classes: {gluten: maybe}}
+  rice flour:          {group: trap, parent: flour, classes: {}}
+  almond flour:        {group: trap, parent: flour, classes: {tree_nut: yes}}
+  corn tortilla:       {group: trap, parent: tortilla, classes: {}}
+  flour tortilla:      {group: trap, parent: tortilla, classes: {gluten: yes}}
+  tortilla chip:       {group: trap, classes: {gluten: maybe}}
+  pasta sauce:         {group: trap, classes: {}}
+  graham cracker:      {group: trap, parent: cracker, classes: {gluten: yes}}
+  bread and butter pickle: {group: trap, parent: pickle, classes: {}}
+  goat cheese:         {group: trap, parent: cheese, classes: {dairy: yes}}
+  cream cheese:        {group: trap, parent: cheese, classes: {dairy: yes}}
+  cottage cheese:      {group: trap, parent: cheese, classes: {dairy: yes}}
+  pine nut:            {group: trap, classes: {tree_nut: yes}}
+  water chestnut:      {group: trap, classes: {}}
+  nutmeg:              {group: trap, classes: {}}
+  coconut oil:         {group: trap, classes: {tree_nut: maybe}}
+  peanut oil:          {group: trap, classes: {peanut: yes}}
+  sesame oil:          {group: trap, classes: {sesame: yes}}
+  tahini:              {group: trap, classes: {sesame: yes}}
+  hummus:              {group: trap, classes: {sesame: maybe}}
+  miso paste:          {group: trap, classes: {soy: yes}}
+  beer:                {group: trap, classes: {alcohol: yes, gluten: maybe}}
+  vodka:               {group: trap, classes: {alcohol: yes}}
+  bourbon:             {group: trap, parent: whiskey, classes: {alcohol: yes}}
+  # ----------------------------------------------------------------------------------------- common mainstream
+  butter:              {group: common, classes: {dairy: yes}}
+  milk:                {group: common, classes: {dairy: yes}}
+  egg:                 {group: common, classes: {egg: yes}}
+  all purpose flour:   {group: common, parent: flour, classes: {gluten: yes}}
+  olive oil:           {group: common, parent: oil, classes: {}}
+  sugar:               {group: common, classes: {}}
+  salt:                {group: common, classes: {}}
+  garlic:              {group: common, classes: {}}
+  onion:               {group: common, classes: {}}
+  chicken broth:       {group: common, parent: broth, classes: {poultry: yes}}
+  beef broth:          {group: common, parent: broth, classes: {beef: yes}}
+  parmesan cheese:     {group: common, parent: cheese, classes: {dairy: yes}}
+  cheddar cheese:      {group: common, parent: cheese, classes: {dairy: yes}}
+  feta cheese:         {group: common, parent: cheese, classes: {dairy: yes}}
+  heavy cream:         {group: common, parent: cream, classes: {dairy: yes}}
+  sour cream:          {group: common, classes: {dairy: yes}}
+  yogurt:              {group: common, classes: {dairy: yes}}
+  honey:               {group: common, classes: {}}
+  walnut:              {group: common, classes: {tree_nut: yes}}
+  pecan:               {group: common, classes: {tree_nut: yes}}
+  almond:              {group: common, classes: {tree_nut: yes}}
+  peanut:              {group: common, classes: {peanut: yes}}
+  tofu:                {group: common, classes: {soy: yes}}
+  shrimp:              {group: common, classes: {shellfish: yes}}
+  salmon:              {group: common, classes: {fish: yes}}
+  bacon:               {group: common, classes: {pork: yes}}
+  ground beef:         {group: common, parent: beef, classes: {beef: yes}}
+  chicken breast:      {group: common, parent: chicken, classes: {poultry: yes}}
+  ground pork:         {group: common, parent: pork, classes: {pork: yes}}
+  spaghetti:           {group: common, parent: pasta, classes: {gluten: yes}}
+  penne:               {group: common, parent: pasta, classes: {gluten: yes}}
+  white bread:         {group: common, parent: bread, classes: {gluten: yes}}
+  breadcrumb:          {group: common, classes: {gluten: yes}}
+  panko:               {group: common, classes: {gluten: yes}}
+  baking powder:       {group: common, classes: {}}
+  cornstarch:          {group: common, classes: {}}
+  black pepper:        {group: common, classes: {}}
+  tomato:              {group: common, classes: {}}
+  rice:                {group: common, classes: {}}
+  lemon juice:         {group: common, classes: {}}
+  dijon mustard:       {group: common, parent: mustard, classes: {}}
+  ketchup:             {group: common, classes: {}}
+  brown sugar:         {group: common, parent: sugar, classes: {}}
+  powdered sugar:      {group: common, parent: sugar, classes: {}}
+  # ----------------------------------------------------------------------------------------- mid-frequency (random sample)
+  potato nugget:       {group: mid, classes: {}}
+  praline liqueur:     {group: mid, classes: {alcohol: yes, tree_nut: maybe}}
+  baked tortilla chip: {group: mid, classes: {gluten: maybe}}
+  spaghettini:         {group: mid, parent: pasta, classes: {gluten: yes}}
+  chourico:            {group: mid, parent: sausage, classes: {pork: yes}}
+  blue corn tortilla:  {group: mid, parent: tortilla, classes: {}}
+  chocolate covered peanut: {group: mid, classes: {peanut: yes, dairy: maybe}}
+  loin pork chop:      {group: mid, parent: pork, classes: {pork: yes}}
+  instant oatmeal:     {group: mid, classes: {gluten: maybe}}
+  gluten free elbow:   {group: mid, classes: {}}
+  blackberry brandy:   {group: mid, parent: brandy, classes: {alcohol: yes}}
+  fruit yogurt:        {group: mid, parent: yogurt, classes: {dairy: yes}}
+  madagascar vanilla extract: {group: mid, parent: vanilla extract, classes: {alcohol: maybe}}
+  yellow cheddar:      {group: mid, parent: cheese, classes: {dairy: yes}}
+  of butter:           {group: mid, parent: butter, classes: {dairy: yes}}
+  semi pearled farro:  {group: mid, classes: {gluten: yes}}
+  swiss gruyere cheese: {group: mid, parent: cheese, classes: {dairy: yes}}
+  cuban bread:         {group: mid, parent: bread, classes: {gluten: yes}}
+  ficelle:             {group: mid, parent: bread, classes: {gluten: yes}}
+  buttermilk powder:   {group: mid, classes: {dairy: yes}}
+  tomato water:        {group: mid, classes: {}}
+  veal stew meat:      {group: mid, parent: veal, classes: {beef: yes}}
+  # ----------------------------------------------------------------------------------------- long tail (random, messy)
+  pork chicken broth:  {group: tail, classes: {pork: yes, poultry: yes}}
+  chive blade:         {group: tail, parent: chive, classes: {}}
+  washed blueberry:    {group: tail, parent: blueberry, classes: {}}
+  sourdough country white bread: {group: tail, parent: bread, classes: {gluten: yes}}
+  th cream:            {group: tail, classes: {dairy: yes}}
+  basil olive pesto:   {group: tail, parent: pesto, classes: {tree_nut: maybe, dairy: maybe}}
+  lt pickled mayo:     {group: tail, classes: {egg: yes}}
+  double crust all butter pie dough shell: {group: tail, classes: {dairy: yes, gluten: yes, egg: maybe}}
+  blueberry bavarian cream: {group: tail, classes: {dairy: yes, egg: yes}}
+  curly sauceless pulled chicken: {group: tail, parent: chicken, classes: {poultry: yes}}
+  fine cracker meal:   {group: tail, classes: {gluten: yes}}
+  sunshine cheez it cracker: {group: tail, parent: cracker, classes: {gluten: yes, dairy: yes}}
+  slice peach:         {group: tail, parent: peach, classes: {}}
+  15ml butter:         {group: tail, parent: butter, classes: {dairy: yes}}
+  grey sole:           {group: tail, parent: sole, classes: {fish: yes}}
+  dark brown muscavado sugar: {group: tail, parent: sugar, classes: {}}
+  beer frosting:       {group: tail, classes: {alcohol: yes, gluten: maybe, dairy: maybe}}
+  chardonnay dry:      {group: tail, parent: wine, classes: {alcohol: yes}}
+  jamaican lager:      {group: tail, parent: beer, classes: {alcohol: yes, gluten: maybe}}
+  lamb shoulder o bone chop: {group: tail, parent: lamb, classes: {lamb: yes}}
+  pistachio compound:  {group: tail, classes: {tree_nut: yes}}
+  loaf crusty french bread: {group: tail, parent: bread, classes: {gluten: yes}}
+  after first day of active fermentation: {group: tail, is_ingredient: false}
+  ball jar lid and band: {group: tail, is_ingredient: false}
+  candy black shoestring and twisted black licorice: {group: tail, classes: {gluten: maybe}}
+  flat anchovy fillet from can: {group: tail, parent: anchovy, classes: {fish: yes}}
+  black bean paste:    {group: tail, classes: {soy: maybe}}
+  progresso parmesan bread crumb: {group: tail, parent: breadcrumb, classes: {gluten: yes, dairy: yes}}

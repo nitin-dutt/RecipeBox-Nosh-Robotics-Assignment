@@ -1,0 +1,178 @@
+_note: Generated from config/labels/review_decisions.json. Human decisions; they win
+  over rules and LLM.
+classes:
+  bacon bit:
+    pork: maybe
+  bread:
+    dairy: maybe
+  breadcrumb:
+    dairy: maybe
+  chicken bouillon granule:
+    soy: maybe
+  chocolate:
+    soy: maybe
+  chocolate chip:
+    soy: maybe
+  chocolate hazelnut spread:
+    soy: maybe
+  chocolate sandwich cookie:
+    soy: maybe
+  chocolate syrup:
+    soy: maybe
+  chocolate wafer cookie:
+    egg: maybe
+    soy: maybe
+  chorizo sausage:
+    beef: maybe
+  condensed cream of celery soup:
+    gluten: maybe
+  condensed tomato soup:
+    dairy: maybe
+    gluten: maybe
+  cream of mushroom soup:
+    gluten: maybe
+  cream style corn:
+    dairy: none
+  creamed corn:
+    dairy: none
+  creamy salad dressing:
+    dairy: maybe
+    egg: maybe
+  dark chocolate:
+    soy: maybe
+  dark chocolate chip:
+    soy: maybe
+  dry onion soup mix:
+    gluten: maybe
+    soy: maybe
+    beef: maybe
+  english muffin:
+    dairy: maybe
+  fine bittersweet chocolate:
+    soy: maybe
+  french fried onion:
+    gluten: maybe
+  gelatin:
+    pork: maybe
+    beef: maybe
+  hamburger bun:
+    dairy: maybe
+  italian seasoned bread crumb:
+    dairy: maybe
+  italian style salad dressing:
+    soy: maybe
+  marshmallow cream:
+    dairy: none
+  marshmallow creme:
+    egg: maybe
+  milk chocolate:
+    soy: maybe
+  milk chocolate chip:
+    soy: maybe
+  old bay seasoning:
+    shellfish: maybe
+  pastry double crust pie:
+    dairy: maybe
+  pepperoni:
+    beef: maybe
+  pesto:
+    dairy: maybe
+  pie shell:
+    dairy: maybe
+  potato chip:
+    dairy: maybe
+  refried bean:
+    pork: maybe
+  saltine cracker:
+    dairy: maybe
+  seasoned bread crumb:
+    dairy: maybe
+  semisweet chocolate:
+    soy: maybe
+  sherry wine vinegar:
+    alcohol: none
+  smoked sausage:
+    beef: maybe
+    poultry: maybe
+  spaghetti squash:
+    gluten: none
+  square chocolate:
+    soy: maybe
+  steak sauce:
+    gluten: maybe
+    soy: maybe
+  taco seasoning mix:
+    gluten: maybe
+  unflavored gelatin:
+    pork: maybe
+    beef: maybe
+  vanilla wafer:
+    dairy: maybe
+    egg: maybe
+  white bread:
+    dairy: maybe
+  white chocolate:
+    soy: maybe
+  white chocolate chip:
+    soy: maybe
+  whole wheat bread:
+    dairy: maybe
+  xanthan gum:
+    gluten: maybe
+    soy: maybe
+  yellow cake mix:
+    soy: maybe
+parent: {}
+not_ingredient:
+- after first day of active fermentation
+- aluminum foil
+- available asian market
+- available specialty food shop
+- available specialty food shop and supermarket
+- ball jar lid and band
+- bamboo skewer
+- black
+- blanched
+- brown
+- butter pan
+- cake pan
+- candy thermometer
+- canning jar lid and ring
+- cheesecloth
+- chip
+- cleaned
+- dark
+- deep fry thermometer
+- dried
+- dry
+- em
+- fully
+- green
+- half canning jar lid and ring
+- hickory wood chip
+- kitchen twine
+- light
+- lollipop stick
+- metal skewer
+- parchment paper
+- pie weight
+- piece
+- preheat oven degree f
+- red
+- reynold wrap aluminum foil
+- roasted
+- round
+- skewer
+- soft
+- spice mill
+- strong
+- toothpick
+- topping
+- unbleached
+- untreated cedar plank
+- vegetable oil pan
+- washed
+- white
+- wood chip
+- wooden skewer
+- yellow

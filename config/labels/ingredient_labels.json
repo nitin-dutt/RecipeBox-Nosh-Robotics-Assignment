@@ -1,0 +1,3029 @@
+{
+ "version": 1,
+ "rule": "raise-only: these labels can add restriction flags, never remove one",
+ "updated": "2026-11-09T12:20:08+00:00",
+ "labels": {
+  "all purpose baking mix": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat flour blend, may contain dairy"
+  },
+  "all vegetable shortening": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains soybean oil"
+  },
+  "amaretti cookie": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "tree_nut": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "almond macaron cookie containing almond and egg white"
+  },
+  "angel food cake": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "egg white cake"
+  },
+  "angel food cake mix": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat flour and dried egg whites"
+  },
+  "aperol": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic aperitif"
+  },
+  "applejack": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "apple brandy alcohol"
+  },
+  "aquavit": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "distilled spirit"
+  },
+  "arctic char": {
+   "classes": {
+    "fish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fish is not vegetarian"
+  },
+  "armagnac": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "type of brandy"
+  },
+  "asafoetida powder": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Spice gum, often cut with wheat flour"
+  },
+  "asian chili sauce": {
+   "classes": {
+    "soy": "maybe",
+    "fish": "maybe",
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Chili condiment, often contains soy or seafood"
+  },
+  "assorted candy": {
+   "classes": {
+    "dairy": "maybe",
+    "tree_nut": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "assorted candy may contain various allergens"
+  },
+  "bagel": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread product"
+  },
+  "baked bean": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains pork or bacon"
+  },
+  "baking mix": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat flour blend"
+  },
+  "ball pizza dough": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat dough"
+  },
+  "basil olive pesto": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pesto often contains cheese and nuts"
+  },
+  "basil pesto": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "herb sauce with nuts and cheese"
+  },
+  "bbq sauce": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain soy or gluten"
+  },
+  "bechamel sauce": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "white sauce made from milk, butter, and flour"
+  },
+  "beer frosting": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "frosting made with beer contains gluten and alcohol"
+  },
+  "benedictine": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "herbal liqueur"
+  },
+  "biscotti": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "tree_nut": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baked biscuit containing wheat."
+  },
+  "biscuit": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked flour product"
+  },
+  "biscuit baking mix": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "processed baking mix"
+  },
+  "bittersweet": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chocolate product"
+  },
+  "black bean paste": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "black bean paste often contains soybeans"
+  },
+  "blue cheese dressing": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy-based salad dressing with cheese"
+  },
+  "blue cheese salad dressing": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains dairy cheese and mayo"
+  },
+  "blueberry bavarian cream": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bavarian cream is dairy-based"
+  },
+  "bocconcini": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mozzarella cheese bites"
+  },
+  "bow tie pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta product"
+  },
+  "bran cereal": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat bran"
+  },
+  "bread cube": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cubed wheat bread"
+  },
+  "bread dough": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat flour"
+  },
+  "breakfast sausage": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pork meat sausage"
+  },
+  "brioche": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "enriched bread containing dairy and egg"
+  },
+  "brioche bread": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "enriched bread containing egg and butter"
+  },
+  "brioche bun": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "enriched bread with dairy and eggs"
+  },
+  "brioche roll": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "enriched bread containing butter and eggs"
+  },
+  "brownie": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked chocolate pastry"
+  },
+  "brownie mix": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baking mix containing wheat flour"
+  },
+  "browning sauce": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "caramelized sugar and vegetable sauce"
+  },
+  "buffalo wing sauce": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Hot sauce often containing butter"
+  },
+  "bulk italian sausage": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pork meat product"
+  },
+  "bun": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread roll"
+  },
+  "burger bun": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread product containing wheat"
+  },
+  "butter flavor all vegetable shortening": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain artificial butter flavor or milk derivatives"
+  },
+  "butter flavored cooking spray": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "oil spray with artificial or real butter flavor"
+  },
+  "butter flavored extract": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "flavor extract may contain dairy derivatives"
+  },
+  "butter flavored shortening": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fat blend with flavoring"
+  },
+  "buttermilk baking mix": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains buttermilk and wheat flour"
+  },
+  "butterscotch chip": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains dairy butter"
+  },
+  "butterscotch schnapp": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic beverage, may contain dairy flavoring"
+  },
+  "buttery round cracker": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat cracker made with dairy butter"
+  },
+  "cabernet sauvignon": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "red wine"
+  },
+  "cachaca": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "distilled spirit"
+  },
+  "caesar salad dressing": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "fish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains cheese, egg, and anchovies"
+  },
+  "cake": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baked dessert containing wheat, milk, egg"
+  },
+  "calvado": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "apple brandy"
+  },
+  "campari": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic aperitif"
+  },
+  "canola oil cooking spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "oil spray often containing soy lecithin"
+  },
+  "canola oil spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Cooking spray may contain soy lecithin."
+  },
+  "cavatappi pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "challah bread": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Enriched wheat bread containing eggs"
+  },
+  "chambord": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "raspberry liqueur containing alcohol"
+  },
+  "chardonnay": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "white wine"
+  },
+  "chardonnay dry": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chardonnay is alcoholic wine"
+  },
+  "cheese ravioli": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pasta filled with cheese"
+  },
+  "cheese tortellini": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pasta filled with cheese"
+  },
+  "chicken bouillon powder": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains chicken stock and additives"
+  },
+  "chicken sausage": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "poultry meat sausage, casing may be pork"
+  },
+  "chili paste": {
+   "classes": {
+    "soy": "maybe",
+    "sesame": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chili condiment"
+  },
+  "chinese black vinegar": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often brewed from wheat or grains"
+  },
+  "chocolate cake mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dry baking mix"
+  },
+  "chocolate cookie": {
+   "classes": {
+    "egg": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked sweet treat containing wheat flour and chocolate"
+  },
+  "chocolate cookie crumb": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked sweet crumb"
+  },
+  "chocolate cookie crumb crust": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from wheat cookies and butter"
+  },
+  "chocolate covered espresso bean": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chocolate often contains dairy and soy"
+  },
+  "chocolate covered peanut": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "peanut candy"
+  },
+  "chocolate curl": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Decorative chocolate shavings"
+  },
+  "chocolate frosting": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sweet spread often containing dairy or soy"
+  },
+  "chocolate ganache": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with cream and chocolate"
+  },
+  "chocolate graham cracker": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat cracker with chocolate flavoring"
+  },
+  "chocolate hazelnut spread": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sweet spread containing hazelnuts and dairy"
+  },
+  "chocolate sauce": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sweet chocolate syrup"
+  },
+  "chocolate shaving": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chocolate often contains dairy and soy"
+  },
+  "chocolate wafer": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked sweet biscuit"
+  },
+  "chourico": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pork sausage"
+  },
+  "ciabatta bread": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread"
+  },
+  "cinnamon graham cracker": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat-based baked good."
+  },
+  "cinnamon schnapp": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic spirit"
+  },
+  "coarse bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from wheat bread"
+  },
+  "coarse grained dijon mustard": {
+   "classes": {
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Dijon mustard often contains white wine."
+  },
+  "cocktail sauce": {
+   "classes": {
+    "fish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Sauce often containing Worcestershire sauce or fish ingredients"
+  },
+  "coleslaw": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cabbage salad usually with mayo dressing"
+  },
+  "condensed cheddar cheese soup": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains dairy and flour"
+  },
+  "condensed cream of chicken soup": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "soup containing poultry and dairy"
+  },
+  "condensed cream of mushroom soup": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains dairy and wheat flour"
+  },
+  "condensed cream of potato soup": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cream soup contains dairy, may contain wheat thickener"
+  },
+  "condensed french onion soup": {
+   "classes": {
+    "gluten": "maybe",
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "canned concentrated onion soup often with beef broth"
+  },
+  "condensed golden mushroom soup": {
+   "classes": {
+    "dairy": "yes",
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "processed soup containing dairy"
+  },
+  "cookie": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked sweet treat containing wheat"
+  },
+  "corn bread mix": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "packaged baking blend"
+  },
+  "corn flake": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "malt flavoring often contains gluten"
+  },
+  "corn flake cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "corn flakes often contain malt flavoring"
+  },
+  "corn muffin mix": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baking mix containing wheat flour"
+  },
+  "cornbread": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked corn and wheat bread"
+  },
+  "cornbread mix": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "packaged baking mix"
+  },
+  "cornflake": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "malt flavoring often contains gluten"
+  },
+  "cornflake cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "corn cereal often with malt flavoring"
+  },
+  "cornflake crumb": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cornflakes often use barley malt"
+  },
+  "country bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread made from wheat flour"
+  },
+  "country white bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat bread, may contain dairy"
+  },
+  "crabmeat": {
+   "classes": {
+    "shellfish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "crustacean shellfish"
+  },
+  "cracker": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked wheat snack"
+  },
+  "cracker crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat-based crackers, may contain dairy"
+  },
+  "cream of celery soup": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "processed soup containing cream"
+  },
+  "crema": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy cream product"
+  },
+  "creme de cacao": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cocoa liqueur"
+  },
+  "creme de cassis": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "blackcurrant liqueur"
+  },
+  "creme de menthe": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mint liqueur"
+  },
+  "crepe": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "thin pancake containing milk, egg, and wheat"
+  },
+  "crisp rice cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "rice breakfast cereal, may contain malt flavoring"
+  },
+  "crispy rice cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "rice cereal often malt flavored"
+  },
+  "crispy rice cereal square": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Processed cereal snack, often contains barley malt."
+  },
+  "croissant": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "laminated pastry made with butter and wheat flour"
+  },
+  "crostini": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "toasted bread slices"
+  },
+  "crusty roll": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread roll"
+  },
+  "curry paste": {
+   "classes": {
+    "soy": "maybe",
+    "fish": "maybe",
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Spice paste, sometimes contains shrimp paste or fish sauce"
+  },
+  "day old bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread containing gluten"
+  },
+  "day old italian bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat-based bread."
+  },
+  "demi glace": {
+   "classes": {
+    "beef": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "brown meat stock reduction"
+  },
+  "devil food cake mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat baking mix"
+  },
+  "dinner roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baked wheat bread product"
+  },
+  "dipping sauce": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "generic sauce composition varies"
+  },
+  "disk mexican chocolate": {
+   "classes": {
+    "tree_nut": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chocolate disk with potential flavorings"
+  },
+  "ditalini pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "double crust all butter pie dough shell": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "butter pie crust contains dairy and gluten"
+  },
+  "dressing": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Generic salad dressing emulsion"
+  },
+  "dried breadcrumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Dried wheat bread product"
+  },
+  "dried spaghetti": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Long cylindrical dried wheat pasta"
+  },
+  "dry bread stuffing mix": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat bread, may contain dairy"
+  },
+  "dry breadcrumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from bread"
+  },
+  "dry brown gravy mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "packaged mix often contains wheat and meat extract"
+  },
+  "dry corn muffin mix": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mix containing cornmeal, wheat flour, and leavening"
+  },
+  "dry fettuccine pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta, may contain egg"
+  },
+  "dry italian style salad dressing mix": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dry seasoning packet"
+  },
+  "dry penne pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "dry ranch style dressing mix": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains dried dairy solids"
+  },
+  "dungeness crabmeat": {
+   "classes": {
+    "shellfish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "crustacean shellfish"
+  },
+  "farfalle": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bow tie pasta"
+  },
+  "fermented black bean": {
+   "classes": {
+    "soy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "salted fermented soybeans"
+  },
+  "ficelle": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread loaf"
+  },
+  "fine bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread product"
+  },
+  "firm white bread": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread often contains dairy or soy"
+  },
+  "firm white sandwich bread": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat baked good"
+  },
+  "flatbread": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread made with wheat flour"
+  },
+  "foie gra": {
+   "classes": {
+    "poultry": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "duck liver meat"
+  },
+  "framboise": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "raspberry liqueur"
+  },
+  "frangelico": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Hazelnut liqueur containing alcohol"
+  },
+  "french roll": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread roll"
+  },
+  "french vanilla ice cream": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy frozen dessert with egg yolks"
+  },
+  "fried onion": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fried onions are often dredged in wheat flour"
+  },
+  "fromage blanc": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fresh cow milk cheese"
+  },
+  "frosting": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains dairy fats"
+  },
+  "fully luncheon meat": {
+   "classes": {
+    "pork": "maybe",
+    "beef": "maybe",
+    "poultry": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "processed meat product"
+  },
+  "gelatin sheet": {
+   "classes": {
+    "pork": "maybe",
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "animal-derived gelling agent"
+  },
+  "genoa salami": {
+   "classes": {
+    "pork": "yes",
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cured meat, typically pork"
+  },
+  "german chocolate cake mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Prepackaged baking mix containing flour and additives"
+  },
+  "ginger beer": {
+   "classes": {
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain trace alcohol"
+  },
+  "gingersnap": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked cookie product"
+  },
+  "gingersnap cookie": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked wheat biscuit"
+  },
+  "gingersnap cookie crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cookie crumbs made with wheat flour"
+  },
+  "gnocchi": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "potato or wheat dumpling"
+  },
+  "gochujang": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fermented chili and soybean paste"
+  },
+  "grana padano": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "hard Italian cheese made from cow milk"
+  },
+  "granola": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked oat and nut mixture"
+  },
+  "green creme de menthe": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mint liqueur"
+  },
+  "green curry paste": {
+   "classes": {
+    "fish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains shrimp paste"
+  },
+  "hard apple cider": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fermented alcoholic apple beverage"
+  },
+  "hard cider": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic fermented apple beverage"
+  },
+  "hard salami": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cured meat sausage"
+  },
+  "herb seasoned dry bread stuffing mix": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "seasoned dried bread cubes"
+  },
+  "hoagie roll": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread product containing gluten"
+  },
+  "hoisin sauce": {
+   "classes": {
+    "soy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "soybean base"
+  },
+  "hollandaise sauce": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with butter and egg yolks"
+  },
+  "hot dog": {
+   "classes": {
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made of meat"
+  },
+  "hot dog bun": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread product"
+  },
+  "hot dog roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread roll for hot dogs"
+  },
+  "i cant believe its not butter spread": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "brand name for margarine spread"
+  },
+  "imitation crabmeat": {
+   "classes": {
+    "gluten": "maybe",
+    "fish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from surimi (fish) and binders"
+  },
+  "imported white chocolate": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Chocolate made with cocoa butter and milk solids"
+  },
+  "instant oatmeal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "oats may contain gluten"
+  },
+  "instant potato flake": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dehydrated potato sometimes containing dairy"
+  },
+  "irish cream liqueur": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cream liqueur"
+  },
+  "irish stout beer": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains barley and alcohol"
+  },
+  "irish whiskey": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "distilled spirit from grains"
+  },
+  "italian bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread product"
+  },
+  "italian sausage": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "traditional italian sausage contains pork"
+  },
+  "italian style bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "ground wheat bread"
+  },
+  "kaiser roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes",
+    "sesame": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread roll"
+  },
+  "kellogg rice krispy cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "malt flavoring often contains gluten"
+  },
+  "kielbasa": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pork sausage"
+  },
+  "kimchi": {
+   "classes": {
+    "fish": "maybe",
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fermented cabbage often containing fish sauce"
+  },
+  "ladyfinger": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sponge cake biscuit made with eggs"
+  },
+  "leftover stuffing": {
+   "classes": {
+    "poultry": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "stuffing often contains bread and meat broth"
+  },
+  "lime sherbet": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "frozen fruit dessert containing milk"
+  },
+  "limoncello": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "lemon liqueur contains alcohol"
+  },
+  "linguine pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "linguini": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "linguini pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "liquid egg substitute": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain egg or soy"
+  },
+  "lt pickled mayo": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mayonnaise contains egg and is not vegan"
+  },
+  "lump crabmeat": {
+   "classes": {
+    "shellfish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "crustacean shellfish"
+  },
+  "malted milk powder": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy powder with malt"
+  },
+  "mango sorbet": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Sorbet may sometimes contain dairy."
+  },
+  "manicotti shell": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Wheat pasta shell."
+  },
+  "maraschino": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cherry liqueur"
+  },
+  "marinade": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "marinades often contain soy sauce and gluten"
+  },
+  "marshmallow cream": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain egg whites and gelatin"
+  },
+  "marshmallow fluff": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains egg whites and sugar syrup"
+  },
+  "matzo": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "unleavened bread made from wheat flour"
+  },
+  "matzo cake meal": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from wheat flour"
+  },
+  "matzo meal": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from wheat matzo"
+  },
+  "meat tenderizer": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often uses wheat-derived ingredients as carrier"
+  },
+  "meatball": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "meat dish"
+  },
+  "meatloaf mix": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "blend of ground meats"
+  },
+  "merlot": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "red wine"
+  },
+  "mexican chocolate": {
+   "classes": {
+    "tree_nut": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "spiced cacao with sugar and cinnamon"
+  },
+  "mexican crema": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy cream product"
+  },
+  "mezcal": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "distilled alcoholic beverage"
+  },
+  "microwave popcorn": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often has butter flavoring"
+  },
+  "milk chocolate candy kiss": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains milk and soy lecithin"
+  },
+  "naan bread": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "leavened flatbread, often contains dairy or egg"
+  },
+  "neely bbq sauce": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "commercial condiment"
+  },
+  "non dairy whipped topping": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "May contain dairy or soy derivatives."
+  },
+  "non stick cooking spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains soy lecithin"
+  },
+  "nonstick baking spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain soy lecithin"
+  },
+  "nonstick vegetable cooking spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain soy lecithin"
+  },
+  "nutella": {
+   "classes": {
+    "dairy": "yes",
+    "soy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains hazelnut, skim milk, and soy lecithin"
+  },
+  "oat bran": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "oats often cross-contaminated with gluten"
+  },
+  "oat flour": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from oats, often cross-contaminated with gluten"
+  },
+  "oatmeal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from oats, which may have cross-contact with gluten"
+  },
+  "old bay seasoning tm": {
+   "classes": {
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "spice blend often used for seafood"
+  },
+  "onion roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat flour baked good"
+  },
+  "onion soup mix": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Dehydrated soup blend, often contains wheat or beef extract"
+  },
+  "orange sherbet": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains milk and dairy"
+  },
+  "orecchiette": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "orecchiette pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat-based ear-shaped pasta"
+  },
+  "oyster cracker": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat flour baked snack"
+  },
+  "package pepperidge farm puff pastry sheet": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "laminated wheat dough made with butter"
+  },
+  "pancake mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "packaged pancake powder"
+  },
+  "pappardelle": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wide ribbon pasta, often egg pasta"
+  },
+  "pappardelle pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wide ribbon pasta"
+  },
+  "pasta dough": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from wheat flour and sometimes egg"
+  },
+  "pasta sheet": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "flat sheet of pasta dough"
+  },
+  "pastrami": {
+   "classes": {
+    "pork": "maybe",
+    "beef": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cured and smoked beef meat"
+  },
+  "pastry cream": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains milk and egg"
+  },
+  "pastry double crust pie": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pastry dough"
+  },
+  "pastry dough": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "flour dough for baking"
+  },
+  "pastry shell": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked flour crust containing gluten and possibly butter or egg"
+  },
+  "pastry single crust pie": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pastry crust"
+  },
+  "pate brisee": {
+   "classes": {
+    "dairy": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "french shortcrust pastry"
+  },
+  "peach schnapp": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic liqueur"
+  },
+  "peanut butter chip": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains peanut and often dairy"
+  },
+  "peanut sauce": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with peanuts"
+  },
+  "pepper jack": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy cheese"
+  },
+  "peppermint schnapp": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic beverage"
+  },
+  "pepperoni sausage": {
+   "classes": {
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cured meat sausage"
+  },
+  "pesto sauce": {
+   "classes": {
+    "dairy": "yes",
+    "tree_nut": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains basil, pine nuts, and parmesan cheese"
+  },
+  "pheasant": {
+   "classes": {
+    "game": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "game bird meat"
+  },
+  "pie dough": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains flour, often butter or lard"
+  },
+  "pinot grigio": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "white wine"
+  },
+  "pinot noir": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "red wine"
+  },
+  "pisco": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "grape brandy"
+  },
+  "pizza crust": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains wheat and dairy"
+  },
+  "poire william": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pear eau de vie"
+  },
+  "ponzu": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "yes",
+    "fish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "citrus soy sauce often contains fish extract"
+  },
+  "potato bun": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread made with wheat"
+  },
+  "potato gnocchi": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "potato pasta dumpling"
+  },
+  "potato roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread roll made with potato flour and wheat"
+  },
+  "pound cake": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains flour, egg, and dairy"
+  },
+  "powdered gelatin": {
+   "classes": {
+    "pork": "maybe",
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "derived from animal collagen"
+  },
+  "praline liqueur": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains nuts and alcohol"
+  },
+  "pre baked pizza crust": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with wheat flour, may contain dairy or egg"
+  },
+  "pretzel twist": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat baked snack"
+  },
+  "processed american cheese": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Processed cheese product containing dairy"
+  },
+  "puff pastry dough": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "laminated wheat dough typically made with butter"
+  },
+  "puff pastry sheet": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "laminated wheat dough with butter"
+  },
+  "pumpernickel bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "rye and wheat bread"
+  },
+  "pumpkin pie filling": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain milk or dairy solids"
+  },
+  "purchased pesto": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains parmesan and pine nuts"
+  },
+  "ranch dressing": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains buttermilk and egg"
+  },
+  "ranch dressing mix": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains buttermilk solids"
+  },
+  "ranch salad dressing": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with buttermilk and mayonnaise"
+  },
+  "ranch style salad dressing": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with buttermilk and mayo"
+  },
+  "red enchilada sauce": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chili based sauce"
+  },
+  "red miso": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "fermented soybean paste"
+  },
+  "reddi wip dairy whipped topping": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy cream product"
+  },
+  "refrigerated biscuit dough": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked good dough containing gluten"
+  },
+  "refrigerated crescent dinner roll": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "prepared pastry dough containing wheat and often dairy"
+  },
+  "refrigerated crescent roll": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat and dairy ingredients"
+  },
+  "refrigerated crescent roll dough": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "prepared pastry dough"
+  },
+  "refrigerated pizza crust": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat dough product"
+  },
+  "refrigerated pizza crust dough": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat dough"
+  },
+  "refrigerated pizza dough": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat dough"
+  },
+  "refrigerated sugar cookie dough": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "prepared baking dough"
+  },
+  "regular marshmallow": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains gelatin from animal bones"
+  },
+  "remoulade sauce": {
+   "classes": {
+    "egg": "maybe",
+    "fish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mayo and mustard base, often with anchovy"
+  },
+  "rice cereal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain barley malt flavoring"
+  },
+  "riesling": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "white wine"
+  },
+  "ritz cracker": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "branded wheat cracker"
+  },
+  "roll": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "individual bread product"
+  },
+  "rotelle pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheel-shaped wheat pasta"
+  },
+  "rotini pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta shape"
+  },
+  "royal icing": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "traditionally made with egg whites"
+  },
+  "rump roast": {
+   "classes": {
+    "beef": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Cut of beef from the hindquarter"
+  },
+  "salami": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cured meat sausage"
+  },
+  "sambal": {
+   "classes": {
+    "fish": "maybe",
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains shrimp paste"
+  },
+  "sandwich bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sliced loaf bread"
+  },
+  "sandwich roll": {
+   "classes": {
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread roll"
+  },
+  "sauvignon blanc": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "white wine"
+  },
+  "scotch whiskey": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "distilled grain alcohol"
+  },
+  "scotch whisky": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Distilled alcoholic beverage from grain"
+  },
+  "seafood stock": {
+   "classes": {
+    "fish": "yes",
+    "shellfish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from fish and shellfish"
+  },
+  "seashell pasta": {
+   "classes": {
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta, may contain egg"
+  },
+  "seasoned crouton": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "toasted seasoned bread"
+  },
+  "seasoned dry bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread product"
+  },
+  "self rising cornmeal": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "self rising cornmeal may contain wheat flour"
+  },
+  "semisweet chocolate morsel": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baking chocolate, may contain milk or soy lecithin"
+  },
+  "sesame seed hamburger bun": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bread bun with sesame seeds"
+  },
+  "shaoxing wine": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Asian cooking wine often containing wheat"
+  },
+  "shortbread cookie": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "butter cookie"
+  },
+  "sleeve buttery round cracker": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked wheat cracker"
+  },
+  "slice brioche": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "enriched bread slice containing dairy and egg"
+  },
+  "slice country style bread": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread slice"
+  },
+  "slider bun": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "small bread roll"
+  },
+  "slider roll": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "small wheat bread roll"
+  },
+  "snack factory pretzel crisp": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat flour pretzel product"
+  },
+  "snail": {
+   "classes": {
+    "shellfish": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mollusc categorized under shellfish"
+  },
+  "soppressata": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dry salami pork product"
+  },
+  "spaghettini": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat pasta"
+  },
+  "spicy italian sausage": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pork sausage"
+  },
+  "sponge cake": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Contains wheat and eggs."
+  },
+  "spring roll wrapper": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat or rice pastry wrapper"
+  },
+  "square bittersweet chocolate": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Baking chocolate, may contain traces of milk or soy"
+  },
+  "square white chocolate": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "chocolate containing cocoa butter and milk solids"
+  },
+  "stuffing": {
+   "classes": {
+    "dairy": "maybe",
+    "poultry": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Bread-based mixture, may contain broth or dairy"
+  },
+  "sub roll": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "long bread roll"
+  },
+  "sugar cookie dough": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains flour dairy and eggs"
+  },
+  "sugar cookie mix": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "packaged cookie mix"
+  },
+  "sun dried tomato pesto": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains cheese and nuts"
+  },
+  "sunshine cheez it cracker": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cheese crackers contain dairy and wheat"
+  },
+  "sweet italian sausage link": {
+   "classes": {
+    "pork": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "traditional italian sausage is pork"
+  },
+  "taco seasoning": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain wheat flour filler"
+  },
+  "tamari": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "japanese soy sauce, sometimes contains wheat"
+  },
+  "tamari sauce": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "soy sauce derivative"
+  },
+  "tempeh": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "soybean product, sometimes includes grains"
+  },
+  "teriyaki sauce": {
+   "classes": {
+    "soy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "teriyaki sauce is soy-based and may contain gluten"
+  },
+  "texa toast": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "thick sliced bread"
+  },
+  "thai red curry paste": {
+   "classes": {
+    "shellfish": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "curry paste often contains shrimp paste"
+  },
+  "thousand island dressing": {
+   "classes": {
+    "egg": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains mayonnaise (egg)"
+  },
+  "toffee baking bit": {
+   "classes": {
+    "dairy": "yes",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Small pieces of sugar and butter candy"
+  },
+  "toffee bit": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made with butter"
+  },
+  "tomato soup": {
+   "classes": {
+    "dairy": "maybe",
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Processed soup often containing milk or flour"
+  },
+  "top round": {
+   "classes": {
+    "beef": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "beef cut"
+  },
+  "turkey sausage": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "poultry meat, casing may involve pork"
+  },
+  "type white bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat flour baked bread"
+  },
+  "unbaked pie shell": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat flour and fat"
+  },
+  "unbaked tart shell": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pastry crust"
+  },
+  "unflavored gelatin powder": {
+   "classes": {
+    "pork": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "animal-derived protein product"
+  },
+  "unflavored powdered gelatin": {
+   "classes": {
+    "pork": "maybe",
+    "beef": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Derived from animal collagen"
+  },
+  "vanilla bean paste": {
+   "classes": {
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "vanilla extract base"
+  },
+  "vanilla cupcake": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked cake containing flour, dairy, and eggs"
+  },
+  "vanilla flavored vodka": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Flavored distilled spirit"
+  },
+  "vanilla frosting": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "sweet cake topping"
+  },
+  "vanilla paste": {
+   "classes": {
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain alcohol solvent"
+  },
+  "vanilla protein powder": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains whey or soy protein"
+  },
+  "vanilla pudding": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "dairy-based pudding"
+  },
+  "vanilla wafer cookie": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked wheat cookie typically containing dairy and egg"
+  },
+  "vanilla wafer crumb": {
+   "classes": {
+    "dairy": "maybe",
+    "egg": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "crushed vanilla cookies"
+  },
+  "veal demi glace": {
+   "classes": {
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from veal stock, often contains wine"
+  },
+  "vegan butter": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "plant-based butter substitute"
+  },
+  "vegetable bouillon": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "bouillon cubes often contain soy"
+  },
+  "vegetable spray": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "cooking spray often containing soy lecithin"
+  },
+  "velveeta": {
+   "classes": {
+    "dairy": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "processed cheese food"
+  },
+  "waffle": {
+   "classes": {
+    "dairy": "yes",
+    "egg": "yes",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "baked batter containing wheat, milk, and eggs"
+  },
+  "wheat bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat flour"
+  },
+  "whipped topping mix": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "often contains milk derivatives or soy"
+  },
+  "white bread crumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "made from white bread"
+  },
+  "white breadcrumb": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Ground white bread particles"
+  },
+  "white creme de cacao": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "alcoholic liqueur"
+  },
+  "white creme de menthe": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "mint liqueur"
+  },
+  "white frosting": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "may contain butter or milk"
+  },
+  "white miso": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "soybean paste"
+  },
+  "white miso paste": {
+   "classes": {
+    "gluten": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Soybean paste often containing barley"
+  },
+  "white sandwich bread": {
+   "classes": {
+    "dairy": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat sandwich bread"
+  },
+  "whole grain bread": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat bread"
+  },
+  "whole wheat english muffin": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains wheat flour"
+  },
+  "whole wheat hamburger bun": {
+   "classes": {
+    "dairy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "whole wheat bread product"
+  },
+  "won ton wrapper": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "pasta wrapper made with wheat"
+  },
+  "wonton skin": {
+   "classes": {
+    "egg": "maybe",
+    "gluten": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "wheat dough wrapper"
+  },
+  "worcestershire": {
+   "classes": {
+    "gluten": "maybe",
+    "fish": "maybe",
+    "alcohol": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "contains anchovies and vinegar"
+  },
+  "your favorite bbq sauce": {
+   "classes": {
+    "gluten": "maybe",
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "barbecue sauce may contain anchovies or soy sauce"
+  },
+  "zaatar": {
+   "classes": {
+    "sesame": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Middle Eastern spice and sesame blend"
+  },
+  "zesty italian dressing": {
+   "classes": {
+    "soy": "maybe"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "oil and vinegar dressing often with soy derivatives"
+  },
+  "zinfandel": {
+   "classes": {
+    "alcohol": "yes"
+   },
+   "source": "llm:gemini-3.5-flash-lite",
+   "reason": "Red wine."
+  }
+ }
+}

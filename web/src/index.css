@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* One accent (burnt orange for text and marks, pastel orange for fills) on warm paper. Flat: thin lines, no shadows, no gradients.
+   Light by default; warm dark when the OS prefers it. Text colours were chosen for at least 4.5:1 contrast on their backgrounds. */
+:root {
+  --bg: #fbf6ef; --panel: #fffdf9; --ink: #2b2118; --muted: #6f6052; --line: #e9dccd;
+  --accent: #a94a14; --accent-ink: #ffffff; --accent-soft: #fdebd9;
+  --brand: #f6c7a0; --brand-ink: #3d1e0a;
+  --ok: #2f6b49; --ok-soft: #e4f0e6; --warn: #7a5200; --warn-soft: #fbf0cf; --danger: #a3302b; --danger-soft: #fbe3df;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1511; --panel: #221b16; --ink: #f2e8dc; --muted: #b3a393; --line: #3a2f26;
+    --accent: #f2a874; --accent-ink: #2a1508; --accent-soft: #35261b;
+    --brand: #f2a874; --brand-ink: #2a1508;
+    --ok: #86c9a0; --ok-soft: #1c2c22; --warn: #e6c070; --warn-soft: #33290f; --danger: #f2948d; --danger-soft: #3b1f1d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --bg: #1a1511; --panel: #221b16; --ink: #f2e8dc; --muted: #b3a393; --line: #3a2f26;
+    --accent: #f2a874; --accent-ink: #2a1508; --accent-soft: #35261b;
+    --brand: #f2a874; --brand-ink: #2a1508;
+    --ok: #86c9a0; --ok-soft: #1c2c22; --warn: #e6c070; --warn-soft: #33290f; --danger: #f2948d; --danger-soft: #3b1f1d;
+    color-scheme: dark;
+}
+@theme inline {
+  --color-bg: var(--bg); --color-panel: var(--panel); --color-ink: var(--ink); --color-muted: var(--muted); --color-line: var(--line);
+  --color-accent: var(--accent); --color-accent-ink: var(--accent-ink); --color-accent-soft: var(--accent-soft);
+  --color-brand: var(--brand); --color-brand-ink: var(--brand-ink);
+  --color-ok: var(--ok); --color-ok-soft: var(--ok-soft); --color-warn: var(--warn); --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger); --color-danger-soft: var(--danger-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+}
+html, body, #root { height: 100%; }
+body { background-color: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; -webkit-font-smoothing: antialiased; }
+@layer base { :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } }
+@keyframes flash { 0% { background: var(--accent-soft); } 100% { background: transparent; } }
+.flash { animation: flash 1.4s ease-out; }
+@media (prefers-reduced-motion: reduce) { .flash { animation: none; } * { scroll-behavior: auto !important; } }

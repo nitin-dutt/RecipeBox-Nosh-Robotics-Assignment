@@ -1,0 +1,3559 @@
+[
+  {
+    "id": "T1-count-both-ingredients",
+    "task": 1,
+    "category": "",
+    "why": "Statistics must use the complete filtered set and say what they counted.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "count_close",
+        "arg": {
+          "words": [
+            "garlic",
+            "onion"
+          ],
+          "low": 0.7,
+          "high": 1.0
+        },
+        "ok": true,
+        "detail": "ours 15985, plain-text count 20244, ratio 0.79 (allowed 0.7-1.0)",
+        "turn": 1
+      },
+      {
+        "check": "denominator_is_complete_recipes",
+        "arg": {},
+        "ok": true,
+        "detail": "denominator 122935, independent SQL says 122935",
+        "turn": 1
+      },
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "15985 of 122935 recipes (13.0%) match (include ingredients: garlic, onion). For reference, that is 12.8% of all 124647 recipes."
+  },
+  {
+    "id": "T1-count-explains-normalization",
+    "task": 1,
+    "category": "",
+    "why": "The brief asks the answer to explain ingredient-name normalization.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "note_contains",
+        "arg": "Matching rule for 'garlic'",
+        "ok": true,
+        "detail": "looking for \"Matching rule for 'garlic'\" in the calculation notes",
+        "turn": 1
+      },
+      {
+        "check": "note_contains",
+        "arg": "NOT counted as garlic",
+        "ok": true,
+        "detail": "looking for 'NOT counted as garlic' in the calculation notes",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "32740 of 122935 recipes (26.6%) match (include ingredients: garlic). For reference, that is 26.3% of all 124647 recipes."
+  },
+  {
+    "id": "T1-median-ingredient-count",
+    "task": 1,
+    "category": "",
+    "why": "Average and median ingredient counts, with the calculation.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "median",
+        "ok": true,
+        "detail": "looking for 'median'",
+        "turn": 1
+      },
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Ingredient lines per recipe (no filters):\n- all recipes: 122935 recipes, average 10.36 ingredient lines, median 9, from 1 to 82 (90th percentile 17)"
+  },
+  {
+    "id": "T1-refuse-calories",
+    "task": 1,
+    "category": "",
+    "why": "The dataset has no nutrition data: refuse, never guess.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "refused",
+        "ok": true,
+        "detail": "status=refused",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "no nutrition",
+        "ok": true,
+        "detail": "looking for 'no nutrition'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I can't answer that: the dataset has no nutrition information. The dataset has no nutrition fields. A few Food Network instructions paste a calorie figure into the text, but that is not a structured, comparable attribute, and nutrition cannot be computed reliably from free-text ingredient lines.\nWhat I can do instead: counts and percentages of recipes by ingredient, restriction or number of steps; the most common ingredients, ingredient counts and step counts; recipes ranked by fewest/most instruction steps; ingredient-based matching and substitution suggestions grounded in other recipes."
+  },
+  {
+    "id": "T1-mixed-supported-and-unsupported",
+    "task": 1,
+    "category": "",
+    "why": "Answer the part we can, name the part we cannot.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "Not answered",
+        "ok": true,
+        "detail": "looking for 'Not answered'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: penne), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Penne with Edible Flowers [1] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n2. Penne with Edible Flowers [2] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n3. Penne with Herbed Ricotta [3] (10 steps, 7 ingredients, source epi) - matched: 1 pound penne\n4. Penne Pasta with Spinach and Bacon [4] (8 steps, 6 ingredients, source ar) - matched: 1 (12 ounce) package penne pasta\n5. Creamy Penne Pasta [5] (6 steps, 9 ing"
+  },
+  {
+    "id": "T1-fewest-steps-ordering",
+    "task": 1,
+    "category": "",
+    "why": "Ranking must be correct and ties disclosed.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_ascending",
+        "arg": {},
+        "ok": true,
+        "detail": "steps=[1, 1, 1, 1, 1]",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "tie",
+        "ok": true,
+        "detail": "looking for 'tie'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Recipes with the fewest steps (include ingredients: tomato):\n1. Sweet Pepper Salmon with Zucchini Ribbon Salad [1]: 1 steps (16 ingredients)\n2. Mozzarella Pesto Spread [2]: 1 steps (3 ingredients)\n3. Tomato Basil Smoothie [3]: 1 steps (5 ingredients)\n4. Black Bean Salad [4]: 1 steps (15 ingredients)\n5. Tomato Vinaigrette [5]: 1 steps (6 ingredients)\nNote: 63 recipes tie at the cut-off; ties on sentences are broken by the other step measure (paragraphs), then by recipe ID (alphabetical)"
+  },
+  {
+    "id": "C1-no-dairy-penne",
+    "task": 1,
+    "category": "",
+    "why": "Hard exclusion: nothing returned may contain dairy by an independent text check.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['dairy']",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "query",
+          "value": "penne"
+        },
+        "ok": true,
+        "detail": "query=penne",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: penne; exclude ingredients: dairy; exclude classes: dairy), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Penne with Edible Flowers [1] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n2. Penne Pasta with Spinach and Bacon [2] (8 steps, 6 ingredients, source ar) - matched: 1 (12 ounce) package penne pasta\n3. Penne with Edible Flowers [3] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n4. Penne with Spinach, Shrimp, Tomatoes and Basil [4] (28 steps, 9 ingredients, sourc"
+  },
+  {
+    "id": "C2-no-peanut",
+    "task": 1,
+    "category": "",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: noodles; exclude classes: peanut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Noodles and Veggies [1] (2 steps, 2 ingredients, source ar)\n2. Cabbage and Noodles [2] (10 steps, 6 ingredients, source ar) - matched: 1 (8 ounce) package egg noodles\n3. Figgy Noodles [3] (3 steps, 3 ingredients, source ar)\n4. Herb Buttered Noodles [4] (4 steps, 5 ingredients, source fn) - matched: 12 ounces egg noodles\n5. Polish Noodles (Cottage Cheese and Noodles) [5] (7 steps, 7 ingredients, source ar) - matche"
+  },
+  {
+    "id": "C3-egg-free-cookies",
+    "task": 1,
+    "category": "",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookies; exclude classes: egg), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Cookies and Cream [1] (15 steps, 8 ingredients, source fn)\n2. Worm Cookies [2] (12 steps, 2 ingredients, source ar)\n3. Shortbread Cookies [3] (34 steps, 4 ingredients, source epi)\n4. Cookie Paints [4] (3 steps, 2 ingredients, source ar)\n5. Pizza Cookie [5] (5 steps, 4 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as safe: packaged ingredients "
+  },
+  {
+    "id": "C4-vegetarian-toggle",
+    "task": 1,
+    "category": "",
+    "why": "The UI switch is a hard filter applied in code.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "10 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 10 recipes break 'vegetarian'",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "vegetarian_only",
+          "value": true
+        },
+        "ok": true,
+        "detail": "vegetarian_only=True",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 10 most relevant recipes (query: soup; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fruit Soup [1] (3 steps, 4 ingredients, source fn)\n2. Vegetable Soup [2] (10 steps, 13 ingredients, source fn)\n3. Sweet Soup [3] (1 steps, 4 ingredients, source fn)\n4. Vegetable Soup [4] (10 steps, 13 ingredients, source fn)\n5. Vegetable Soup [5] (10 steps, 13 ingredients, source fn)\n6. Loaded Potato Soup II [6] (8 steps, 8 ingredients, source ar)\n7. Second Time Around Vegetable Soup [7] (6 steps, 4 ingredients, source fn)\n"
+  },
+  {
+    "id": "C5-model-forgets-restriction",
+    "task": 1,
+    "category": "",
+    "why": "If the planner forgets a stated restriction, the guard adds it.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "peanut"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['peanut']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookies; exclude classes: peanut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Black and White Cookies [1] (19 steps, 4 ingredients, source fn)\n2. Cookies and Cream [2] (6 steps, 7 ingredients, source fn)\n3. Cookies and Cream [3] (15 steps, 8 ingredients, source fn)\n4. Cookie Cutter Cookies [4] (17 steps, 6 ingredients, source fn)\n5. Shortbread Cookies [5] (34 steps, 4 ingredients, source epi)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as"
+  },
+  {
+    "id": "M1-eggs-onions-tomatoes-rice",
+    "task": 2,
+    "category": "",
+    "why": "The brief's example: ranked, explainable, constraints respected.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 2
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 6,
+        "ok": true,
+        "detail": "steps=[4, 6, 3, 4, 4]",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "Ignored because you excluded them",
+        "ok": true,
+        "detail": "looking for 'Ignored because you excluded them'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (exclude classes: peanut, egg; max steps: 6; available: eggs, onions, tomatoes and rice):\n1. Easy Authentic Spanish Rice [1] (4 steps): uses 3 of your 3; still needed: 6 tablespoons butter. Score 2.75 = 3 used - 0.25 x 1 still needed. Uses 3 of your 3 ingredients, still needs 1 more, 4 steps by the sentences rule.\n2. Easy Red Rice [2] (6 steps): uses 3 of your 3; still needed: 2 cups chicken broth, 1/2 teaspoon dried basil. Score 2.50 = 3 used - 0.25 x 2 still needed. Uses 3 of your 3 ingredients, still needs 2 more, 6 steps by the sentences rule."
+  },
+  {
+    "id": "M2-no-match-is-labelled",
+    "task": 2,
+    "category": "",
+    "why": "A hard constraint is never relaxed silently: with nothing eligible, say so; near-misses are labelled as breaking the constraint.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "no_results",
+        "ok": true,
+        "detail": "status=no_results",
+        "turn": 1
+      },
+      {
+        "check": "alternatives_labelled",
+        "arg": {},
+        "ok": true,
+        "detail": "no recipes shown at all",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "None of the ingredients you listed can be used: they were not recognised or they conflict with your constraints.\nIgnored because you excluded them: chicken breast: it falls under the excluded class 'poultry', so it cannot be used.\nQuantities are compared only when the units are comparable (mass with mass, volume with volume, identical counts). Otherwise the match is by name and marked 'quantity not verified'. No densities or item sizes are assumed."
+  },
+  {
+    "id": "S1-banana-bread-egg",
+    "task": 3,
+    "category": "",
+    "why": "Weak evidence must be reported as weak; nothing applied without support.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "evidence is (WEAK|CONFLICTING|NONE|SUPPORTED)",
+        "ok": true,
+        "detail": "evidence is WEAK",
+        "turn": 2
+      },
+      {
+        "check": "text_regex",
+        "arg": "(?i)nothing applied|prediction|tentative",
+        "ok": true,
+        "detail": "nothing applied",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "4 cited, 0 not in the dataset",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. egg: weak (leads only, nothing applied).\n- egg: evidence is WEAK. only 1 of the 4 closest recipes without it use honey (5 candidate(s) dropped because they are the same ingredient family; 3 candidate(s) dropped because they cannot do the same job (role check)) Leads: honey (indirect, 1 similar recipes) [2][3]; applesauce (indirect, 1 similar recipes) [4]; yogurt (indirect, 1 similar recipes) [3]. Nothing applied.\nRecipes behind these swaps (open one to see how "
+  },
+  {
+    "id": "S2-cookies-without-butter",
+    "task": 3,
+    "category": "",
+    "why": "A well-supported swap cites several real recipes.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "evidence is SUPPORTED",
+        "ok": true,
+        "detail": "evidence is SUPPORTED",
+        "turn": 2
+      },
+      {
+        "check": "adapted_view",
+        "arg": {},
+        "ok": true,
+        "detail": "adapted sheet present",
+        "turn": 2
+      },
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "9 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "9 cited, 0 not in the dataset",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Easy Chocolate Chip Cookies [1] (the recipe being adapted)\nAdapted, every change is supported by similar recipes. butter: supported -> vegetable oil.\n- butter: evidence is SUPPORTED. 8 of the 23 closest recipes without it use vegetable oil (35%) against 0% of those that keep it (14 candidate(s) dropped because they are the same ingredient family; 5 candidate(s) dropped because they cannot do the same job (role check)) Leads: vegetable oil (variant, 8 similar recipes; 18 list it as an alternative) [2][3][4]; margarine (variant, 3 similar recipes; 441 list it as an alternative) [5][6][7]; oli"
+  },
+  {
+    "id": "S3-dairy-free-cream-pasta",
+    "task": 3,
+    "category": "",
+    "why": "An adaptation must say what remains; never claim dairy-free while dairy is still listed.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "Text check for dairy: (no term found|possible|still present)",
+        "ok": true,
+        "detail": "Text check for dairy: still present",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      },
+      {
+        "check": "dairy_claim_consistent",
+        "arg": {},
+        "ok": true,
+        "detail": "dairy still present and the answer says so",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Pasta with Creamy Vodka-and-Herb Sauce [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. butter: supported -> olive oil; heavy cream: conflicting (leads only, nothing applied); parmesan cheese: weak (leads only, nothing applied).\n- butter: evidence is SUPPORTED. 6 of the 8 closest recipes without it use olive oil (75%) against 40% of those that keep it (2 candidate(s) dropped because they fall under the excluded class; 5 candidate(s) dropped because they are the same ingredient family; 2 candidate(s) dropped because they cannot d"
+  },
+  {
+    "id": "M3-model-forgets-step-limit",
+    "task": 2,
+    "category": "",
+    "why": "Found by a real conversation: the planner dropped 'at most 6 steps'. The guard must add it.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 6,
+        "ok": true,
+        "detail": "steps=[4, 4, 5, 5, 5]",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "max_steps",
+          "value": 6
+        },
+        "ok": true,
+        "detail": "max_steps=6",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (exclude classes: peanut; max steps: 6; available: eggs, onions, tomatoes and rice):\n1. Easy Authentic Spanish Rice [1] (4 steps): uses 3 of your 4; still needed: 6 tablespoons butter. Score 2.75 = 3 used - 0.25 x 1 still needed. Uses 3 of your 4 ingredients, still needs 1 more, 4 steps by the sentences rule.\n2. Poached Farm Eggs with Heirloom Tomatoes, Red Onions, Oregano and Feta [2] (4 steps): uses 3 of your 4; still needed: 8 ounces feta, 1 bunch fresh oregano. Score 2.50 = 3 used - 0.25 x 2 still needed. Uses 3 of your 4 ingredients, still ne"
+  },
+  {
+    "id": "X1-double-a-recipe",
+    "task": 3,
+    "category": "",
+    "why": "Phase 10: scaling changes only the amounts, and says what it did not change.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "scaled by 2x",
+        "ok": true,
+        "detail": "scaled by 2x",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "NOT scaled",
+        "ok": true,
+        "detail": "looking for 'NOT scaled'",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "Instructions (unchanged)",
+        "ok": true,
+        "detail": "looking for 'Instructions (unchanged)'",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "1 cited, 0 not in the dataset",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (scaled by 2x)\nIngredients (changed amounts in bold):\n- **4 cups all-purpose flour**\n- **2 teaspoons baking soda**\n- **1/2 teaspoon salt**\n- **1 cup butter**\n- **1 1/2 cups brown sugar**\n- **4 eggs, beaten**\n- **4 2/3 cups mashed overripe bananas**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nPreheat oven to 350 degrees F (175 degrees C). Lightly grease a 9x5 inch loaf pan.\nIn a large bowl, combine flour, baking soda and salt. In a separate bo"
+  },
+  {
+    "id": "T1-low-spice-profile",
+    "task": 3,
+    "category": "",
+    "why": "Phase 10: a taste profile adjusts only the hot ingredient lines and labels the numbers a rule of thumb.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "Adjusted to your taste (spice low)",
+        "ok": true,
+        "detail": "looking for 'Adjusted to your taste (spice low)'",
+        "turn": 2
+      },
+      {
+        "check": "text_regex",
+        "arg": "Reduce by about 50%",
+        "ok": true,
+        "detail": "Reduce by about 50%",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "not from the dataset",
+        "ok": true,
+        "detail": "looking for 'not from the dataset'",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "1 cited, 0 not in the dataset",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Spicy White Chili with Chicken [1] (source ar, 6 steps)\nIngredients:\n- 1 tablespoon olive oil\n- 1 onion, chopped\n- 1 jalapeno pepper, seeded and chopped (optional)\n- 3 cloves garlic, minced\n- 4 cups chicken broth\n- 2 (15.5 ounce) cans Great Northern beans, drained and rinsed\n- 1 (15 ounce) can garbanzo beans, drained\n- 1 cup corn kernels\n- 1 (7 ounce) can diced green chiles\n- 2 tablespoons minced fresh cilantro\n- 1 tablespoon lime juice\n- 2 teaspoons ground cumin\n- 1 teaspoon ground black pepper\n- 4 cooked chicken breast halves, cubed\n- 2 tablespoons cornstarch\n- 1/4 cup cold water\nInstruct"
+  },
+  {
+    "id": "R1-no-dairy-and-no-egg-cake",
+    "task": 1,
+    "category": "restrictions",
+    "why": "Two classes at once: nothing shown may contain either (independent text check).",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 1
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cake; exclude classes: dairy, egg), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. 100% Fruit \"Cake\" [1] (9 steps, 4 ingredients, source ar)\n2. Strawberry Cake Filling [2] (4 steps, 4 ingredients, source ar)\n3. No-Bake Love Cake [3] (4 steps, 5 ingredients, source fn)\n4. Blackberry Cake Filling [4] (2 steps, 3 ingredients, source ar)\n5. Chocolate Cake Shot [5] (3 steps, 4 ingredients, source ar)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as "
+  },
+  {
+    "id": "R2-shellfish-allergy-pasta",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "shellfish",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'shellfish'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: pasta; exclude ingredients: shellfish; exclude classes: shellfish), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. How to Cook Pasta [1] (5 steps, 1 ingredients, source fn) - matched: 1 pound pasta (your choice)\n2. Pasta and Garlic [2] (7 steps, 5 ingredients, source ar) - matched: 1 1/2 pounds pasta\n3. Awesome Easy Pasta [3] (9 steps, 7 ingredients, source ar) - matched: 8 ounces linguine pasta\n4. Fresh Pasta [4] (12 steps, 2 ingredients, source ar)\n5. Pasta Alla Gricia [5] (8 steps, 7 ingredi"
+  },
+  {
+    "id": "R3-no-pork-soup",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "pork",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'pork'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: soup; exclude classes: pork), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. My Favorite Soup [1] (8 steps, 7 ingredients, source ar)\n2. Potato Soup [2] (4 steps, 5 ingredients, source ar)\n3. Fruit Soup [3] (3 steps, 4 ingredients, source fn)\n4. Diet Soup [4] (3 steps, 8 ingredients, source ar)\n5. Soup with Carrot and Chicken [5] (3 steps, 5 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as safe: packaged ingredients can "
+  },
+  {
+    "id": "R4-tree-nut-free-brownies",
+    "task": 1,
+    "category": "restrictions",
+    "why": "Brownies often have walnuts: a good place for a leak.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "tree_nut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'tree_nut'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: brownies; exclude classes: tree_nut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Brownie Sundaes [1] (2 steps, 5 ingredients, source fn) - matched: 6 brownies\n2. Brownies [2] (21 steps, 8 ingredients, source fn)\n3. Brownie Sundaes [3] (2 steps, 5 ingredients, source fn) - matched: 6 brownies\n4. Marbled Brownies [4] (11 steps, 7 ingredients, source fn)\n5. Classic Brownies [5] (13 steps, 7 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not "
+  },
+  {
+    "id": "R5-three-classes-cookies",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookies; exclude classes: peanut, egg, dairy), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Halloween Spiderweb Cookies [1] (40 steps, 4 ingredients, source epi)\n2. Fresh Strawberry Cookies [2] (8 steps, 3 ingredients, source ar)\n3. Holiday Star Cookies [3] (15 steps, 4 ingredients, source fn)\n4. Almond Cookies [4] (6 steps, 4 ingredients, source fn)\n5. Oatmeal Cookie [5] (14 steps, 5 ingredients, source epi)\nRestriction checks look only at the ingredient text of each recipe. They do not cert"
+  },
+  {
+    "id": "R6-gluten-free-dinner",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "gluten",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'gluten'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: dinner; exclude classes: gluten), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. New England Dinner [1] (3 steps, 4 ingredients, source ar)\n2. After Dinner [2] (2 steps, 5 ingredients, source epi)\n3. Breakfast For Dinner [3] (8 steps, 7 ingredients, source ar)\n4. Hobo Dinner [4] (7 steps, 7 ingredients, source ar)\n5. Dinner Salad [5] (11 steps, 9 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as safe: packaged ingredients"
+  },
+  {
+    "id": "R7-exclude-an-ingredient",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "mushroom"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['mushroom']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: pasta; exclude ingredients: mushrooms), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. How to Cook Pasta [1] (5 steps, 1 ingredients, source fn) - matched: 1 pound pasta (your choice)\n2. Pasta and Garlic [2] (7 steps, 5 ingredients, source ar) - matched: 1 1/2 pounds pasta\n3. Awesome Easy Pasta [3] (9 steps, 7 ingredients, source ar) - matched: 8 ounces linguine pasta\n4. Fresh Pasta [4] (12 steps, 2 ingredients, source ar)\n5. Pasta Alla Gricia [5] (8 steps, 7 ingredients, source fn) - matched: "
+  },
+  {
+    "id": "R8-exclude-two-ingredients",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "onion",
+          "tomato"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['onion', 'tomato']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: salad; exclude ingredients: onion, tomato), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. 7-Layer Salad [1] (3 steps, 9 ingredients, source ar)\n2. Red Salad [2] (8 steps, 5 ingredients, source ar)\n3. Simple Potato Salad [3] (11 steps, 3 ingredients, source ar)\n4. Table Salad [4] (12 steps, 4 ingredients, source epi)\n5. Quick Christmas Salad [5] (2 steps, 5 ingredients, source ar)"
+  },
+  {
+    "id": "R9-grape-allergy-planner-correct",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "grape"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['grape']",
+        "turn": 1
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: fruit salad; exclude ingredients: grapes), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Grilled Fruit Salad [1] (4 steps, 5 ingredients, source ar)\n2. Tropical Fruit Salad [2] (3 steps, 4 ingredients, source epi)\n3. Seasonal Fruit Salad with Fresh Mint [3] (3 steps, 5 ingredients, source epi)\n4. Fresh Fruit Salad [4] (3 steps, 5 ingredients, source fn)\n5. Fresh Fruit Salad [5] (3 steps, 5 ingredients, source fn)"
+  },
+  {
+    "id": "R10-grape-allergy-planner-WRONG",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "The user's bug: the planner answered 'no egg' for 'allergic to grapes'. The code must drop the unsupported class and exclude grapes.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_word",
+        "arg": [
+          "grape"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['grape']",
+        "turn": 2
+      },
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "filter_absent",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "egg"
+        },
+        "ok": true,
+        "detail": "exclude_classes=None",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_ingredients",
+          "value": "grapes"
+        },
+        "ok": true,
+        "detail": "exclude_ingredients=['grapes']",
+        "turn": 2
+      },
+      {
+        "check": "trace_has",
+        "arg": {
+          "path": "allergen_guard.classes_dropped",
+          "value": [
+            "egg"
+          ]
+        },
+        "ok": true,
+        "detail": "trace[allergen_guard.classes_dropped]=['egg']",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: fruit salad; exclude ingredients: grapes), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Grilled Fruit Salad [1] (4 steps, 5 ingredients, source ar)\n2. Tropical Fruit Salad [2] (3 steps, 4 ingredients, source epi)\n3. Seasonal Fruit Salad with Fresh Mint [3] (3 steps, 5 ingredients, source epi)\n4. Fresh Fruit Salad [4] (3 steps, 5 ingredients, source fn)\n5. Fresh Fruit Salad [5] (3 steps, 5 ingredients, source fn)"
+  },
+  {
+    "id": "R11-planner-forgets-the-allergen",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "kiwi"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['kiwi']",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_ingredients",
+          "value": "kiwi"
+        },
+        "ok": true,
+        "detail": "exclude_ingredients=['kiwi']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: fruit salad; exclude ingredients: kiwi), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fruit Salad in Seconds [1] (2 steps, 4 ingredients, source ar)\n2. Fruit Salad [2] (9 steps, 6 ingredients, source fn)\n3. Grilled Fruit Salad [3] (4 steps, 5 ingredients, source ar)\n4. Tropical Fruit Salad [4] (3 steps, 4 ingredients, source epi)\n5. Minted Fruit Salad [5] (4 steps, 4 ingredients, source fn)"
+  },
+  {
+    "id": "R12-shrimp-allergy-planner-empty",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "shellfish",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'shellfish'",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "shellfish"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['shellfish']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: fried rice; exclude classes: shellfish), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Classic Fried Rice [1] (5 steps, 6 ingredients, source fn) - matched: 4 cups cold, cooked rice\n2. Breakfast Fried Rice [2] (7 steps, 8 ingredients, source ar) - matched: 2 cups uncooked white rice\n3. Classic Fried Rice [3] (5 steps, 6 ingredients, source ar) - matched: 4 cups cold, cooked rice\n4. Fried Rice (Sinangag) [4] (7 steps, 7 ingredients, source ar) - matched: 4 cups cold, cooked white rice\n5. Quick "
+  },
+  {
+    "id": "R13-lactose-intolerant-planner-WRONG",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 2
+      },
+      {
+        "check": "filter_absent",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "peanut"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['dairy']",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['dairy']",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: soup; exclude classes: dairy), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fruit Soup [1] (3 steps, 4 ingredients, source fn)\n2. Diet Soup [2] (3 steps, 8 ingredients, source ar)\n3. Soup with Carrot and Chicken [3] (3 steps, 5 ingredients, source fn)\n4. Vegetable Soup [4] (10 steps, 13 ingredients, source fn)\n5. Vegetable Soup [5] (10 steps, 13 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as safe: packaged ingredient"
+  },
+  {
+    "id": "R14-allow-a-class-again",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 1
+      },
+      {
+        "check": "filter_absent",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=None",
+        "turn": 2
+      },
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: penne), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Penne with Edible Flowers [1] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n2. Penne with Edible Flowers [2] (6 steps, 8 ingredients, source fn) - matched: 1 pound penne\n3. Penne with Herbed Ricotta [3] (10 steps, 7 ingredients, source epi) - matched: 1 pound penne\n4. Penne Pasta with Spinach and Bacon [4] (8 steps, 6 ingredients, source ar) - matched: 1 (12 ounce) package penne pasta\n5. Creamy Penne Pasta [5] (6 steps, 9 ing"
+  },
+  {
+    "id": "R15-three-step-refinement",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "Each follow-up is a diff on the filters; all of them must still hold at the end.",
+    "turns": 4,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 3
+      },
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 4
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 4
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 4
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 8,
+        "ok": true,
+        "detail": "steps=[8, 3, 8, 6, 6]",
+        "turn": 4
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "egg"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['egg', 'dairy']",
+        "turn": 4
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['egg', 'dairy']",
+        "turn": 4
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "query",
+          "value": "muffin"
+        },
+        "ok": true,
+        "detail": "query=muffin",
+        "turn": 4
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: muffin; exclude classes: egg, dairy; max steps: 8), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Applesauce Muffins [1] (8 steps, 13 ingredients, source ar)\n2. Peanut Butter-Banana English Muffin Sandwich [2] (3 steps, 5 ingredients, source fn) - matched: 1 light, whole-grain English muffin, toasted\n3. Honey Nut Fruit Muffins [3] (8 steps, 10 ingredients, source ar)\n4. Rice Zucchini Muffins [4] (6 steps, 11 ingredients, source ar)\n5. Aloha English Muffin Sandwich [5] (6 steps, 4 ingredients, "
+  },
+  {
+    "id": "R16-new-topic-forgets-old-filters",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "filter_absent",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "peanut"
+        },
+        "ok": true,
+        "detail": "exclude_classes=None",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "query",
+          "value": "soup"
+        },
+        "ok": true,
+        "detail": "query=soup",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: soup), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. My Favorite Soup [1] (8 steps, 7 ingredients, source ar)\n2. Potato Soup [2] (4 steps, 5 ingredients, source ar)\n3. Fruit Soup [3] (3 steps, 4 ingredients, source fn)\n4. Diet Soup [4] (3 steps, 8 ingredients, source ar)\n5. A Nice Vegetable Soup [5] (24 steps, 13 ingredients, source epi)"
+  },
+  {
+    "id": "R17-i-am-vegetarian",
+    "task": 1,
+    "category": "restrictions",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'vegetarian'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: dinner; exclude classes: vegetarian), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Asparagus for Dinner [1] (10 steps, 1 ingredients, source fn)\n2. After Dinner [2] (2 steps, 5 ingredients, source epi)\n3. Sunday Dinner Rolls [3] (11 steps, 9 ingredients, source ar)\n4. Soft Dinner Rolls [4] (8 steps, 8 ingredients, source ar)\n5. Sweet Dinner Rolls [5] (11 steps, 9 ingredients, source ar)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as safe: p"
+  },
+  {
+    "id": "R18-lenient-then-still-no-definite-egg",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "restriction_mode",
+          "value": "lenient"
+        },
+        "ok": true,
+        "detail": "restriction_mode=lenient",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: pancakes; exclude classes: egg), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Blended Berry Pancakes [1] (6 steps, 5 ingredients, source ar) - uncertain: may contain egg\n2. Ricotta Breakfast Pancakes [2] (6 steps, 3 ingredients, source ar) - uncertain: may contain egg\n3. Sweet Potato Pancakes [3] (11 steps, 5 ingredients, source fn) - uncertain: may contain egg\n4. Healthy Freezer Pancakes [4] (8 steps, 7 ingredients, source ar) - uncertain: may contain egg\n5. Boxty Pancakes [5] (8 steps, 7 in"
+  },
+  {
+    "id": "R19-severe-allergy-wording",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "Never claim safety; always say the check is only on the ingredient text.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "do not certify",
+        "ok": true,
+        "detail": "looking for 'do not certify'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookies; exclude classes: peanut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Black and White Cookies [1] (19 steps, 4 ingredients, source fn)\n2. Cookies and Cream [2] (6 steps, 7 ingredients, source fn)\n3. Cookies and Cream [3] (15 steps, 8 ingredients, source fn)\n4. Cookie Cutter Cookies [4] (17 steps, 6 ingredients, source fn)\n5. Shortbread Cookies [5] (34 steps, 4 ingredients, source epi)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as"
+  },
+  {
+    "id": "R20-allergy-and-negation-phrasing",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "Several phrasings of the same constraint, all missed by the scripted planner: the guards must catch every one.",
+    "turns": 3,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "tree_nut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'tree_nut'",
+        "turn": 2
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "banana"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['banana']",
+        "turn": 3
+      },
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 3
+      },
+      {
+        "check": "no_violations",
+        "arg": "tree_nut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'tree_nut'",
+        "turn": 3
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "banana"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['banana']",
+        "turn": 3
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: dessert; exclude ingredients: bananas; exclude classes: tree_nut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fresh Fruit Dessert [1] (2 steps, 3 ingredients, source fn)\n2. A Peachy Dessert [2] (5 steps, 3 ingredients, source fn)\n3. Layered Fruit Dessert [3] (6 steps, 5 ingredients, source fn)\n4. Dessert Crepes [4] (6 steps, 6 ingredients, source ar)\n5. Parsnip and Apple Dessert [5] (3 steps, 6 ingredients, source ar)\nRestriction checks look only at the ingredient text of each recipe. They "
+  },
+  {
+    "id": "V1-veg-cake-has-no-egg",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "Veg mode now also leaves out egg (the user's rule): cake is the hardest case.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "8 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'egg'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'vegetarian'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 8 most relevant recipes (query: cake; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Elegant Cake Fudge [1] (9 steps, 7 ingredients, source ar)\n2. Super Duper Easy Apple Cake [2] (5 steps, 4 ingredients, source ar)\n3. Soda Cake [3] (2 steps, 2 ingredients, source fn)\n4. My Sister Maria's Easy Apple Cake and Ice Cream [4] (7 steps, 6 ingredients, source fn)\n5. 100% Fruit \"Cake\" [5] (9 steps, 4 ingredients, source ar)\n6. Dump Cake II [6] (5 steps, 4 ingredients, source ar)\n7. Easy Upside Down Cake [7] (24 step"
+  },
+  {
+    "id": "V2-veg-and-dairy-free",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "8 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'vegetarian'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'egg'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'dairy'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 8 most relevant recipes (query: soup; exclude classes: dairy; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fruit Soup [1] (3 steps, 4 ingredients, source fn)\n2. Vegetable Soup [2] (10 steps, 13 ingredients, source fn)\n3. Vegetable Soup [3] (10 steps, 13 ingredients, source fn)\n4. Vegetable Soup [4] (10 steps, 13 ingredients, source fn)\n5. Watermelon Soup [5] (2 steps, 4 ingredients, source ar)\n6. Green Summer Soup [6] (6 steps, 3 ingredients, source epi)\n7. Melon Soup [7] (10 steps, 6 ingredients, source f"
+  },
+  {
+    "id": "V3-veg-with-step-limit",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "8 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 5,
+        "ok": true,
+        "detail": "steps=[2, 3, 5, 2, 1, 2, 5, 2]",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 8 recipes break 'vegetarian'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 8 most relevant recipes (query: dinner; max steps: 5; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. After Dinner [1] (2 steps, 5 ingredients, source epi)\n2. Dinner Rolls with Chive Butter [2] (3 steps, 4 ingredients, source fn) - matched: 4 whole-wheat dinner rolls\n3. After Dinner Mints [3] (5 steps, 3 ingredients, source fn)\n4. After Supper [4] (2 steps, 4 ingredients, source epi)\n5. Title [5] (1 steps, 3 ingredients, source fn)\n6. Fruit Salad for Easter Sunday [6] (2 steps, 8 ingredients, source ar)\n7. Le"
+  },
+  {
+    "id": "V4-veg-asks-for-chicken",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "A non-veg request in veg mode is not searched; the user is offered the switch.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "veg_blocked",
+        "arg": {},
+        "ok": true,
+        "detail": "status=needs_input suggest=turn_off_vegetarian sources=0",
+        "turn": 1
+      },
+      {
+        "check": "filter_absent",
+        "arg": {
+          "key": "query"
+        },
+        "ok": true,
+        "detail": "query=None",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Vegetarian only is on, and it leaves out meat, fish and egg, so I will not search for chicken while it is on. Turn the switch off to see these recipes."
+  },
+  {
+    "id": "V5-veg-asks-for-egg-dish",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "veg_blocked",
+        "arg": {},
+        "ok": true,
+        "detail": "status=needs_input suggest=turn_off_vegetarian sources=0",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Vegetarian only is on, and it leaves out meat, fish and egg, so I will not search for egg while it is on. Turn the switch off to see these recipes."
+  },
+  {
+    "id": "V6-veg-asks-for-bacon-as-an-ingredient",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "veg_blocked",
+        "arg": {},
+        "ok": true,
+        "detail": "status=needs_input suggest=turn_off_vegetarian sources=0",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Vegetarian only is on, and it leaves out meat, fish and egg, so I will not search for bacon while it is on. Turn the switch off to see these recipes."
+  },
+  {
+    "id": "V7-blocked-then-switch-off",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "veg_blocked",
+        "arg": {},
+        "ok": true,
+        "detail": "status=needs_input suggest=turn_off_vegetarian sources=0",
+        "turn": 1
+      },
+      {
+        "check": "min_sources",
+        "arg": 1,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "suggest",
+        "arg": null,
+        "ok": true,
+        "detail": "suggest=None",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: mutton biryani), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Chef Biju's Simple Biryani [1] (7 steps, 8 ingredients, source fn)\n2. Vegetable Biryani [2] (21 steps, 28 ingredients, source fn)\n3. Mum's Mutton Curry [3] (11 steps, 15 ingredients, source ar) - matched: 2 pounds mutton, cubed\n4. Veg Biryani [4] (10 steps, 14 ingredients, source ar) - matched: 1 teaspoon biryani masala powder\n5. Vegetable Biryani (Tehri) [5] (14 steps, 15 ingredients, source ar)"
+  },
+  {
+    "id": "V8-veg-does-not-block-cake",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "A dish NAME that merely contains egg or butter is not a non-veg request.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "suggest",
+        "arg": null,
+        "ok": true,
+        "detail": "suggest=None",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: banana cake; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Wonderful Banana Cake [1] (7 steps, 3 ingredients, source ar) - matched: 2 very ripe bananas, mashed\n2. Banana Upside-Down Cake [2] (8 steps, 5 ingredients, source ar) - matched: 4 bananas, sliced\n3. Amazingly Easy Banana Cake [3] (5 steps, 4 ingredients, source ar) - matched: 3 over-ripe bananas, mashed\n4. Tropical Island Banana Cake [4] (20 steps, 10 ingredients, source fn) - matched: 1 ripe banana, mashed\n5. Butter"
+  },
+  {
+    "id": "V9-veg-count",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "vegetarian only",
+        "ok": true,
+        "detail": "looking for 'vegetarian only'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "22 of 122935 recipes (0.0%) match (include ingredients: paneer; vegetarian only). For reference, that is 0.0% of all 124647 recipes."
+  },
+  {
+    "id": "V10-veg-top-ingredients",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "chicken",
+        "ok": true,
+        "detail": "'chicken' must not appear",
+        "turn": 1
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "beef",
+        "ok": true,
+        "detail": "'beef' must not appear",
+        "turn": 1
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "bacon",
+        "ok": true,
+        "detail": "'bacon' must not appear",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Most common ingredients (vegetarian only):\n1. salt: 16881 recipes (42.8%)\n2. sugar: 10010 recipes (25.4%)\n3. olive oil: 8965 recipes (22.7%)\n4. black pepper: 8849 recipes (22.4%)\n5. butter: 8489 recipes (21.5%)\n6. water: 6968 recipes (17.7%)\n7. garlic: 6573 recipes (16.7%)\n8. lemon juice: 3955 recipes (10.0%)\n9. onion: 3858 recipes (9.8%)\n10. all purpose flour: 3666 recipes (9.3%)\n11. tomato: 3205 recipes (8.1%)\n12. milk: 3022 recipes (7.7%)\n13. brown sugar: 3017 recipes (7.7%)\n14. cinnamon: 2978 recipes (7.6%)\n15. vanilla extract: 2900 recipes (7.4%)"
+  },
+  {
+    "id": "V11-veg-match",
+    "task": 2,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'vegetarian'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (vegetarian only; available: rice, lentils and spinach):\n1. Egyptian Lentils and Rice (Koushry) [1] (10 steps): uses 2 of your 3; still needed: 2 teaspoons butter, 1 large onion, finely diced. Score 1.50 = 2 used - 0.25 x 2 still needed. Uses 2 of your 3 ingredients, still needs 2 more, 10 steps by the sentences rule.\n2. Egyptian Lentils and Rice (Koushry) [2] (10 steps): uses 2 of your 3; still needed: 2 teaspoons butter, 1 large onion, finely diced. Score 1.50 = 2 used - 0.25 x 2 still needed. Uses 2 of your 3 ingredients, still needs 2 more, 10"
+  },
+  {
+    "id": "V12-switch-on-mid-conversation",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "no_violations",
+        "arg": "vegetarian",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'vegetarian'",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "vegetarian_only",
+          "value": true
+        },
+        "ok": true,
+        "detail": "vegetarian_only=True",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "query",
+          "value": "chili"
+        },
+        "ok": true,
+        "detail": "query=chili",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: chili; exclude classes: vegetarian; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Chili-tini [1] (6 steps, 4 ingredients, source fn)\n2. Easy Chili [2] (4 steps, 11 ingredients, source ar)\n3. Chili Sauce [3] (6 steps, 5 ingredients, source fn) - matched: 1 cup/250 ml fresh chili peppers\n4. Chili with Quinoa [4] (5 steps, 12 ingredients, source ar)\n5. Chili Con Queso Dip II [5] (3 steps, 3 ingredients, source ar)\nRestriction checks look only at the ingredient text of each recip"
+  },
+  {
+    "id": "T1a-percent-dairy-free",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      },
+      {
+        "check": "denominator_is_complete_recipes",
+        "arg": {},
+        "ok": true,
+        "detail": "denominator 122935, independent SQL says 122935",
+        "turn": 1
+      },
+      {
+        "check": "text_regex",
+        "arg": "\\d+ of \\d+ recipes \\(\\d+\\.\\d%\\)",
+        "ok": true,
+        "detail": "44483 of 122935 recipes (36.2%)",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "44483 of 122935 recipes (36.2%) match (exclude classes: dairy). For reference, that is 35.7% of all 124647 recipes."
+  },
+  {
+    "id": "T1b-include-and-exclude-count",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      },
+      {
+        "check": "text_regex",
+        "arg": "\\d+ of \\d+ recipes",
+        "ok": true,
+        "detail": "5379 of 122935 recipes",
+        "turn": 1
+      },
+      {
+        "check": "denominator_is_complete_recipes",
+        "arg": {},
+        "ok": true,
+        "detail": "denominator 122935, independent SQL says 122935",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5379 of 122935 recipes (4.4%) match (include ingredients: tomato; exclude ingredients: onion). For reference, that is 4.3% of all 124647 recipes."
+  },
+  {
+    "id": "T1c-top-ingredients-in-chicken-recipes",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      },
+      {
+        "check": "text_regex",
+        "arg": "1\\. ",
+        "ok": true,
+        "detail": "1. ",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Most common ingredients (include ingredients: chicken):\n1. salt: 2052 recipes (70.3%)\n2. black pepper: 1718 recipes (58.9%)\n3. garlic: 1342 recipes (46.0%)\n4. onion: 1187 recipes (40.7%)\n5. olive oil: 947 recipes (32.4%)\n6. chicken broth: 696 recipes (23.8%)\n7. butter: 685 recipes (23.5%)\n8. carrot: 505 recipes (17.3%)\n9. all purpose flour: 492 recipes (16.9%)\n10. water: 464 recipes (15.9%)"
+  },
+  {
+    "id": "T1d-ingredient-counts-by-source",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "Allrecipes",
+        "ok": true,
+        "detail": "looking for 'Allrecipes'",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "Epicurious",
+        "ok": true,
+        "detail": "looking for 'Epicurious'",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "Food Network",
+        "ok": true,
+        "detail": "looking for 'Food Network'",
+        "turn": 1
+      },
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Ingredient lines per recipe (no filters):\n- Allrecipes: 39522 recipes, average 9.07 ingredient lines, median 9, from 1 to 32 (90th percentile 14)\n- Epicurious: 25260 recipes, average 9.76 ingredient lines, median 9, from 1 to 51 (90th percentile 16)\n- Food Network: 58153 recipes, average 11.49 ingredient lines, median 10, from 1 to 82 (90th percentile 19)"
+  },
+  {
+    "id": "T1e-fewest-steps-spinach-egg-free",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_ascending",
+        "arg": {},
+        "ok": true,
+        "detail": "steps=[1, 1, 1, 1, 1]",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'egg'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Recipes with the fewest steps (include ingredients: spinach; exclude classes: egg):\n1. Lemon Coconut Cleanser [1]: 1 steps (7 ingredients)\n2. Creamy Green Drink [2]: 1 steps (6 ingredients)\n3. Spinach Power [3]: 1 steps (9 ingredients)\n4. Spinach and Garlic Scape Pesto [4]: 1 steps (6 ingredients)\n5. Lean and Green [5]: 1 steps (8 ingredients)\nNote: 26 recipes tie at the cut-off; ties on sentences are broken by the other step measure (paragraphs), then by recipe ID (alphabetical)"
+  },
+  {
+    "id": "T1f-step-limit-dinner",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 3,
+        "ok": true,
+        "detail": "steps=[2, 3, 3, 3, 3]",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: dinner; max steps: 3), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. After Dinner [1] (2 steps, 5 ingredients, source epi)\n2. New England Dinner [2] (3 steps, 4 ingredients, source ar)\n3. Dinner Rolls with Chive Butter [3] (3 steps, 4 ingredients, source fn) - matched: 4 whole-wheat dinner rolls\n4. Second Time Around Salmon and Rice Dinner [4] (3 steps, 6 ingredients, source fn)\n5. Picnic Loaf Dinner Sandwich [5] (3 steps, 9 ingredients, source fn)"
+  },
+  {
+    "id": "T1g-count-a-dish",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "\\d+ of \\d+ recipes",
+        "ok": true,
+        "detail": "261 of 122935 recipes",
+        "turn": 1
+      },
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "261 of 122935 recipes (0.2%) match (query: banana bread). The match for the dish words is a keyword match on title and ingredients."
+  },
+  {
+    "id": "T1h-count-keeps-the-filters",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['dairy']",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "query",
+          "value": "penne"
+        },
+        "ok": true,
+        "detail": "query=penne",
+        "turn": 2
+      },
+      {
+        "check": "text_regex",
+        "arg": "\\d+ of \\d+ recipes",
+        "ok": true,
+        "detail": "68 of 122935 recipes",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "68 of 122935 recipes (0.1%) match (query: penne; exclude classes: dairy). The match for the dish words is a keyword match on title and ingredients."
+  },
+  {
+    "id": "T1i-most-steps",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "most steps",
+        "ok": true,
+        "detail": "looking for 'most steps'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Recipes with the most steps (include ingredients: chocolate):\n1. Fondant-Covered Wedding Cake with Raspberries and Chocolate [1]: 266 steps (21 ingredients)\n2. Boysenberry-Grand Marnier Ice Cream Bonbons [2]: 166 steps (17 ingredients)\n3. Irish Cream Chocolate Mousse Cake [3]: 155 steps (5 ingredients)\n4. Spiced Chocolate Torte Wrapped in Chocolate Ribbons [4]: 149 steps (25 ingredients)\n5. Vanilla-Scented Pear Strudel with Hazelnuts and Chocolate Sauce [5]: 144 steps (17 ingredients)"
+  },
+  {
+    "id": "T1j-percentage-garlic",
+    "task": 1,
+    "category": "statistics",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "count_close",
+        "arg": {
+          "words": [
+            "garlic"
+          ],
+          "low": 0.7,
+          "high": 1.0
+        },
+        "ok": true,
+        "detail": "ours 32740, plain-text count 37339, ratio 0.88 (allowed 0.7-1.0)",
+        "turn": 1
+      },
+      {
+        "check": "denominator_is_complete_recipes",
+        "arg": {},
+        "ok": true,
+        "detail": "denominator 122935, independent SQL says 122935",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "32740 of 122935 recipes (26.6%) match (include ingredients: garlic). For reference, that is 26.3% of all 124647 recipes."
+  },
+  {
+    "id": "M4-pasta-and-tomatoes",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "still needed",
+        "ok": true,
+        "detail": "looking for 'still needed'",
+        "turn": 1
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "5 cited, 0 not in the dataset",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (available: pasta and tomatoes):\n1. Danny's Macaroni and Cheese [1] (5 steps): uses 2 of your 2; still needed: 1 (8 ounce) package shredded sharp Cheddar cheese. Score 1.75 = 2 used - 0.25 x 1 still needed. Uses 2 of your 2 ingredients, still needs 1 more, 5 steps by the sentences rule.\n2. Italian Tomato Pasta Salad [2] (4 steps): uses 2 of your 2; still needed: 1/2 cup zesty Italian dressing, 1/4 cup grated Parmesan cheese. Score 1.50 = 2 used - 0.25 x 2 still needed. Uses 2 of your 2 ingredients, still needs 2 more, 4 steps by the sentences rule"
+  },
+  {
+    "id": "M5-match-then-exclude-an-ingredient",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "no_word",
+        "arg": [
+          "garlic"
+        ],
+        "ok": true,
+        "detail": "0 of 5 recipes contain ['garlic']",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (exclude ingredients: garlic; available: chicken, rice and onions):\n1. Mother-in-law Chicken Soup [1] (9 steps): uses 3 of your 3; still needed: 2 (14.5 ounce) cans chicken broth, 1 stalk celery, 1 carrot. Score 2.25 = 3 used - 0.25 x 3 still needed. Uses 3 of your 3 ingredients, still needs 3 more, 9 steps by the sentences rule.\n2. Chicken, Mushroom and Rice [2] (13 steps): uses 3 of your 3; still needed: 1 cup white wine, 1 can cream of mushroom soup, 2 cups sliced mushrooms. Score 2.25 = 3 used - 0.25 x 3 still needed. Uses 3 of your 3 ingredie"
+  },
+  {
+    "id": "M6-match-then-tighten-steps",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 1,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "steps_at_most",
+        "arg": 4,
+        "ok": true,
+        "detail": "steps=[4, 2, 4, 4, 4]",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (max steps: 4; available: eggs, flour and milk):\n1. Simple Yorkshire Pudding [1] (4 steps): uses 3 of your 3; still needed: nothing. Score 3.00 = 3 used - 0.25 x 0 still needed. Uses 3 of your 3 ingredients, still needs 0 more, 4 steps by the sentences rule.\n2. Sour Cream Dough for Pierogi [2] (2 steps): uses 3 of your 3; still needed: 1/2 cup sour cream. Score 2.75 = 3 used - 0.25 x 1 still needed. Uses 3 of your 3 ingredients, still needs 1 more, 2 steps by the sentences rule. Ranked below #1 because its score is lower (2.75 vs 3.00).\n3. Swedish"
+  },
+  {
+    "id": "M7-unrecognised-ingredient-is-reported",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "did not recognise",
+        "ok": true,
+        "detail": "looking for 'did not recognise'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (available: flurbleberries and rice):\n1. QA [1] (1 steps): uses 1 of your 1; still needed: nothing. Score 1.00 = 1 used - 0.25 x 0 still needed. Uses 1 of your 1 ingredients, still needs 0 more, 1 steps by the sentences rule.\n2. Rice Milk [2] (2 steps): uses 1 of your 1; still needed: nothing. Score 1.00 = 1 used - 0.25 x 0 still needed. Uses 1 of your 1 ingredients, still needs 0 more, 2 steps by the sentences rule. Same score as #1, but it has more steps (2 vs 1).\n3. Toasted Rice Powder [3] (3 steps): uses 1 of your 1; still needed: nothing. Sco"
+  },
+  {
+    "id": "M8-match-with-nothing-to-match",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Tell me which ingredients you have, for example: eggs, onions, tomatoes and rice."
+  },
+  {
+    "id": "M9-match-with-an-allergy",
+    "task": 2,
+    "category": "matching",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 1,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 1
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "dairy"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['dairy']",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "5 recipes fit your ingredients and constraints (exclude ingredients: dairy; exclude classes: dairy; available: eggs and flour):\n1. Manicotti Shells [1] (3 steps): uses 2 of your 2; still needed: nothing. Score 2.00 = 2 used - 0.25 x 0 still needed. Uses 2 of your 2 ingredients, still needs 0 more, 3 steps by the sentences rule.\n2. Spaetzle II [2] (3 steps): uses 2 of your 2; still needed: nothing. Score 2.00 = 2 used - 0.25 x 0 still needed. Uses 2 of your 2 ingredients, still needs 0 more, 3 steps by the sentences rule. Tied with #1 on every preference; ordered by recipe ID.\n3. Grandma Nancy'"
+  },
+  {
+    "id": "S4-replace-milk-in-pancakes",
+    "task": 3,
+    "category": "substitution",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "evidence is (SUPPORTED|WEAK|CONFLICTING|NONE)",
+        "ok": true,
+        "detail": "evidence is CONFLICTING",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "10 cited, 0 not in the dataset",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Pancakes [1] (the recipe being adapted)\nNo supported adaptation. milk: conflicting (leads only, no replacement applied; the line was removed).\n- milk: evidence is CONFLICTING. the 226 closest recipes without it use many different things; the most common, almond milk, appears in only 4% (35 candidate(s) dropped because they are the same ingredient family; 14 candidate(s) dropped because they cannot do the same job (role check)) Leads: almond milk (variant, 10 similar recipes; 6 list it as an alternative) [2][3][4]; coconut milk (variant, 7 similar recipes) [5][6][7]; soy milk (variant, 4 sim"
+  },
+  {
+    "id": "S5-swap-without-a-recipe",
+    "task": 3,
+    "category": "substitution",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Which recipe do you mean? Search for one first, or tell me its name."
+  },
+  {
+    "id": "S6-swap-without-a-target",
+    "task": 3,
+    "category": "substitution",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "What should I remove or avoid in that recipe (for example egg, or dairy)?"
+  },
+  {
+    "id": "S7-swap-then-scale",
+    "task": 3,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 3,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "scaled by 2x",
+        "ok": true,
+        "detail": "looking for 'scaled by 2x'",
+        "turn": 3
+      },
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 2
+        },
+        "ok": true,
+        "detail": "7 amounts checked, all correct",
+        "turn": 3
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (scaled by 2x)\nIngredients (changed amounts in bold):\n- **4 cups all-purpose flour**\n- **2 teaspoons baking soda**\n- **1/2 teaspoon salt**\n- **1 cup butter**\n- **1 1/2 cups brown sugar**\n- **4 eggs, beaten**\n- **4 2/3 cups mashed overripe bananas**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nPreheat oven to 350 degrees F (175 degrees C). Lightly grease a 9x5 inch loaf pan.\nIn a large bowl, combine flour, baking soda and salt. In a separate bo"
+  },
+  {
+    "id": "S8-removed-line-is-shown",
+    "task": 3,
+    "category": "substitution",
+    "why": "The user's second bug: a removed ingredient must be marked, never vanish.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "removed_line",
+        "arg": "egg",
+        "ok": true,
+        "detail": "removed lines: ['2 eggs, beaten']",
+        "turn": 2
+      },
+      {
+        "check": "adapted_view",
+        "arg": {},
+        "ok": true,
+        "detail": "adapted sheet present",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "Open the adapted recipe",
+        "ok": true,
+        "detail": "looking for 'Open the adapted recipe'",
+        "turn": 2
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "Revised instructions",
+        "ok": true,
+        "detail": "'Revised instructions' must not appear",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. egg: weak (leads only, no replacement applied; the line was removed).\n- egg: evidence is WEAK. only 1 of the 4 closest recipes without it use honey (5 candidate(s) dropped because they are the same ingredient family; 3 candidate(s) dropped because they cannot do the same job (role check)) Leads: honey (indirect, 1 similar recipes) [2][3]; applesauce (indirect, 1 similar recipes) [4]; yogurt (indirect, 1 similar recipes) [3]. The line is removed, with no replace"
+  },
+  {
+    "id": "S9-weak-evidence-adds-labelled-web-results",
+    "task": 3,
+    "category": "web-search",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "web_labelled",
+        "arg": {},
+        "ok": true,
+        "detail": "1 web hits",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "4 cited, 0 not in the dataset",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. egg: weak (leads only, no replacement applied; the line was removed).\n- egg: evidence is WEAK. only 1 of the 4 closest recipes without it use honey (5 candidate(s) dropped because they are the same ingredient family; 3 candidate(s) dropped because they cannot do the same job (role check)) Leads: honey (indirect, 1 similar recipes) [2][3]; applesauce (indirect, 1 similar recipes) [4]; yogurt (indirect, 1 similar recipes) [3]. The line is removed, with no replace"
+  },
+  {
+    "id": "S10-supported-evidence-does-not-search-the-web",
+    "task": 3,
+    "category": "web-search",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "evidence is SUPPORTED",
+        "ok": true,
+        "detail": "evidence is SUPPORTED",
+        "turn": 2
+      },
+      {
+        "check": "no_web",
+        "arg": {},
+        "ok": true,
+        "detail": "0 web hits",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Easy Chocolate Chip Cookies [1] (the recipe being adapted)\nAdapted, every change is supported by similar recipes. butter: supported -> vegetable oil.\n- butter: evidence is SUPPORTED. 8 of the 23 closest recipes without it use vegetable oil (35%) against 0% of those that keep it (14 candidate(s) dropped because they are the same ingredient family; 5 candidate(s) dropped because they cannot do the same job (role check)) Leads: vegetable oil (variant, 8 similar recipes; 18 list it as an alternative) [2][3][4]; margarine (variant, 3 similar recipes; 441 list it as an alternative) [5][6][7]; oli"
+  },
+  {
+    "id": "S11-two-ingredients-at-once",
+    "task": 3,
+    "category": "substitution",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_regex",
+        "arg": "- butter: evidence is",
+        "ok": true,
+        "detail": "- butter: evidence is",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "17 cited, 0 not in the dataset",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Shortbread Cookies [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. sugar: weak -> brown sugar; butter: supported -> egg.\n- sugar: evidence is WEAK. only 10 of the 41 closest recipes without it use brown sugar and 15 list it as an alternative (6 candidate(s) dropped because they cannot do the same job (role check)) Leads: brown sugar (variant, 10 similar recipes; 15 list it as an alternative) [2][3][4]; egg (variant, 4 similar recipes) [5][6][7]; maple syrup (indirect, 1 similar recipes; 1 list it as an alternative) [8][9][10]. "
+  },
+  {
+    "id": "S12-make-a-meat-dish-vegetarian",
+    "task": 3,
+    "category": "substitution",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "6 cited, 0 not in the dataset",
+        "turn": 2
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "adapted",
+        "ok": true,
+        "detail": "looking for 'adapted'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Chicken Noodle Soup [1] (the recipe being adapted)\nPartly adapted: at least one change rests on weak evidence or could not be made. chicken broth: weak -> vegetable broth; chicken breast: weak (leads only, nothing applied).\n- chicken broth: evidence is WEAK. only 2 of the 3 similar recipes without it use vegetable broth and 246 list it as an alternative (12 candidate(s) dropped because they fall under the excluded class; 9 candidate(s) dropped because they are the same ingredient family; 3 candidate(s) dropped because they cannot do the same job (role check)) Leads: vegetable broth (indirec"
+  },
+  {
+    "id": "S13-swap-uses-the-opened-recipe",
+    "task": 3,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 3,
+    "passed": true,
+    "checks": [
+      {
+        "check": "opened_ref",
+        "arg": 2,
+        "ok": true,
+        "detail": "opened PNtSV40YPColz8jdUQLNHRYE3h13W92, list item 2 was PNtSV40YPColz8jdUQLNHRYE3h13W92",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "1 cited, 0 not in the dataset",
+        "turn": 3
+      },
+      {
+        "check": "same_recipe_as_previous",
+        "arg": {},
+        "ok": true,
+        "detail": "PNtSV40YPColz8jdUQLNHRYE3h13W92 vs previous PNtSV40YPColz8jdUQLNHRYE3h13W92",
+        "turn": 3
+      }
+    ],
+    "answer_excerpt": "1. Pancakes [1] (the recipe being adapted)\nNo ingredient line of this recipe matches the request, so nothing needed to change.\nNo change was applied, so the recipe stays exactly as it is.\nRestriction checks read only the ingredient and instruction text of the adapted recipe; they do not certify it as safe (packaged ingredients can contain allergens that the text does not mention). Expected effects are general culinary knowledge, not outcomes verified in the dataset."
+  },
+  {
+    "id": "X2-half-a-recipe",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 0.5
+        },
+        "ok": true,
+        "detail": "7 amounts checked, all correct",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "NOT scaled",
+        "ok": true,
+        "detail": "looking for 'NOT scaled'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (scaled by 0.5x)\nIngredients (changed amounts in bold):\n- **1 cup all-purpose flour**\n- **1/2 teaspoon baking soda**\n- **1/8 teaspoon salt**\n- **1/4 cup butter**\n- **3/8 cup brown sugar**\n- **1 egg, beaten**\n- **1 1/8 cups mashed overripe bananas**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nPreheat oven to 350 degrees F (175 degrees C). Lightly grease a 9x5 inch loaf pan.\nIn a large bowl, combine flour, baking soda and salt. In a separate bo"
+  },
+  {
+    "id": "X3-servings-from-and-to",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "from 4 to 6 servings",
+        "ok": true,
+        "detail": "looking for 'from 4 to 6 servings'",
+        "turn": 2
+      },
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 1.5
+        },
+        "ok": true,
+        "detail": "3 amounts checked, all correct",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Pancakes [1] (scaled by 1.5x (from 4 to 6 servings))\nIngredients (changed amounts in bold):\n- **3 cups Original Bisquick mix**\n- **1 1/2 cups milk**\n- **3 eggs**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. Check the instructions for amounts before you cook.\nInstructions (unchanged):\nHeat griddle or skillet over medium-high heat or electric griddle to 375 degrees F; grease with cooking spray, vegetable oil or shortening. (Surface is ready when a few drops of water sprinkled on it dance and disappear.)\nStir all ingredients until blended. Pour by sl"
+  },
+  {
+    "id": "X4-servings-without-a-base",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "does not say how many people",
+        "ok": true,
+        "detail": "looking for 'does not say how many people'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The dataset does not say how many people a recipe serves, so I scale by a factor. Say how many it serves now (for example 'it serves 4, make it for 6'), or give a factor such as double, half or 1.5 times."
+  },
+  {
+    "id": "X5-absurd-factor",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "Please pick a factor between 0.1 and 20 times."
+  },
+  {
+    "id": "X6-triple",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 3
+        },
+        "ok": true,
+        "detail": "5 amounts checked, all correct",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Potato Soup [1] (scaled by 3x)\nIngredients (changed amounts in bold):\n- **3 tablespoons butter**\n- **3 large onion, chopped**\n- **18 cups mashed cooked potatoes**\n- **6 (14.5 ounce) cans chicken broth**\n- **1 1/2 cups milk**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nIn a medium soup pot melt butter over low heat, and saute onions until tender. Stir in the mashed potatoes, and then slowly add the chicken broth. Stirring, add milk (use more or less to achieve desire"
+  },
+  {
+    "id": "X7-planner-drops-the-factor",
+    "task": 3,
+    "category": "scaling",
+    "why": "Fault injection: the scripted planner forgets the number; the guard re-reads the message.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 2
+        },
+        "ok": true,
+        "detail": "7 amounts checked, all correct",
+        "turn": 2
+      },
+      {
+        "check": "trace_has",
+        "arg": {
+          "path": "scale_added_by_guard.scale_factor",
+          "value": 2.0
+        },
+        "ok": true,
+        "detail": "trace[scale_added_by_guard.scale_factor]=2.0",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. My Favorite Soup [1] (scaled by 2x)\nIngredients (changed amounts in bold):\n- **2 (8 ounce) packages cream cheese**\n- **1 cup butter**\n- **2 cups chopped green onions**\n- **4 (10.75 ounce) cans condensed cream of potato soup**\n- **2 (15.25 ounce) cans whole kernel corn**\n- **2 pounds cooked shrimp**\n- **1 cup milk, or as needed**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nIn a soup pot, slowly melt cream cheese and butter over low heat. Add green onions and simmer 1"
+  },
+  {
+    "id": "X8-scale-without-a-recipe",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Which recipe do you mean? Search for one first, or tell me its name."
+  },
+  {
+    "id": "X9-scale-then-salt-low",
+    "task": 3,
+    "category": "scaling",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 2
+        },
+        "ok": true,
+        "detail": "7 amounts checked, all correct",
+        "turn": 2
+      },
+      {
+        "check": "taste_lines_match",
+        "arg": {
+          "axes": [
+            "salt"
+          ],
+          "allow_missed": 1
+        },
+        "ok": true,
+        "detail": "changed 0 lines (0 not of axis ['salt']: []); 0 axis lines missed: []",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. My Favorite Soup [1] (scaled by 2x)\nIngredients (changed amounts in bold):\n- **2 (8 ounce) packages cream cheese**\n- **1 cup butter**\n- **2 cups chopped green onions**\n- **4 (10.75 ounce) cans condensed cream of potato soup**\n- **2 (15.25 ounce) cans whole kernel corn**\n- **2 pounds cooked shrimp**\n- **1 cup milk, or as needed**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nIn a soup pot, slowly melt cream cheese and butter over low heat. Add green onions and simmer 1"
+  },
+  {
+    "id": "T2-low-spice-chili",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "taste_lines_match",
+        "arg": {
+          "axes": [
+            "spice"
+          ],
+          "allow_missed": 1
+        },
+        "ok": true,
+        "detail": "changed 1 lines (0 not of axis ['spice']: []); 0 axis lines missed: []",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "not from the dataset",
+        "ok": true,
+        "detail": "looking for 'not from the dataset'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Thirty Minute Chili [1] (source ar, 4 steps)\nIngredients:\n- 1 pound ground beef\n- 1 (14.5 ounce) can canned diced tomatoes\n- 1 (15 ounce) can kidney beans, drained\n- 1 (1.25 ounce) package chili seasoning mix\nInstructions:\nCrumble the beef into a large skillet over medium-high heat. Cook and stir until evenly browned. Drain off grease, and mix in the tomatoes, kidney beans and chili seasoning mix. Reduce heat to medium, and simmer for 15 minutes.\nAdjusted to your taste (spice low):\n- 1 (1.25 ounce) package chili seasoning mix: Reduce by about 50%, about 1/2 (1.25 ounce) package chili season"
+  },
+  {
+    "id": "T3-high-sweet-brownies",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "taste_lines_match",
+        "arg": {
+          "axes": [
+            "sweet"
+          ],
+          "allow_missed": 1
+        },
+        "ok": true,
+        "detail": "changed 1 lines (0 not of axis ['sweet']: []); 0 axis lines missed: []",
+        "turn": 2
+      },
+      {
+        "check": "text_regex",
+        "arg": "Increase by about (25|50)%",
+        "ok": true,
+        "detail": "Increase by about 50%",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Brownies [1] (source fn, 21 steps)\nIngredients:\n- 1 cup (2 sticks) unsalted butter, room temperature, plus more for dish and parchment\n- 1 2/3 cups sifted all-purpose flour, plus more for parchment\n- 8 ounces unsweetened chocolate, chopped\n- 5 large eggs\n- 2 teaspoons pure vanilla extract\n- 3 1/4 cups sugar\n- 1/4 teaspoon salt\n- 7 ounces semisweet chocolate, cut into chunks (1 1/4 cups)\nInstructions:\nPreheat oven to 425 degrees F.\nButter a 9 by 13-inch glass baking dish, and line dish with parchment paper. Butter and flour parchment. Set dish aside.\nPlace unsweetened chocolate and 1 cup but"
+  },
+  {
+    "id": "T4-all-medium-changes-nothing",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "as written",
+        "ok": true,
+        "detail": "looking for 'as written'",
+        "turn": 2
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "Reduce by",
+        "ok": true,
+        "detail": "'Reduce by' must not appear",
+        "turn": 2
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "Increase by",
+        "ok": true,
+        "detail": "'Increase by' must not appear",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Thirty Minute Chili [1] (source ar, 4 steps)\nIngredients:\n- 1 pound ground beef\n- 1 (14.5 ounce) can canned diced tomatoes\n- 1 (15 ounce) can kidney beans, drained\n- 1 (1.25 ounce) package chili seasoning mix\nInstructions:\nCrumble the beef into a large skillet over medium-high heat. Cook and stir until evenly browned. Drain off grease, and mix in the tomatoes, kidney beans and chili seasoning mix. Reduce heat to medium, and simmer for 15 minutes.\nAdjusted to your taste (sweet medium, salt medium, spice medium):\nYour taste is set to medium for sweet, salt and spice, so the recipe is used as "
+  },
+  {
+    "id": "T5-two-axes",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "taste_lines_match",
+        "arg": {
+          "axes": [
+            "salt",
+            "spice"
+          ],
+          "allow_missed": 1
+        },
+        "ok": true,
+        "detail": "changed 0 lines (0 not of axis ['salt', 'spice']: []); 0 axis lines missed: []",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Beef Tacos [1] (source ar, 8 steps)\nIngredients:\n- 18 medium taco shells\n- 2 pounds lean ground beef\n- 1 (14 ounce) bottle ketchup\n- 1 (8 ounce) package shredded Cheddar cheese\n- 1 large tomato, diced\n- 1 cup iceberg lettuce, shredded\nInstructions:\nPreheat oven to 375 degrees F (190 degrees C).\nWarm taco shells for 5 minutes on the center rack in the preheated oven.\nIn a medium skillet over medium high heat, brown the beef. Halfway through browning, pour in ketchup. Stir well and let simmer for 5 minutes.\nSpoon the meat mixture into the warm taco shells and top with Cheddar cheese. Return t"
+  },
+  {
+    "id": "T6-no-matching-ingredient",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "nothing to change",
+        "ok": true,
+        "detail": "looking for 'nothing to change'",
+        "turn": 2
+      },
+      {
+        "check": "answer_lacks",
+        "arg": "Increase by",
+        "ok": true,
+        "detail": "'Increase by' must not appear",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Fruit Salad in Seconds [1] (source ar, 2 steps)\nIngredients:\n- 1 pint fresh strawberries, sliced\n- 1 pound seedless green grapes, halved\n- 3 bananas, peeled and sliced\n- 1 (8 ounce) container strawberry yogurt\nInstructions:\nIn a large bowl, toss together strawberries, grapes, bananas, and strawberry yogurt. Serve immediately.\nAdjusted to your taste (spice high):\nI found no spice ingredient lines in this recipe, so there is nothing to change."
+  },
+  {
+    "id": "T7-baking-keeps-sugar-change-small",
+    "task": 3,
+    "category": "taste",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "baking",
+        "ok": true,
+        "detail": "looking for 'baking'",
+        "turn": 2
+      },
+      {
+        "check": "text_regex",
+        "arg": "Reduce by about 25%",
+        "ok": true,
+        "detail": "Reduce by about 25%",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Cookie Jar Sugar Cookies [1] (source ar, 13 steps)\nIngredients:\n- 1 1/2 cups white sugar\n- 4 cups all-purpose flour\n- 1 teaspoon baking powder\n- 1/2 teaspoon baking soda\n- 1/2 teaspoon salt\n- 3/4 teaspoon ground nutmeg\n- 1 cup butter, room temperature\n- 1 egg\n- 1/2 cup sour cream\n- 1 teaspoon vanilla extract\nInstructions:\nCombine the flour with the baking powder, baking soda, salt and nutmeg. In a clean 1 quart-sized glass jar with a wide mouth layer the white sugar followed by the flour mixture. Press firmly in place and seal. Attach a card with the following instructions:\n\"In a large bowl"
+  },
+  {
+    "id": "F1-open-the-third-one",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "opened_ref",
+        "arg": 3,
+        "ok": true,
+        "detail": "opened bnzp45PjkFM8X/K7yvKwtUJPmh3UHY., list item 3 was bnzp45PjkFM8X/K7yvKwtUJPmh3UHY.",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "Ingredients",
+        "ok": true,
+        "detail": "looking for 'Ingredients'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "1. Penne with Herbed Ricotta [1] (source epi, 10 steps)\nIngredients:\n- 1 1/2 cups whole-milk ricotta\n- 2 tablespoons chopped chives\n- 2 tablespoons chopped flat-leaf parsley\n- 2 tablespoons chopped basil\n- 1 teaspoon chopped thyme\n- 1/3 cup extra-virgin olive oil\n- 1 pound penne\nInstructions:\nStir together ricotta, herbs, oil, 1/4 teaspoon salt, and 1 teaspoon pepper in a large shallow serving bowl. Meanwhile, cook penne in a pasta pot of boiling salted water (3 tablespoons salt for 6 quarts water) until al dente. Reserve 1 cup cooking water, then drain penne. Stir 1/4 cup cooking water into r"
+  },
+  {
+    "id": "F2-reference-without-a-list",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "There is no result number 2 in the last list."
+  },
+  {
+    "id": "F3-reference-beyond-the-list",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "no result number 9",
+        "ok": true,
+        "detail": "looking for 'no result number 9'",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "There is no result number 9 in the last list."
+  },
+  {
+    "id": "F4-similar-recipes",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "text_contains",
+        "arg": "most similar",
+        "ok": true,
+        "detail": "looking for 'most similar'",
+        "turn": 2
+      },
+      {
+        "check": "cited_ids_exist",
+        "arg": {},
+        "ok": true,
+        "detail": "5 cited, 0 not in the dataset",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "Recipes most similar to Deadly Delicious Lasagna:\n1. Lasagna [1] (similarity 0.94; shares 4 ingredients)\n2. Fabulous Foolproof Lasagna [2] (similarity 0.94; shares 4 ingredients)\n3. Yummy Lasagna [3] (similarity 0.94; shares 4 ingredients)\n4. Best Lasagna [4] (similarity 0.93; shares 4 ingredients)\n5. Cheese Lasagna [5] (similarity 0.92; shares 5 ingredients)"
+  },
+  {
+    "id": "F5-clarify",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "needs_input",
+        "ok": true,
+        "detail": "status=needs_input",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Better how: fewer steps, a different ingredient, or something else?"
+  },
+  {
+    "id": "F6-chat",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "text_contains",
+        "arg": "Recipe Box",
+        "ok": true,
+        "detail": "looking for 'Recipe Box'",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I answer questions about the Recipe Box dataset (about 125,000 recipes): find recipes, count them or work out percentages, list common ingredients, rank by number of steps, suggest recipes from the ingredients you have, and adapt a recipe (for example dairy-free) using what similar recipes do. Every answer shows the recipes it comes from. The dataset has no nutrition, cooking time, servings, cuisine, cost or rating."
+  },
+  {
+    "id": "F7-chain-search-filter-open-scale",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "",
+    "turns": 4,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "dairy",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'dairy'",
+        "turn": 2
+      },
+      {
+        "check": "min_sources",
+        "arg": 3,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      },
+      {
+        "check": "scale_independent",
+        "arg": {
+          "factor": 2
+        },
+        "ok": true,
+        "detail": "4 amounts checked, all correct",
+        "turn": 4
+      }
+    ],
+    "answer_excerpt": "1. Fruit Soup [1] (scaled by 2x)\nIngredients (changed amounts in bold):\n- **2 large, ripe cantaloupe, peeled, seeded and cut into chunks**\n- **4 cans, 6 ounces each pineapple juice**\n- **2 limes, juiced**\n- **4 kiwis, peeled and chopped**\nCooking times, pan sizes and any amounts written inside the instructions are NOT scaled. For a big change, season gradually and taste as you go.\nInstructions (unchanged):\nCombine cantaloupe, pineapple juice and lime juice in food processor and process until smooth. Pour soup into shallow bowls or cups and top with chopped kiwi pieces. This soup may be served "
+  },
+  {
+    "id": "F8-reference-after-a-refinement-uses-the-new-list",
+    "task": 1,
+    "category": "follow-ups",
+    "why": "After a refinement the numbers refer to the NEW list, not the old one.",
+    "turns": 3,
+    "passed": true,
+    "checks": [
+      {
+        "check": "opened_ref",
+        "arg": 2,
+        "ok": true,
+        "detail": "opened 9bzMRO3XdVVDZUMVYNzB5vAhXX/tCIS, list item 2 was 9bzMRO3XdVVDZUMVYNzB5vAhXX/tCIS",
+        "turn": 3
+      },
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 1 recipes break 'egg'",
+        "turn": 3
+      }
+    ],
+    "answer_excerpt": "1. Refrigerated Cake [1] (source fn, 5 steps)\nIngredients:\n- 1 package chocolate wafers\n- 2 cups whipped cream\nInstructions:\nSpread 2-3 tablespoon of whipped cream on a wafer and stack on another cookie. Alternate whipped cream with wafers and assemble on long plate in the shape of log. When all wafers are assemble use remaining whipped cream to coat all sides. Chill for 6-8 hours. Slice on the diagaonal and serve."
+  },
+  {
+    "id": "H2-cooking-time-is-refused",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "refused",
+        "ok": true,
+        "detail": "status=refused",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "no time",
+        "ok": true,
+        "detail": "looking for 'no time'",
+        "turn": 1
+      },
+      {
+        "check": "no_sources",
+        "arg": {},
+        "ok": true,
+        "detail": "0 recipes shown",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I can't answer that: the dataset has no cooking time information. The dataset has no time fields. Instructions sometimes mention durations (\"bake 20 minutes\"), but they are free text, often omit resting/chilling time, and cannot be summed into a reliable total.\nWhat I can do instead: counts and percentages of recipes by ingredient, restriction or number of steps; the most common ingredients, ingredient counts and step counts; recipes ranked by fewest/most instruction steps; ingredient-based matching and substitution suggestions grounded in other recipes."
+  },
+  {
+    "id": "H3-servings-question-is-refused",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "refused",
+        "ok": true,
+        "detail": "status=refused",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "servings",
+        "ok": true,
+        "detail": "looking for 'servings'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I can't answer that: the dataset has no servings information. The dataset has no servings or yield field.\nWhat I can do instead: counts and percentages of recipes by ingredient, restriction or number of steps; the most common ingredients, ingredient counts and step counts; recipes ranked by fewest/most instruction steps; ingredient-based matching and substitution suggestions grounded in other recipes."
+  },
+  {
+    "id": "H4-cuisine-is-refused",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "refused",
+        "ok": true,
+        "detail": "status=refused",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "cuisine",
+        "ok": true,
+        "detail": "looking for 'cuisine'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I can't answer that: the dataset has no cuisine information. The dataset has no cuisine, region or country field. A title may contain a word like 'Thai', which I can search for, but that is a keyword match, not a cuisine classification.\nWhat I can do instead: counts and percentages of recipes by ingredient, restriction or number of steps; the most common ingredients, ingredient counts and step counts; recipes ranked by fewest/most instruction steps; ingredient-based matching and substitution suggestions grounded in other recipes."
+  },
+  {
+    "id": "H5-rating-is-refused",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "refused",
+        "ok": true,
+        "detail": "status=refused",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "ratings",
+        "ok": true,
+        "detail": "looking for 'ratings'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I can't answer that: the dataset has no ratings and popularity information. The dataset has no ratings, reviews or popularity data.\nWhat I can do instead: counts and percentages of recipes by ingredient, restriction or number of steps; the most common ingredients, ingredient counts and step counts; recipes ranked by fewest/most instruction steps; ingredient-based matching and substitution suggestions grounded in other recipes."
+  },
+  {
+    "id": "H6-injection-does-not-produce-a-safety-claim",
+    "task": 1,
+    "category": "limits",
+    "why": "A message that asks the bot to certify safety must not get a safety claim, whatever the planner does.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "do not certify",
+        "ok": true,
+        "detail": "looking for 'do not certify'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookies; exclude classes: peanut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Black and White Cookies [1] (19 steps, 4 ingredients, source fn)\n2. Cookies and Cream [2] (6 steps, 7 ingredients, source fn)\n3. Cookies and Cream [3] (15 steps, 8 ingredients, source fn)\n4. Cookie Cutter Cookies [4] (17 steps, 6 ingredients, source fn)\n5. Shortbread Cookies [5] (34 steps, 4 ingredients, source epi)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a recipe as"
+  },
+  {
+    "id": "H7-typed-recipe-id",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 1,
+        "ok": true,
+        "detail": "1 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "Banana",
+        "ok": true,
+        "detail": "looking for 'Banana'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "1. Banana Banana Bread [1] (source ar, 9 steps)\nIngredients:\n- 2 cups all-purpose flour\n- 1 teaspoon baking soda\n- 1/4 teaspoon salt\n- 1/2 cup butter\n- 3/4 cup brown sugar\n- 2 eggs, beaten\n- 2 1/3 cups mashed overripe bananas\nInstructions:\nPreheat oven to 350 degrees F (175 degrees C). Lightly grease a 9x5 inch loaf pan.\nIn a large bowl, combine flour, baking soda and salt. In a separate bowl, cream together butter and brown sugar. Stir in eggs and mashed bananas until well blended. Stir banana mixture into flour mixture; stir just to moisten. Pour batter into prepared loaf pan.\nBake in prehea"
+  },
+  {
+    "id": "H8-unknown-recipe-id",
+    "task": 1,
+    "category": "limits",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "status",
+        "arg": "no_results",
+        "ok": true,
+        "detail": "status=no_results",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "no recipe with ID",
+        "ok": true,
+        "detail": "looking for 'no recipe with ID'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "I have no recipe with ID ZZZ-not-an-id."
+  },
+  {
+    "id": "H9-relevance-gulab-jamun",
+    "task": 1,
+    "category": "retrieval",
+    "why": "The user's third bug: a short keyword result must not be padded with unrelated look-alikes.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "source_count_between",
+        "arg": [
+          1,
+          4
+        ],
+        "ok": true,
+        "detail": "3 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "titles_contain",
+        "arg": {
+          "word": "gulab",
+          "min": 1
+        },
+        "ok": true,
+        "detail": "3 of 3 titles contain 'gulab'",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "most relevant",
+        "ok": true,
+        "detail": "looking for 'most relevant'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 3 most relevant recipes (query: gulab jamun), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Baked Gulab Jamun (Indian Dumplings in Syrup) [1] (12 steps, 7 ingredients, source ar)\n2. Gulab Jamun [2] (18 steps, 14 ingredients, source ar)\n3. Gulab Jamun or Kala Jam (Waffle Balls) [3] (14 steps, 11 ingredients, source ar)"
+  },
+  {
+    "id": "H10-relevance-common-dish",
+    "task": 1,
+    "category": "retrieval",
+    "why": "",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "titles_contain",
+        "arg": {
+          "word": "banana",
+          "min": 4
+        },
+        "ok": true,
+        "detail": "5 of 5 titles contain 'banana'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: banana bread), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Banana Banana Bread [1] (9 steps, 7 ingredients, source ar) - matched: 2 1/3 cups mashed overripe bananas\n2. Banana Bread - Quick Bread for Machines [2] (16 steps, 7 ingredients, source ar) - matched: 2 bananas, peeled and halved lengthwise\n3. Simple Banana Bread [3] (10 steps, 7 ingredients, source ar) - matched: 4 ripe bananas, mashed\n4. Banana Bread [4] (7 steps, 7 ingredients, source ar) - matched: 3 bananas, mashed\n5. Quick Bana"
+  },
+  {
+    "id": "R21-count-follow-up-the-planner-forgets-vegetarian",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "Found by a real conversation: for 'how many of those are vegetarian?' the planner returned a bare count, and the answer silently counted ALL recipes.",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "vegetarian"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['vegetarian']",
+        "turn": 2
+      },
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "include_ingredients",
+          "value": "tomato"
+        },
+        "ok": true,
+        "detail": "include_ingredients=['tomato', 'basil']",
+        "turn": 2
+      },
+      {
+        "check": "has_calculation",
+        "arg": {},
+        "ok": true,
+        "detail": "computation keys: ['denominator', 'description', 'filters', 'funnel', 'method', 'n_analyzed']",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "844 of 122935 recipes (0.7%) match (include ingredients: tomato, basil; exclude classes: vegetarian). For reference, that is 0.7% of all 124647 recipes."
+  },
+  {
+    "id": "R22-planner-refuses-a-request-that-asks-to-confirm-safety",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "Found by a real conversation: 'show me cookies and confirm they are safe' was refused whole. The recipes are answered; the certification is declined in words.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "tree_nut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'tree_nut'",
+        "turn": 1
+      },
+      {
+        "check": "no_violations",
+        "arg": "peanut",
+        "ok": true,
+        "detail": "0 of 5 recipes break 'peanut'",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "cannot confirm safety",
+        "ok": true,
+        "detail": "looking for 'cannot confirm safety'",
+        "turn": 1
+      },
+      {
+        "check": "trace_has",
+        "arg": {
+          "path": "safety_request_converted",
+          "value": true
+        },
+        "ok": true,
+        "detail": "trace[safety_request_converted]=True",
+        "turn": 1
+      },
+      {
+        "check": "no_safety_claim",
+        "arg": {},
+        "ok": true,
+        "detail": "no safety claim",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: cookie; exclude classes: tree_nut), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Cookie Press Butter Cookies [1] (8 steps, 9 ingredients, source ar)\n2. Cookies and Cream [2] (6 steps, 7 ingredients, source fn)\n3. Cookie Cutter Cookies [3] (17 steps, 6 ingredients, source fn)\n4. Basic Sugar Cookies [4] (6 steps, 4 ingredients, source ar)\n5. Black and White Cookies [5] (19 steps, 4 ingredients, source fn)\nRestriction checks look only at the ingredient text of each recipe. They do not certify a "
+  },
+  {
+    "id": "V13-veg-mode-leaves-out-a-junk-parsed-egg-line",
+    "task": 1,
+    "category": "vegetarian",
+    "why": "Found by the extended audit: 'Scrambled Eggs' passed the veg switch because its line was parsed to a junk name and flagged only as 'maybe egg'.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "no_violations",
+        "arg": "egg",
+        "ok": true,
+        "detail": "0 of 10 recipes break 'egg'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "The 10 most relevant recipes (query: scrambled; vegetarian only), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Scrambled Tofu [1] (5 steps, 7 ingredients, source ar)\n2. Anna's Scrambled Tofu [2] (4 steps, 7 ingredients, source ar)\n3. Amazing Tofu Scramble [3] (4 steps, 9 ingredients, source ar)\n4. Tstcgdgdgdgdgdgdgd [4] (4 steps, 3 ingredients, source fn)\n5. Corn-and-Tomato Scramble [5] (14 steps, 6 ingredients, source epi)\n6. Glazed Apricot Twists [6] (20 steps, 6 ingredients, source epi)\n7. Funked Out Smashed Potatoes [7] (10"
+  },
+  {
+    "id": "R23-vegan-asked-for-in-words",
+    "task": 1,
+    "category": "allergen-guard",
+    "why": "",
+    "turns": 2,
+    "passed": true,
+    "checks": [
+      {
+        "check": "active_filter",
+        "arg": {
+          "key": "exclude_classes",
+          "value": "vegan"
+        },
+        "ok": true,
+        "detail": "exclude_classes=['vegan']",
+        "turn": 2
+      },
+      {
+        "check": "min_sources",
+        "arg": 2,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 2
+      }
+    ],
+    "answer_excerpt": "The 5 most relevant recipes (query: dessert; exclude classes: vegan), ranked by combined keyword and meaning similarity (this is a relevance ranking, not a count of all matches):\n1. Fresh Fruit Dessert [1] (2 steps, 3 ingredients, source fn)\n2. Tropical Fruit Dessert [2] (3 steps, 6 ingredients, source fn)\n3. Vegan Date and Cashew Dessert [3] (6 steps, 5 ingredients, source ar)\n4. Mango and Melon Dessert [4] (8 steps, 7 ingredients, source epi)\n5. Eight Treasure Porridge Dessert [5] (12 steps, 10 ingredients, source ar)\nRestriction checks look only at the ingredient text of each recipe. They d"
+  },
+  {
+    "id": "T1k-planner-puts-the-ingredient-in-the-dish-query",
+    "task": 1,
+    "category": "statistics",
+    "why": "Found by a real conversation: 'recipes with tomato' came back as query=tomato, so the ranking looked at 5 relevant recipes instead of every tomato recipe.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_ascending",
+        "arg": {},
+        "ok": true,
+        "detail": "steps=[1, 1, 1, 1, 1]",
+        "turn": 1
+      },
+      {
+        "check": "trace_has",
+        "arg": {
+          "path": "query_moved_to_ingredient",
+          "value": "tomato"
+        },
+        "ok": true,
+        "detail": "trace[query_moved_to_ingredient]=tomato",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "tie",
+        "ok": true,
+        "detail": "looking for 'tie'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Recipes with the fewest steps (include ingredients: tomato):\n1. Sweet Pepper Salmon with Zucchini Ribbon Salad [1]: 1 steps (16 ingredients)\n2. Mozzarella Pesto Spread [2]: 1 steps (3 ingredients)\n3. Tomato Basil Smoothie [3]: 1 steps (5 ingredients)\n4. Black Bean Salad [4]: 1 steps (15 ingredients)\n5. Tomato Vinaigrette [5]: 1 steps (6 ingredients)\nNote: 63 recipes tie at the cut-off; ties on sentences are broken by the other step measure (paragraphs), then by recipe ID (alphabetical)"
+  },
+  {
+    "id": "T1l-fewest-steps-for-a-dish-name-is-really-sorted",
+    "task": 1,
+    "category": "statistics",
+    "why": "Hybrid retrieval ignores the sort order; the ranking is now done in code over a relevance pool and says so.",
+    "turns": 1,
+    "passed": true,
+    "checks": [
+      {
+        "check": "min_sources",
+        "arg": 5,
+        "ok": true,
+        "detail": "5 recipes shown",
+        "turn": 1
+      },
+      {
+        "check": "steps_ascending",
+        "arg": {},
+        "ok": true,
+        "detail": "steps=[2, 4, 5, 5, 6]",
+        "turn": 1
+      },
+      {
+        "check": "text_contains",
+        "arg": "relevance pool",
+        "ok": true,
+        "detail": "looking for 'relevance pool'",
+        "turn": 1
+      }
+    ],
+    "answer_excerpt": "Of the 50 most relevant recipes (query: banana bread; a relevance pool, not every match), the fewest steps:\n1. Almond Butter and Finger Bananas on Fruit Bread [1]: 2 steps (3 ingredients)\n2. Toast with Banana Topping [2]: 4 steps (4 ingredients)\n3. Country Banana Bread [3]: 5 steps (4 ingredients)\n4. Grandma's Homemade Banana Bread [4]: 5 steps (9 ingredients)\n5. Mother's Banana Bread [5]: 6 steps (9 ingredients)\nSteps are counted as sentences; ties are ordered by relevance, then recipe ID."
+  }
+]

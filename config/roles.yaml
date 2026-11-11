@@ -1,0 +1,134 @@
+# Culinary ROLE knowledge used by the substitution tool.
+#
+# THIS IS GENERAL KNOWLEDGE, NOT DATASET EVIDENCE. The tool uses it for exactly two things, and always labels it as such:
+#   1. a compatibility check: a substitute should be able to do (at least part of) the job of the ingredient it replaces;
+#   2. the "expected effects" text, which is always presented as a PREDICTION, never as a verified outcome.
+# Names are canonical ingredient names (see ingredient_vocab). Unknown ingredients simply have no entry: the tool then says
+# "role not documented" and relies on the recipe evidence alone.
+
+role_labels:
+  binder: holds the mixture together
+  leavening: gives lift and an airy crumb
+  moisture: keeps the result moist
+  richness: adds richness and a smooth mouthfeel
+  fat: adds fat for tenderness and browning
+  sweetness: adds sweetness
+  structure: gives body and structure
+  thickener: thickens a sauce or batter
+  liquid: provides liquid
+  acid: adds tang or acidity
+  flavor: adds its own distinctive flavour
+  crunch: adds crunch
+  umami: adds savoury depth
+
+# what is typically lost if a role is NOT covered (written as a prediction)
+loss_effects:
+  binder: the mixture may hold together less well and crumble or fall apart
+  leavening: less lift, so a denser, flatter result
+  moisture: a drier result
+  richness: less rich and a lighter, thinner mouthfeel
+  fat: less tender, with less browning
+  sweetness: less sweet
+  structure: a softer, less structured texture
+  thickener: a thinner sauce or batter
+  liquid: less liquid, so you may need to add some
+  acid: a flatter, less bright taste
+  flavor: the dish loses that characteristic flavour
+  crunch: less crunch
+  umami: less savoury depth
+
+roles:
+  egg: [binder, leavening, moisture, richness, structure]
+  egg yolk: [binder, richness, moisture]
+  egg white: [binder, leavening, structure]
+  butter: [fat, richness, flavor, moisture]
+  margarine: [fat, richness, moisture]
+  shortening: [fat, structure]
+  vegetable oil: [fat, moisture]
+  olive oil: [fat, moisture, flavor]
+  canola oil: [fat, moisture]
+  coconut oil: [fat, flavor]
+  milk: [liquid, moisture, richness]
+  buttermilk: [liquid, moisture, acid, richness]
+  heavy cream: [richness, liquid, thickener, fat]
+  half and half: [richness, liquid]
+  sour cream: [richness, moisture, acid, thickener]
+  yogurt: [moisture, acid, richness, thickener]
+  cream cheese: [richness, thickener, structure]
+  cheese: [flavor, richness, umami]
+  parmesan cheese: [flavor, umami]
+  condensed milk: [sweetness, richness, thickener]
+  evaporated milk: [richness, liquid]
+  creme fraiche: [richness, acid, thickener]
+  coconut milk: [liquid, richness, moisture, flavor]
+  coconut cream: [richness, thickener, liquid]
+  almond milk: [liquid, moisture]
+  soy milk: [liquid, moisture]
+  oat milk: [liquid, moisture]
+  cashew: [richness, thickener, structure]
+  applesauce: [moisture, sweetness, binder]
+  banana: [moisture, sweetness, binder, flavor]
+  mashed banana: [moisture, sweetness, binder, flavor]
+  silken tofu: [binder, moisture, richness, structure]
+  tofu: [structure, binder]
+  flaxseed: [binder, moisture]
+  chia seed: [binder, moisture]
+  baking soda: [leavening]
+  baking powder: [leavening]
+  vinegar: [acid, leavening]
+  apple cider vinegar: [acid, leavening]
+  lemon juice: [acid, flavor]
+  mayonnaise: [richness, binder, moisture, fat]
+  cornstarch: [thickener, structure]
+  all purpose flour: [structure, thickener]
+  sugar: [sweetness, moisture, structure]
+  brown sugar: [sweetness, moisture, flavor]
+  honey: [sweetness, moisture, binder, flavor]
+  maple syrup: [sweetness, moisture, flavor]
+  molasses: [sweetness, moisture, flavor]
+  peanut butter: [fat, richness, binder, flavor]
+  almond butter: [fat, richness, binder, flavor]
+  tahini: [fat, richness, binder, flavor]
+  sunflower seed butter: [fat, richness, binder, flavor]
+  breadcrumb: [binder, crunch, structure]
+  oat: [structure, binder, moisture]
+  chicken broth: [liquid, umami, flavor]
+  vegetable broth: [liquid, umami, flavor]
+  beef broth: [liquid, umami, flavor]
+  soy sauce: [umami, flavor, liquid]
+  worcestershire sauce: [umami, flavor, acid]
+  wine: [liquid, acid, flavor]
+  white wine: [liquid, acid, flavor]
+  red wine: [liquid, acid, flavor]
+  nutritional yeast: [umami, flavor]
+  walnut: [crunch, flavor, fat]
+  pecan: [crunch, flavor, fat]
+  almond: [crunch, flavor, fat]
+  peanut: [crunch, flavor, fat]
+  pasta: [structure]
+  gelatin: [binder, structure, thickener]
+
+# short text about what a substitute ADDS (also a prediction)
+adds:
+  applesauce: adds moisture and mild sweetness, with some binding but little lift
+  banana: adds moisture, sweetness and banana flavour, with some binding
+  mashed banana: adds moisture, sweetness and banana flavour, with some binding
+  silken tofu: adds smooth body and binding with almost no flavour
+  yogurt: adds moisture and tang
+  coconut milk: adds richness and a noticeable coconut flavour
+  coconut cream: adds richness and a noticeable coconut flavour
+  almond milk: adds liquid but little richness
+  soy milk: adds liquid but little richness
+  oat milk: adds liquid, little richness
+  vegetable oil: adds fat and moisture with no flavour
+  olive oil: adds fat and moisture with a fruity flavour
+  coconut oil: adds fat, solid when cool, with a coconut flavour
+  margarine: behaves like butter in most baking
+  flaxseed: binds when mixed with water, with a nutty taste
+  chia seed: binds when mixed with water
+  vinegar: reacts with baking soda to give some lift
+  baking soda: gives lift when combined with an acid
+  cashew: when blended, gives creaminess
+  peanut butter: adds fat, binding and a strong nutty flavour
+  almond butter: adds fat, binding and a nutty flavour
+  tahini: adds fat, binding and a sesame flavour
